@@ -1,39 +1,13 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from "react"
 
-// styles
-const pageStyles = {
-	color: "#232129",
-	padding: "96px",
-	fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-	marginTop: 0,
-	marginBottom: 64,
-	maxWidth: 320,
-}
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
-const paragraphStyles = {
-	marginBottom: 48,
-}
-
-// markup
-const NotFoundPage = () => {
-	return (
-		<main style={pageStyles}>
-			<title>Not found</title>
-			<h1 style={headingStyles}>Page not found</h1>
-			<p style={paragraphStyles}>
-				Sorry{" "}
-				<span role="img" aria-label="Pensive emoji">
-					😔
-				</span>{" "}
-				we couldn’t find what you were looking for.
-				<br />
-				<Link to="/">Go home</Link>.
-			</p>
-		</main>
-	)
-}
+const NotFoundPage = () => (
+	<Layout>
+		<SEO title="Ошибка 404" robots="noindex, nofollow" />
+		<h1>Ошибка 404. Документ не найден</h1>
+	</Layout>
+)
 
 export default NotFoundPage
