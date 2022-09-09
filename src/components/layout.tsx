@@ -1,5 +1,7 @@
-import React, { ReactNode } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+
+import "normalize.css"
 
 interface LayoutProps {
 	children?: any
