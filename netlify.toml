@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/404.html"
+  to = "/404"
+  status = 404
+  force = true
