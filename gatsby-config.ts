@@ -12,7 +12,7 @@ const config: GatsbyConfig = {
 	graphqlTypegen: true,
 
 	plugins: [
-		"gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap",
+		"gatsby-plugin-netlify", "gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap",
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
