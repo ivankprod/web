@@ -1,11 +1,14 @@
 {
-	"name": "web-gatsby-test",
+	"name": "ivankprod-web",
 	"version": "1.0.0",
 	"private": true,
-	"description": "web-gatsby-test",
+	"description": "ivankprod website",
 	"author": "ivankprod",
+	"license": "MIT",
 	"keywords": [
-		"gatsby"
+		"gatsby",
+		"ivankprod",
+		"ivank production"
 	],
 	"scripts": {
 		"develop": "gatsby develop",
@@ -33,7 +36,8 @@
 	"devDependencies": {
 		"@types/node": "^17.0.45",
 		"@types/react": "^18.0.14",
-		"@types/react-dom": "^18.0.5",
+		"@types/react-dom": "^18.0.6",
+		"@types/react-helmet": "^6.1.5",
 		"typescript": "^4.7.4"
 	}
 }
