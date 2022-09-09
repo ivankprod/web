@@ -25,12 +25,12 @@ const Layout: React.FC<LayoutProps> = ({ children = {} }) => {
 					<div className="footer-block first">
 						<div className="footer-block-title">ИНФО</div>
 						© 2008-{new Date().getFullYear()} {site.siteMetadata.title}. Все права защищены.
-						<br></br>
+						<br/>
 						Копирование материлов сайта без указания источника запрещено!
-						<br></br>
-						<br></br>
+						<br/>
+						<br/>
 						<a className="spa" href="/legal/user-agreement/">Пользовательское соглашение</a>
-						<br></br>
+						<br/>
 						<a className="spa" href="/legal/privacy-policy/">Политика конфиденциальности</a>
 					</div>
 					<div className="footer-block second">
