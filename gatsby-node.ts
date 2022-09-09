@@ -1,14 +1,15 @@
-exports.onCreatePage = async ({ page, actions }) => {
+import { CreatePageArgs } from "gatsby";
+
+exports.onCreatePage = async ({ page, actions }: CreatePageArgs) => {
 	const { createRedirect } = actions;
 
-	if (!page.path.endsWith(".html")) {
-		const isIndex = page.path === "/";
-		const legacyUrl = isIndex ? "/index.html" : page.path.replace(/\/$/, ".html");
+	if (page.path.endsWith(".html")) {
+		const newUrl = page.path.replace(/\.html$/, "");
 
 		createRedirect({
-			fromPath: legacyUrl,
-			toPath: page.path,
-			isPermanent: true
+			fromPath: page.path,
+			toPath: newUrl,
+			statusCode: 404
 		});
 	}
 };
