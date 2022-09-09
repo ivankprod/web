@@ -7,10 +7,11 @@ interface SeoProps {
 	description?: string
 	lang?: string
 	meta?: any[]
-	linkCanonical: string
+	path?: string
+	robots?: string
 }
 
-const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = [], linkCanonical }) => {
+const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = [], path = "", robots = "index, follow" }) => {
 	const { site } = useStaticQuery(
 		graphql`query {
 			site {
@@ -18,12 +19,14 @@ const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = 
 					title
 					description
 					author
+					siteUrl
 				}
 			}
 		}`
 	)
 
 	const metaDescription = description || site.siteMetadata.description
+	const linkCanonical: string = `${site.siteMetadata.siteUrl}/${path}`
 
 	return (
 		<Helmet
@@ -37,6 +40,10 @@ const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = 
 				},
 			]}
 			meta = {[
+				{
+					name: "robots",
+					content: robots,
+				},
 				{
 					name: "description",
 					content: metaDescription,
