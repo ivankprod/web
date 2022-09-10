@@ -75,7 +75,7 @@ const Navigation: React.FC<NavigationProps> = ({ scope = "" }) => {
 				});
 			});
 		});
-	});
+	}, []);
 
 	return (
 		<>
