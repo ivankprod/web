@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -6,7 +7,15 @@ import SEO from "../components/seo"
 const NotFoundPage = () => (
 	<Layout>
 		<SEO title="Ошибка 404" robots="noindex, nofollow" />
-		<h1>Ошибка 404. Документ не найден</h1>
+		<section id="content-holder" className="container">
+			<div id="content" className="content animate-fadein-css">
+				<div className="error-box">
+					<div className="error-title">404 Не найдено</div>
+					<div className="error-message">Запрашиваемая страница не найдена либо ещё не создана</div>
+					<Link to="/" className="abutton small rounded-all">На главную</Link>
+				</div>
+			</div>
+		</section>
 	</Layout>
 )
 

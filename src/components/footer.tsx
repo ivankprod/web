@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
 						<div className="footer-block-title">СОЦИАЛЬНЫЕ СЕТИ</div>
 						<ul className="social">
 							<li><a className="vk" href="https://vk.com/ivankprod" title="Группа во ВКонтакте" target='blank'></a></li>
-							<li><a className="fb" href="https://facebook.com/ivankprod" title="Группа в Facebook" target='blank'></a></li>
+							{/*<li><a className="fb" href="https://facebook.com/ivankprod" title="Группа в Facebook" target='blank'></a></li>*/}
 							<li><a className="tw" href="https://twitter.com/ivankprod" title="Профиль в Twitter" target='blank'></a></li>
 							<li><a className="ig" href="https://instagram.com/ivankprod" title="Профиль в Instagram" target='blank'></a></li>
 							<li><a className="sc" href="https://soundcloud.com/ivankprod" title="Страница на SoundCloud" target='blank'></a></li>

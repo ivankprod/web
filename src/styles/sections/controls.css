@@ -1,0 +1,155 @@
+button, .abutton {
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	outline:            none;
+
+	display: block;
+
+	padding: 10px 14px;
+	margin:  0;
+
+	border: 0;
+
+	font-size: 1.2rem !important;
+	color: #fff !important;
+	cursor: pointer !important;
+
+	line-height: normal;
+
+	background-color: var(--color-theme-green);
+
+	box-shadow: 0 3px 10px #d8d8d8;
+
+	transition: opacity 0.1s !important;
+}
+
+button.middle,
+.abutton.middle {
+	padding: 9px 12px;
+
+	font-size: 1rem !important;
+}
+
+button.small,
+.abutton.small {
+	padding: 10px 12px 9px;
+
+	font-size: 0.9rem !important;
+}
+
+button:hover,
+.abutton:hover {
+	opacity: 0.8 !important;
+}
+
+button:active,
+.abutton:active {
+	opacity: 0.6 !important;
+}
+
+button[disabled],
+.abutton[disabled] {
+	color: #c5c5c5;
+
+	background: #f9f9f9;
+
+	pointer-events: none;
+}
+
+button img.btn-icon-loader,
+.abutton img.btn-icon-loader {
+	display: none;
+	float:   left;
+
+	width:  20px;
+	height: 20px;
+
+	margin-right: 6px;
+}
+
+button.btn-auth,
+.abutton.btn-auth {
+	display: flex;
+	align-items: center;
+
+	position: relative;
+
+	padding: 8px;
+
+	color: #000;
+	text-align: left;
+
+	background-color: #fff;
+
+	border: 1px solid #d8d8d8;
+
+	box-shadow: 0 3px 0 #d8d8d8;
+
+	overflow: hidden;
+}
+
+button.btn-auth img,
+.abutton.btn-auth img {
+	height: 24px;
+	width:  24px;
+
+	cursor: pointer !important;
+}
+
+button.btn-auth span,
+.abutton.btn-auth span {
+	display: inline-block;
+	
+	margin: 0 6px 0 4px;
+
+	font-size: 1.1rem;
+}
+
+button span, .abutton span { cursor: pointer !important; }
+
+.auth-form {
+	display:        flex;
+	flex-direction: row;
+	align-items:    flex-start;
+
+	height: 300px;
+
+	margin: 16px auto;
+
+	box-shadow: 0 3px 10px #d8d8d8;
+
+	overflow: hidden;
+}
+
+.auth-form-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width:  200px;
+	height: 100%;
+
+	background-color: #f7f7f7;
+
+	border-right: 2px solid #bed6a0;
+}
+
+.auth-form-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between;
+
+	height: 100%;
+
+	padding: 24px;
+}
+
+.auth-form-caption {
+	margin-bottom: 8px;
+
+	color:      var(--color-theme-green);
+	font-size:  1.2rem;
+	text-align: center;
+}

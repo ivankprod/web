@@ -3,12 +3,14 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import "../styles/main.css"
-
 const IndexPage = () => (
-	<Layout>
+	<Layout scope="home">
 		<SEO title="Главная" />
-		<h1>HELLO!</h1>
+		<section id="content-holder" className="container">
+			<div id="content" className="content animate-fadein-css">
+				Главная страница
+			</div>
+		</section>
 	</Layout>
 )
 

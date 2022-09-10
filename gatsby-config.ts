@@ -16,10 +16,27 @@ const config: GatsbyConfig = {
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
-				"icon": "src/images/icon.png"
+				"name": "IvanK Production",
+				"short_name": "ivankprod",
+				"description": "Продакшн-студия IvanK Production",
+				"icon": "src/images/icon.png",
+				"lang": "ru",
+				"scope": "/",
+				"start_url": "/?utm_source=pwa-homescreen&utm_medium=pwa",
+				"background_color": "#6dab1e",
+				"theme_color": "#6dab1e",
+				"display": "standalone",
+				"orientation": "portrait"
 			}
 		},
-		"gatsby-plugin-sharp", "gatsby-transformer-sharp",
+		"gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-transformer-json",
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				"name": "content",
+				"path": "./content"
+			}
+		},
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
