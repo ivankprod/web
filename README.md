@@ -12,10 +12,11 @@
 	git clone https://github.com/ivankprod/web-gatsby-netlify-test.git
 	```
 
-2.  **Install all dependencies**
+2.  **Install all dependencies and run the site**
 	```shell
 	cd web-gatsby-netlify-test/
 	npm install
+	npm start
 	```
 
 3.  **Open the code and start developing**
