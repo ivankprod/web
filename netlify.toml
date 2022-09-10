@@ -5,6 +5,12 @@
   force = true
 
 [[redirects]]
+  from = "/404"
+  to = "/asd/"
+  status = 404
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/404/"
   status = 404
