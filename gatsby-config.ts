@@ -8,7 +8,7 @@ const config: GatsbyConfig = {
 		siteUrl: "https://ivankprod.ru"
 	},
 
-	trailingSlash: "never",
+	trailingSlash: "always",
 	graphqlTypegen: true,
 
 	plugins: [
