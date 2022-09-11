@@ -182,6 +182,15 @@ const onSliderTransitionEnd = function (slider: SliderClass) {
 	(slide.children[0] as HTMLElement).style.animation = 'slideBlockTitle 1600ms cubic-bezier(0.190, 1.000, 0.220, 1.000), fadeIn 600ms linear';
 }
 
+type Slides = {
+	caption: string
+	text: string[]
+	action: {
+		text: string
+		url: string
+	}
+}
+
 const Slider: React.FC = () => {
 	useEffect(() => {
 		const sliderConfig: SliderConfig = {
@@ -210,7 +219,12 @@ const Slider: React.FC = () => {
 				nodes {
 					childContentJson {
 						slides {
+							caption
 							text
+							action {
+								text
+								url
+							}
 						}
 					}
 				}
@@ -219,44 +233,26 @@ const Slider: React.FC = () => {
 	).allFile?.nodes[0]?.childContentJson?.slides
 
 	return (
-		<>
-			<div className="container slider-section">
-				<div className="slider-container" id="slider-container">
-					<div className="slider-wrapper">
+		<div className="container slider-section">
+			<div className="slider-container" id="slider-container">
+				<div className="slider-wrapper">
+					{slides.map(({ caption, text, action }: Slides) => (
 						<div className="slider-slide">
 							<div className="slide-block">
-								<div className="slide-block-title"><h1>ДОБРО ПОЖАЛОВАТЬ!</h1></div>
-								<div className="slide-block-desc">Мы – продакшн-студия топ-класса. Работаем с 2008-го года во многих сферах медиа-производства: аудио/видео-продакшн, дизайн и полиграфия, разработка информационных систем и веб-решений.</div>
-								<Link className="abutton middle rounded-all spa" to="/about/">Узнать подробнее</Link>
-							</div>
-						</div>
-						<div className="slider-slide">
-							<div className="slide-block">
-								<div className="slide-block-title"><h1>ПОЧЕМУ МЫ?</h1></div>
-								<div className="slide-block-desc-wm">
-									+ Консультирование, помощь в подготовке проектов<br />
-									+ Своевременное оказание услуг с использованием новейших технологий<br />
-									+ Поддержка и ведение проектов в будущем
+								<div className="slide-block-title"><h1>{caption}</h1></div>
+								<div className="slide-block-desc">
+									{text.map((line: string, index: number) => (
+										index == text.length - 1 ? <span>{line}</span> : <><span>{line}</span><br /></>
+									))}
 								</div>
-								<a className="abutton middle rounded-all" href="/join/">Заполнить бриф</a>
+								<Link className="abutton middle rounded-all spa" to={action.url}>{action.text}</Link>
 							</div>
 						</div>
-						<div className="slider-slide">
-							<div className="slide-block">
-								<div className="slide-block-title"><h1>НУЖНА ПОМОЩЬ?</h1></div>
-								<div className="slide-block-desc-wm">
-									+ Расскажем как реализовать проект наиболее выгодно<br />
-									+ Подберем для Вас оптимальный вариант сотрудничества<br />
-									+ И просто поднимем Вам настроение ;)
-								</div>
-								<Link className="abutton middle rounded-all spa" to="/contacts/">Связаться с нами</Link>
-							</div>
-						</div>
-					</div>
-					<div className="slider-pagination"></div>
+					))}
 				</div>
+				<div className="slider-pagination"></div>
 			</div>
-		</>
+		</div>
 	)
 }
 
