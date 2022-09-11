@@ -3,6 +3,7 @@
 </p>
 <h1 align="center">
   Official ivankprod.ru website repository
+  [![](https://tokei.rs/b1/github/ivankprod/web-gatsby-netlify-test?category=code)](https://github.com/ivankprod/web-gatsby-netlify-test)
 </h1>
 
 ## Quick local start
