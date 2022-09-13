@@ -20,11 +20,6 @@ module.exports = {
 		"react",
 		"@typescript-eslint"
 	],
-	"ignorePatterns": [
-		"src/fonts/*",
-		"src/images/*",
-		"src/styles/*"
-	],
 	"rules": {
 		"react/jsx-key": "off",
 		"@typescript-eslint/no-explicit-any": "off",
