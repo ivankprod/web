@@ -83,12 +83,12 @@ const Navigation: React.FC<NavigationProps> = ({ scope = "" }) => {
 				<ul className="mnav">
 					<li><Link to="/" data-scope="home" className={checkActiveItem("home", scope)}>ГЛАВНАЯ</Link></li>
 					<li><Link to="/projects/" data-scope="projects" 
-					          className={"subnav " + checkActiveItem("projects", scope)}
-					          onClick={closeShowedSubnav}>ПРОЕКТЫ
+						className={"subnav " + checkActiveItem("projects", scope)}
+						onClick={closeShowedSubnav}>ПРОЕКТЫ
 					</Link></li>
 					<li><Link to="/services/" data-scope="services" 
-					          className={"subnav " + checkActiveItem("services", scope)}
-					          onClick={closeShowedSubnav}>УСЛУГИ
+						className={"subnav " + checkActiveItem("services", scope)}
+						onClick={closeShowedSubnav}>УСЛУГИ
 					</Link></li>
 					<li><Link to="/blog/" data-scope="blog" className={checkActiveItem("blog", scope)}>БЛОГ</Link></li>
 					<li><Link to="/about/" data-scope="about" className={checkActiveItem("about", scope)}>О НАС</Link></li>

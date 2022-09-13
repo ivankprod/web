@@ -26,7 +26,7 @@ const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = 
 	)
 
 	const metaDescription = description || site.siteMetadata.description
-	const linkCanonical: string = `${site.siteMetadata.siteUrl}/${path}`
+	const linkCanonical = `${site.siteMetadata.siteUrl}/${path}`
 
 	return (
 		<Helmet
