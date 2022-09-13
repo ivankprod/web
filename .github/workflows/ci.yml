@@ -1,0 +1,38 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  ci:
+    name: CI
+    strategy:
+      matrix:
+        node-version: [ '16' ]
+        os: [ ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
+    env:
+      working-directory: ./
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: ${{ env.working-directory }}/node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install JS dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+        working-directory: ${{ env.working-directory }}
+
+      - name: ESLint
+        run: npm run lint
+        working-directory: ${{ env.working-directory }}
