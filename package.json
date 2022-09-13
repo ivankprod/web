@@ -22,7 +22,7 @@
 		"serve": "gatsby serve",
 		"clean": "gatsby clean",
 		"typecheck": "tsc --noEmit",
-		"lint": "npx eslint src/**"
+		"lint": "npx eslint src/** --no-error-on-unmatched-pattern"
 	},
 	"dependencies": {
 		"@fontsource/open-sans": "^4.5.11",
