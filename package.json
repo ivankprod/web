@@ -10,17 +10,11 @@
 		"ivankprod",
 		"ivank production"
 	],
-	"browserslist": {
-		"production": [
-			"since 2010",
-			"not op_mini all",
-			"not ie >= 6"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version"
-		]
-	},
+	"browserslist": [
+		"since 2010",
+		"not op_mini all",
+		"not ie >= 6"
+	],
 	"scripts": {
 		"develop": "gatsby develop",
 		"start": "gatsby develop",
