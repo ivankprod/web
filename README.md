@@ -6,18 +6,18 @@
 </h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4fd59566-f2e3-4ed0-8ad3-4726b08e2e45/deploy-status)](https://app.netlify.com/sites/ivankprod-gatsby/deploys)
-[![](https://tokei.rs/b1/github/ivankprod/web-gatsby-netlify-test?category=code)](https://github.com/ivankprod/web-gatsby-netlify-test)
+[![](https://tokei.rs/b1/github/ivankprod/web?category=code)](https://github.com/ivankprod/web)
 
 ## Quick local start
 
 1.  **Clone this repo**
 	```shell
-	git clone https://github.com/ivankprod/web-gatsby-netlify-test.git
+	git clone https://github.com/ivankprod/web.git
 	```
 
 2.  **Install all dependencies and run the site**
 	```shell
-	cd web-gatsby-netlify-test/
+	cd web
 	npm install
 	npm start
 	```
