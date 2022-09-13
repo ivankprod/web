@@ -6,6 +6,7 @@
 </h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4fd59566-f2e3-4ed0-8ad3-4726b08e2e45/deploy-status)](https://app.netlify.com/sites/ivankprod-gatsby/deploys)
+[![CI](https://github.com/ivankprod/web/actions/workflows/ci.yml/badge.svg)](https://github.com/ivankprod/web/actions/workflows/ci.yml)
 [![](https://tokei.rs/b1/github/ivankprod/web?category=code)](https://github.com/ivankprod/web)
 
 ## Quick local start
