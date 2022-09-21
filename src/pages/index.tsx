@@ -9,7 +9,7 @@ const IndexPage = () => (
 		<SEO title="Главная" />
 		<section id="content-holder" className="container">
 			<div id="content" className="content animate-fadein-css">
-				<Slider/>
+				<Slider />
 			</div>
 		</section>
 	</Layout>

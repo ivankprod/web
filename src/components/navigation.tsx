@@ -78,59 +78,57 @@ const Navigation: React.FC<NavigationProps> = ({ scope = "" }) => {
 	}, []);
 
 	return (
-		<>
-			<nav className="nav-container">
-				<ul className="mnav">
-					<li><Link to="/" data-scope="home" className={checkActiveItem("home", scope)}>ГЛАВНАЯ</Link></li>
-					<li><Link to="/projects/" data-scope="projects" 
-						className={"subnav " + checkActiveItem("projects", scope)}
-						onClick={closeShowedSubnav}>ПРОЕКТЫ
-					</Link></li>
-					<li><Link to="/services/" data-scope="services" 
-						className={"subnav " + checkActiveItem("services", scope)}
-						onClick={closeShowedSubnav}>УСЛУГИ
-					</Link></li>
-					<li><Link to="/blog/" data-scope="blog" className={checkActiveItem("blog", scope)}>БЛОГ</Link></li>
-					<li><Link to="/about/" data-scope="about" className={checkActiveItem("about", scope)}>О НАС</Link></li>
-					<li><Link to="/contacts/" data-scope="contacts" className={checkActiveItem("contacts", scope)}>КОНТАКТЫ</Link></li>
-				</ul>
-				<div className="subnav-container animate-slidein-fadein-css">
-					<div className="subnav-column">
-						<div className="subnav-title">Subnav for projects</div>
-						<ul className="snav">
-							<li><Link to="/projects/it/">IT-технологии</Link></li>
-							<li><Link to="#">Меню 2ь ьь</Link></li>
-							<li><Link to="#">Меню 3</Link></li>
-							<li><Link to="#">Мебню 4ь</Link></li>
-							<li><Link to="#">Меню 5</Link></li>
-							<li><Link to="#">Менююю 1</Link></li>
-						</ul>
-					</div>
-					<div className="subnav-column">
-						<div className="subnav-title">Subnav for projects 2</div>
-						<ul className="snav">
-							<li><Link to="#">Меню 1</Link></li>
-							<li><Link to="#">Менasdю 2ь ьь</Link></li>
-							<li><Link to="#">Менasdю 3</Link></li>
-							<li><Link to="#">Менююю 1</Link></li>
-						</ul>
-					</div>
-					<div className="subnav-column">
-						<div className="subnav-title">Subnav for projects 3</div>
-						<ul className="snav">
-							<li><Link to="#">Меню 1</Link></li>
-							<li><Link to="#">Меню 2ь ьь</Link></li>
-							<li><Link to="#">Меню 3</Link></li>
-							<li><Link to="#">Мебню 4ь</Link></li>
-							<li><Link to="#">Меню 5</Link></li>
-						</ul>
-					</div>
+		<nav className="nav-container">
+			<ul className="mnav">
+				<li><Link to="/" data-scope="home" className={checkActiveItem("home", scope)}>ГЛАВНАЯ</Link></li>
+				<li><Link to="/projects/" data-scope="projects"
+					className={"subnav " + checkActiveItem("projects", scope)}
+					onClick={closeShowedSubnav}>ПРОЕКТЫ
+				</Link></li>
+				<li><Link to="/services/" data-scope="services"
+					className={"subnav " + checkActiveItem("services", scope)}
+					onClick={closeShowedSubnav}>УСЛУГИ
+				</Link></li>
+				<li><Link to="/blog/" data-scope="blog" className={checkActiveItem("blog", scope)}>БЛОГ</Link></li>
+				<li><Link to="/about/" data-scope="about" className={checkActiveItem("about", scope)}>О НАС</Link></li>
+				<li><Link to="/contacts/" data-scope="contacts" className={checkActiveItem("contacts", scope)}>КОНТАКТЫ</Link></li>
+			</ul>
+			<div className="subnav-container animate-slidein-fadein-css">
+				<div className="subnav-column">
+					<div className="subnav-title">Subnav for projects</div>
+					<ul className="snav">
+						<li><Link to="/projects/it/">IT-технологии</Link></li>
+						<li><Link to="#">Меню 2ь ьь</Link></li>
+						<li><Link to="#">Меню 3</Link></li>
+						<li><Link to="#">Мебню 4ь</Link></li>
+						<li><Link to="#">Меню 5</Link></li>
+						<li><Link to="#">Менююю 1</Link></li>
+					</ul>
 				</div>
-				<div className="subnav-container animate-slidein-fadein-css">
-					Subnav for services
+				<div className="subnav-column">
+					<div className="subnav-title">Subnav for projects 2</div>
+					<ul className="snav">
+						<li><Link to="#">Меню 1</Link></li>
+						<li><Link to="#">Менasdю 2ь ьь</Link></li>
+						<li><Link to="#">Менasdю 3</Link></li>
+						<li><Link to="#">Менююю 1</Link></li>
+					</ul>
 				</div>
-			</nav>
-		</>
+				<div className="subnav-column">
+					<div className="subnav-title">Subnav for projects 3</div>
+					<ul className="snav">
+						<li><Link to="#">Меню 1</Link></li>
+						<li><Link to="#">Меню 2ь ьь</Link></li>
+						<li><Link to="#">Меню 3</Link></li>
+						<li><Link to="#">Мебню 4ь</Link></li>
+						<li><Link to="#">Меню 5</Link></li>
+					</ul>
+				</div>
+			</div>
+			<div className="subnav-container animate-slidein-fadein-css">
+				Subnav for services
+			</div>
+		</nav>
 	)
 }
 

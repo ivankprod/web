@@ -14,13 +14,11 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ scope = "", children = {} }) => {
 	return (
-		<>
-			<div id="master-container" className="master-container">
-				<Header scope={scope}></Header>
-				{children}
-				<Footer/>
-			</div>
-		</>
+		<div id="master-container" className="master-container">
+			<Header scope={scope}></Header>
+			{children}
+			<Footer />
+		</div>
 	)
 }
 

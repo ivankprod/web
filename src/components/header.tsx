@@ -24,29 +24,27 @@ const Header: React.FC<HeaderProps> = ({ scope = "" }) => {
 	).allFile?.nodes[0]?.childContentJson?.meta
 
 	return (
-		<>
-			<header>
-				<div className="container header-picture"><div className="header-picture-wrapper"></div></div>
-				<div className="stretch-container headline">
-					<div className="container headline">
-						<a href="/"><div className="logotype"></div></a>
-						<div className="header-right">
-							<div></div>
-							<div className="global-info">
-								<div className="global-info-row">
-									<div>{meta?.phone}</div>
-									<div className="global-info-stroke">
-										<a href={"mailto:" + meta?.email}>{String(meta?.email).toUpperCase()}</a>
-									</div>
+		<header>
+			<div className="container header-picture"><div className="header-picture-wrapper"></div></div>
+			<div className="stretch-container headline">
+				<div className="container headline">
+					<a href="/"><div className="logotype"></div></a>
+					<div className="header-right">
+						<div></div>
+						<div className="global-info">
+							<div className="global-info-row">
+								<div>{meta?.phone}</div>
+								<div className="global-info-stroke">
+									<a href={"mailto:" + meta?.email}>{String(meta?.email).toUpperCase()}</a>
 								</div>
-								<button className="rounded-all" data-href="/join/">Заполнить бриф</button>
 							</div>
-							<Navigation scope={scope}/>
+							<button className="rounded-all" data-href="/join/">Заполнить бриф</button>
 						</div>
+						<Navigation scope={scope} />
 					</div>
 				</div>
-			</header>
-		</>
+			</div>
+		</header>
 	)
 }
 

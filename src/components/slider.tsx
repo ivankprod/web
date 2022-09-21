@@ -245,7 +245,7 @@ const Slider: React.FC = () => {
 										index == text.length - 1 ? <span>{line}</span> : <><span>{line}</span><br /></>
 									))}
 								</div>
-								<Link className="abutton middle rounded-all spa" to={action.url}>{action.text}</Link>
+								<Link className="abutton middle rounded-all" to={action.url}>{action.text}</Link>
 							</div>
 						</div>
 					))}
