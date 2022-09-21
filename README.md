@@ -2,7 +2,7 @@
   <a href="https://ivankprod.ru/?utm_source=github">IVANKPROD.RU</a>
 </p>
 <h1 align="center">
-  Official ivankprod.ru website repository
+  ivankprod.ru website repository
 </h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4fd59566-f2e3-4ed0-8ad3-4726b08e2e45/deploy-status)](https://app.netlify.com/sites/ivankprod-gatsby/deploys)
@@ -11,18 +11,18 @@
 
 ## Quick local start
 
-1.  **Clone this repo**
+1.  Clone this repo
 	```shell
 	git clone https://github.com/ivankprod/web.git
 	```
 
-2.  **Install all dependencies and run the site**
+2.  Install all dependencies and run the site
 	```shell
 	cd web
 	npm install
 	npm start
 	```
 
-3.  **Open the code and start developing**
+3.  Open the code and start developing
 
 	The site is now running at http://localhost:8000
