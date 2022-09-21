@@ -1,6 +1,3 @@
-<p align="center">
-  <a href="https://ivankprod.ru/?utm_source=github">IVANKPROD.RU</a>
-</p>
 <h1 align="center">
   ivankprod.ru website repository
 </h1>
