@@ -33,7 +33,9 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = [] }) => 
 						<meta itemProp="position" content="1" />
 					</li>
 					{parentPages.map(({ title, path }: Page, index: number) => (
-						<li itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem">
+						<li itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem"
+							key={site.siteMetadata.siteUrl + "/" + path + "/"}
+						>
 							<Link itemScope itemType="http://schema.org/WebPage" itemProp="item" id={site.siteMetadata.siteUrl + "/" + path + "/"} to={"/" + path + "/"}>
 								<span itemProp="name">{title}</span>
 							</Link>

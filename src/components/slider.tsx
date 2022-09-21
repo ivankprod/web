@@ -134,6 +134,7 @@ class SliderClass {
 		this.slidesList.forEach((_, i) => {
 			const bullet = document.createElement('div');
 
+			bullet.setAttribute("key", "bullet-" + String(i));
 			bullet.classList.add('slider-pagination-bullet');
 			if (this.paginationClickable) bullet.onclick = () => { this.fireCurr(i); };
 
@@ -183,6 +184,7 @@ const onSliderTransitionEnd = function (slider: SliderClass) {
 }
 
 type Slides = {
+	id: string
 	caption: string
 	text: string[]
 	action: {
@@ -219,6 +221,7 @@ const Slider: React.FC = () => {
 				nodes {
 					childContentJson {
 						slides {
+							id
 							caption
 							text
 							action {
@@ -236,13 +239,14 @@ const Slider: React.FC = () => {
 		<div className="container slider-section">
 			<div className="slider-container" id="slider-container">
 				<div className="slider-wrapper">
-					{slides.map(({ caption, text, action }: Slides) => (
-						<div className="slider-slide">
+					{slides.map(({ id, caption, text, action }: Slides) => (
+						<div key={id} className="slider-slide">
 							<div className="slide-block">
 								<div className="slide-block-title"><h1>{caption}</h1></div>
 								<div className="slide-block-desc">
 									{text.map((line: string, index: number) => (
-										index == text.length - 1 ? <span>{line}</span> : <><span>{line}</span><br /></>
+										index == text.length - 1 ? <span key={"line-" + String(index)}>{line}</span> : 
+										<><span key={"line-" + String(index)}>{line}</span><br /></>
 									))}
 								</div>
 								<Link className="abutton middle rounded-all" to={action.url}>{action.text}</Link>
