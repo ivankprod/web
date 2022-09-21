@@ -20,7 +20,7 @@ header {
 
 .stretch-container.headline {
 	position: relative;
-	
+
 	height: 160px;
 }
 
@@ -39,7 +39,7 @@ header {
 
 	background: url('../../images/logotype_2x.png') no-repeat left center;
 	background-size: contain;
-			
+
 	cursor: pointer !important;
 }
 
@@ -63,10 +63,10 @@ header {
 
 .header-picture {
 	position: absolute;
-	top:    0;
-	left:   0;
+	top: 0;
+	left: 0;
 	bottom: 0;
-	right:  0;
+	right: 0;
 
 	opacity: 0.05 !important;
 
@@ -75,16 +75,15 @@ header {
 
 .header-picture-wrapper {
 	position: absolute;
-	
-	top:   0;
+	top: 0;
 	right: 0;
 
 	width: 40%;
 	height: 100%;
 
-	background-image:    url('../../images/art.png');
-	background-size:     cover;
-	background-repeat:   no-repeat;
+	background-image: url('../../images/art.png');
+	background-size: cover;
+	background-repeat: no-repeat;
 	background-position: right center;
 
 	-webkit-filter: grayscale(1);

@@ -1,9 +1,9 @@
 .footer-back {
 	position: absolute;
-	top:      0;
-	left:     0;
-	bottom:   0;
-	right:    0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
 
 	background: linear-gradient(to bottom, #f6fdf0, #ffffff);
 
@@ -31,9 +31,9 @@ footer .container {
 
 	margin-top: 34px;
 
-	font-size:     0.9rem;
+	font-size: 0.9rem;
 	vertical-align: top;
-	text-align:    left;
+	text-align: left;
 
 	order: 1;
 }
@@ -42,10 +42,12 @@ footer .container {
 	.footer-block { width: 100%; }
 	.footer-block.first { order: 3; }
 }
+
 @media (min-width: 768px)  {
 	.footer-block { width: 46%; }
 	.footer-block.first { order: 3; }
 }
+
 @media (min-width: 992px)  {
 	.footer-block { width: 30%; }
 	.footer-block.first { order: 1; }
@@ -53,8 +55,8 @@ footer .container {
 
 .footer-block-title {
 	padding-bottom: 6px;
-	margin-bottom:  12px;
-	
+	margin-bottom: 12px;
+
 	font-size: 1.3rem;
 	color: var(--color-theme-green);
 

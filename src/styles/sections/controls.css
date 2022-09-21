@@ -1,13 +1,13 @@
 button, .abutton {
 	-webkit-appearance: none;
-	   -moz-appearance: none;
-	        appearance: none;
-	outline:            none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
 
 	display: block;
 
 	padding: 10px 14px;
-	margin:  0;
+	margin: 0;
 
 	border: 0;
 
@@ -60,9 +60,9 @@ button[disabled],
 button img.btn-icon-loader,
 .abutton img.btn-icon-loader {
 	display: none;
-	float:   left;
+	float: left;
 
-	width:  20px;
+	width: 20px;
 	height: 20px;
 
 	margin-right: 6px;
@@ -92,7 +92,7 @@ button.btn-auth,
 button.btn-auth img,
 .abutton.btn-auth img {
 	height: 24px;
-	width:  24px;
+	width: 24px;
 
 	cursor: pointer !important;
 }
@@ -100,7 +100,7 @@ button.btn-auth img,
 button.btn-auth span,
 .abutton.btn-auth span {
 	display: inline-block;
-	
+
 	margin: 0 6px 0 4px;
 
 	font-size: 1.1rem;
@@ -109,9 +109,9 @@ button.btn-auth span,
 button span, .abutton span { cursor: pointer !important; }
 
 .auth-form {
-	display:        flex;
+	display: flex;
 	flex-direction: row;
-	align-items:    flex-start;
+	align-items: flex-start;
 
 	height: 300px;
 
@@ -127,7 +127,7 @@ button span, .abutton span { cursor: pointer !important; }
 	align-items: center;
 	justify-content: center;
 
-	width:  200px;
+	width: 200px;
 	height: 100%;
 
 	background-color: #f7f7f7;
@@ -149,7 +149,7 @@ button span, .abutton span { cursor: pointer !important; }
 .auth-form-caption {
 	margin-bottom: 8px;
 
-	color:      var(--color-theme-green);
-	font-size:  1.2rem;
+	color: var(--color-theme-green);
+	font-size: 1.2rem;
 	text-align: center;
 }

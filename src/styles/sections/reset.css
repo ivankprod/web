@@ -15,27 +15,27 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin:  0;
+	margin: 0;
 	padding: 0;
 
 	border: 0;
 
 	box-sizing: border-box;
 
-	font:   inherit;
+	font: inherit;
 	cursor: default;
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
 	-webkit-text-size-adjust: none;
-	   -moz-text-size-adjust: none;
+	-moz-text-size-adjust: none;
 
 	vertical-align: baseline;
-	
+
 	-webkit-user-select: none;
-	   -moz-user-select: none;
-	        user-select: none;
+	-moz-user-select: none;
+	user-select: none;
 }
 
 .rounded-all    { border-radius: 6px; }
@@ -59,8 +59,8 @@ a img { cursor: pointer !important; }
 
 p {
 	-webkit-user-select: text;
-	   -moz-user-select: text;
-	        user-select: text;
+	-moz-user-select: text;
+	user-select: text;
 }
 
 p::-moz-selection { background: #4a9fce; }
@@ -73,7 +73,7 @@ ol, ul { list-style: none; }
 
 blockquote, q { quotes: none; }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before, blockquote:after, q::before, q::after {
 	content: '';
 	content: none;
 }
@@ -96,7 +96,7 @@ hr {
 }
 
 .clearfix:before, .clearfix:after { content: " "; display: table; }
-.clearfix:after,  .clear          { clear:  both; }
+.clearfix:after,  .clear          { clear: both; }
 
 .sfix { display: inline-block; position: relative; top: -1px; }
 
@@ -121,10 +121,10 @@ hr {
 
 @keyframes slideIn {
 	from { transform: translateY(31px) translateZ(0); }
-	to   { transform: translateY(0)    translateZ(0); }
+	to   { transform: translateY(0) translateZ(0); }
 }
 
 @keyframes slideBlockTitle {
 	from { transform: translateX(64px) translateZ(0); }
-	to   { transform: translateX(0)    translateZ(0); }
+	to   { transform: translateX(0) translateZ(0); }
 }

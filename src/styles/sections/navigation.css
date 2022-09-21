@@ -1,5 +1,5 @@
 .nav-container {
-	font-size:   1.2rem;
+	font-size: 1.2rem;
 	font-weight: 600;
 }
 
@@ -9,9 +9,9 @@
 	display: block;
 
 	position: relative;
-	
+
 	padding-bottom: 15px;
-	
+
 	color: #000;
 }
 
@@ -19,49 +19,49 @@
 .nav-container ul.mnav li a.hovered,
 .nav-container ul.snav li a:hover { color: var(--color-theme-green) !important; }
 
-.nav-container ul.mnav li a:before {
+.nav-container ul.mnav li a::before {
 	content: '';
 
 	position: absolute;
-	
+
 	display: block;
 	width:   100%;
-	
+
 	padding-top: 38px;
 
 	border-bottom: 0 solid transparent;
 
 	will-change: border-color, border-bottom-width, padding-top;
-	transition:  border-color 0.1s linear, border-bottom-width 0.1s linear, padding-top 0.1s linear;
+	transition: border-color 0.1s linear, border-bottom-width 0.1s linear, padding-top 0.1s linear;
 }
 
-.nav-container ul.mnav li a:hover:before,
-.nav-container ul.mnav li a.hovered:before { 
+.nav-container ul.mnav li a:hover::before,
+.nav-container ul.mnav li a.hovered::before { 
 	border-color: var(--color-theme-green);
 	border-bottom-width: 3px;
 
 	padding-top: 35px;
 }
 
-.nav-container ul.mnav li a.nav-item-active:before { 
+.nav-container ul.mnav li a.nav-item-active::before { 
 	border-color: var(--color-theme-green);
 	border-bottom-width: 3px;
 
 	padding-top: 35px;
 }
 
-.nav-container ul.mnav li a.subnav:after {
+.nav-container ul.mnav li a.subnav::after {
 	content: '\f107';
-	
+
 	display: inline-block;
 
 	left: 0;
-	top:  0;
+	top: 0;
 
 	margin-left: 4px;
 
 	font-family: 'Font Awesome 5 Free';
-	font-size:   1rem;
+	font-size: 1rem;
 	font-weight: 900;
 }
 
@@ -94,7 +94,7 @@
 .subnav-container.showed { display: flex; }
 
 .subnav-container .subnav-title {
-	margin-bottom:  12px;
+	margin-bottom: 12px;
 	padding-bottom: 8px;
 
 	border-bottom: 1px solid var(--color-theme-green);

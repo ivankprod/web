@@ -1,0 +1,10 @@
+{
+	"rules": {
+		"indentation": ["tab"],
+		"comment-empty-line-before": false,
+		"selector-list-comma-newline-after": false,
+		"declaration-block-single-line-max-declarations": false,
+		"declaration-empty-line-before": false,
+		"font-family-no-missing-generic-family-keyword": false
+	}
+}

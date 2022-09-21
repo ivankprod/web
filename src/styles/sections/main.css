@@ -4,10 +4,10 @@ html, body {
 	min-width: 230px;
 
 	font-family: 'Open Sans', system-ui !important;
-	font-size:   14px;
-	color:       #000;
+	font-size: 14px;
+	color: #000;
 
-	background:  #fff;
+	background: #fff;
 }
 
 .master-container  { position: relative; display: flex; flex-direction: column; min-height: 100vh; }
@@ -25,14 +25,14 @@ h2 { font-size: 2rem; }
 
 #progress-bar {
 	position: fixed;
-	top:      24px;
+	top: 24px;
 
 	height: 3px;
-	width:  10%;
+	width: 10%;
 
 	background: #bbde8e;
 
-	opacity:    0;
+	opacity: 0;
 	transition: opacity 0.4s linear;
 
 	z-index: 20;
