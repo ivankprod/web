@@ -21,7 +21,7 @@ module.exports = {
 		"@typescript-eslint"
 	],
 	"rules": {
-		"react/jsx-key": "off",
+		"react/jsx-key": "error",
 		"@typescript-eslint/no-var-requires": "off",
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/ban-types": [
