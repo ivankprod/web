@@ -1,4 +1,4 @@
-import React from "react"
+import React, { ReactNode } from "react"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -9,10 +9,10 @@ import "../styles/app.css"
 
 interface LayoutProps {
 	scope?: string
-	children?: any
+	children?: ReactNode
 }
 
-const Layout: React.FC<LayoutProps> = ({ scope = "", children = {} }) => {
+const Layout: React.FC<LayoutProps> = ({ scope = "", children = undefined }) => {
 	return (
 		<div id="master-container" className="master-container">
 			<Header scope={scope}></Header>
