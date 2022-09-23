@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { Fragment, useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import { animate, drawOpacity, makeLinear } from "../scripts/animate";
@@ -186,7 +186,10 @@ const onSliderTransitionEnd = function (slider: SliderClass) {
 type Slides = {
 	id: string
 	caption: string
-	text: string[]
+	text: {
+		id: string
+		line: string
+	}[]
 	action: {
 		text: string
 		url: string
@@ -223,7 +226,10 @@ const Slider: React.FC = () => {
 						slides {
 							id
 							caption
-							text
+							text {
+								id
+								line
+							}
 							action {
 								text
 								url
@@ -244,9 +250,9 @@ const Slider: React.FC = () => {
 							<div className="slide-block">
 								<div className="slide-block-title"><h1>{caption}</h1></div>
 								<div className="slide-block-desc">
-									{text.map((line: string, index: number) => (
-										index == text.length - 1 ? <span key={"line-" + String(index)}>{line}</span> : 
-										<><span key={"line-" + String(index)}>{line}</span><br /></>
+									{text.map(({ id, line }, index) => (
+										index == text.length - 1 ? <span key={id}>{line}</span> : 
+										<Fragment key={id}><span>{line}</span><br /></Fragment>
 									))}
 								</div>
 								<Link className="abutton middle rounded-all" to={action.url}>{action.text}</Link>
