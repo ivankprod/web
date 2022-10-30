@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
 					<Link to="/legal/privacy-policy/">Политика конфиденциальности</Link>
 				</div>
 				<div className="footer-block second">
-					<div className="footer-block-title">БЫСТРЫЕ ССЫЛКИ</div>
+					<div className="footer-block-title">МЕНЮ</div>
 					<ul>
 						<li><Link to="/projects/">ПРОЕКТЫ</Link></li>
 						<li><Link to="/services/">УСЛУГИ</Link></li>
