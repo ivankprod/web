@@ -95,33 +95,26 @@ const Navigation: React.FC<NavigationProps> = ({ scope = "" }) => {
 			</ul>
 			<div className="subnav-container animate-slidein-fadein-css">
 				<div className="subnav-column">
-					<div className="subnav-title">Subnav for projects</div>
+					<div className="subnav-title">Медиа</div>
 					<ul className="snav">
-						<li><Link to="/projects/it/">IT-технологии</Link></li>
-						<li><Link to="#">Меню 2ь ьь</Link></li>
-						<li><Link to="#">Меню 3</Link></li>
-						<li><Link to="#">Мебню 4ь</Link></li>
-						<li><Link to="#">Меню 5</Link></li>
-						<li><Link to="#">Менююю 1</Link></li>
+						<li><Link to="/projects/media/audio/">Аудио-продакшн</Link></li>
+						<li><Link to="/projects/media/video/">Видео-продакшн</Link></li>
+						<li><Link to="/projects/media/common/">Полный цикл</Link></li>
 					</ul>
 				</div>
 				<div className="subnav-column">
-					<div className="subnav-title">Subnav for projects 2</div>
+					<div className="subnav-title">Дизайн</div>
 					<ul className="snav">
-						<li><Link to="#">Меню 1</Link></li>
-						<li><Link to="#">Менasdю 2ь ьь</Link></li>
-						<li><Link to="#">Менasdю 3</Link></li>
-						<li><Link to="#">Менююю 1</Link></li>
+						<li><Link to="/projects/design/common/">Оформление</Link></li>
+						<li><Link to="/projects/design/covers/">Обложки релизов</Link></li>
+						<li><Link to="/projects/design/prints/">Полиграфия</Link></li>
 					</ul>
 				</div>
 				<div className="subnav-column">
-					<div className="subnav-title">Subnav for projects 3</div>
+					<div className="subnav-title">IT-технологии</div>
 					<ul className="snav">
-						<li><Link to="#">Меню 1</Link></li>
-						<li><Link to="#">Меню 2ь ьь</Link></li>
-						<li><Link to="#">Меню 3</Link></li>
-						<li><Link to="#">Мебню 4ь</Link></li>
-						<li><Link to="#">Меню 5</Link></li>
+						<li><Link to="/projects/it/web/">Разработка веб-сайтов</Link></li>
+						<li><Link to="/projects/it/software/">Разработка прикладного ПО</Link></li>
 					</ul>
 				</div>
 			</div>
