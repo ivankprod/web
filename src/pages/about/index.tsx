@@ -13,7 +13,7 @@ const AboutPage = () => {
 			<section id="content-holder" className="container">
 				<Breadcrumbs page={currentPage} />
 				<div id="content" className="content animate-fadein-css">
-					Страница информации о компании
+					<h1>О нас</h1>
 				</div>
 			</section>
 		</Layout>

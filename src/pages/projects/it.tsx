@@ -17,7 +17,7 @@ const ProjectsITPage = () => {
 			<section id="content-holder" className="container">
 				<Breadcrumbs page={currentPage} parentPages={[parentPage]} />
 				<div id="content" className="content animate-fadein-css">
-					Страница IT-проектов
+					<h1>Наши проекты в IT-сфере</h1>
 				</div>
 			</section>
 		</Layout>

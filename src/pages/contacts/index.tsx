@@ -13,7 +13,7 @@ const ContactsPage = () => {
 			<section id="content-holder" className="container">
 				<Breadcrumbs page={currentPage} />
 				<div id="content" className="content animate-fadein-css">
-					Страница контактов
+					<h1>Наши контакты</h1>
 				</div>
 			</section>
 		</Layout>
