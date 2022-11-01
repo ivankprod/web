@@ -1,11 +1,30 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Breadcrumbs, { Page } from "../../components/breadcrumbs"
+import ContactsForm from "../../components/contactsForm"
 
 const ContactsPage = () => {
 	const currentPage: Page = { title: "Контакты" };
+
+	const meta = useStaticQuery(
+		graphql`query {
+			allFile(filter: {relativePath: {eq: "meta.json"}}) {
+				nodes {
+					childContentJson {
+						meta {
+							phone
+							email
+							email_info
+							email_pr
+						}
+					}
+				}
+			}
+		}`
+	).allFile?.nodes[0]?.childContentJson?.meta
 
 	return (
 		<Layout scope="contacts">
@@ -14,6 +33,17 @@ const ContactsPage = () => {
 				<Breadcrumbs page={currentPage} />
 				<div id="content" className="content animate-fadein-css">
 					<h1>Наши контакты</h1>
+					<div className="contacts-emails">
+						<div className="contacts-emails-column">
+							<h3>Обратная связь</h3>
+							<a href={`mailto:${meta.email_info}`}>{meta.email_info}</a>
+						</div>
+						<div className="contacts-emails-column">
+							<h3>Пресса / PR</h3>
+							<a href={`mailto:${meta.email_pr}`}>{meta.email_pr}</a>
+						</div>
+					</div>
+					<ContactsForm />
 				</div>
 			</section>
 		</Layout>

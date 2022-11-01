@@ -53,7 +53,20 @@
 
 .breadcrumbs .breadcrumbs-last { margin-left: 12px; }
 
-.error-box                { width: 100%; padding: 48px; font-size: 1.2rem; display: flex; flex-direction: column; }
+.error-box                { display: flex; flex-direction: column; width: 100%; padding: 48px; font-size: 1.2rem; }
 .error-box .error-title   { padding-bottom: 8px; font-size: 2.4rem; border-bottom: 2px solid rgba(0, 0, 0, 0.1); }
 .error-box .error-message { margin-top: 12px; }
 .error-box button, .error-box .abutton { margin: 24px auto 0; align-self: center; text-transform: uppercase; }
+
+.contacts-emails {
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+
+	margin: 32px 0;
+
+	font-size: 1.6rem;
+}
+
+.contacts-emails-column { margin-right: 32px; }
+.contacts-emails-column h3 { color: #8b8b8b; font-size: 0.8em; }

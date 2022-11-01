@@ -50,10 +50,13 @@ a, a:link, a:active, a:hover, a:visited {
 
 	border: none;
 
-	transition: color 0.3s, border-color 0.3s;
+	transition: color 0.3s, border-color 0.3s, opacity 0.3s;
 }
 
+a.link-in-text { color: var(--color-theme-green); }
+
 a:hover { color: var(--color-theme-green); }
+a.link-in-text:hover { opacity: 0.8 !important; }
 
 a img { cursor: pointer !important; }
 
