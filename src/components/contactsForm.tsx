@@ -100,9 +100,13 @@ const formValidityReducer = (state: ContactsFormValidityState, action: ContactsF
 	}
 }
 
+const encode = (data: any) => {
+	return Object.keys(data).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
+}
+
 const ContactsForm: React.FC = () => {
-	const [formData, setFormData] = useReducer(formReducer, initialState)
-	const [formValidityData, setFormValidityData] = useReducer(formValidityReducer, initialValidityState)
+	const [formData, setFormData] = useReducer(formReducer, initialState);
+	const [formValidityData, setFormValidityData] = useReducer(formValidityReducer, initialValidityState);
 
 	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
@@ -114,16 +118,16 @@ const ContactsForm: React.FC = () => {
 			return;
 		}
 
-		const newFormData = new FormData(event.target as HTMLFormElement);
+		/*const newFormData = new FormData(event.target as HTMLFormElement);
 		newFormData.append("name", formData.name);
 		newFormData.append("email", formData.email);
-		newFormData.append("message", formData.message);
+		newFormData.append("message", formData.message);*/
 
 		// TODO: fetch form data
 		fetch("/", {
 			method: "POST",
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
-			body: new URLSearchParams(newFormData as any).toString(),
+			body: encode({ "form-name": "contacts-form", ...formData })
 		}).then(() => console.log("Form successfully submitted")).catch((error) => alert(error));
 	}
 
