@@ -1,4 +1,4 @@
-import React, { useReducer, useRef } from "react"
+import React, { useReducer } from "react"
 import { Link } from "gatsby"
 
 type ContactsFormState = {
@@ -109,18 +109,36 @@ const ContactsForm: React.FC = () => {
 	const [formValidityData, setFormValidityData] = useReducer(formValidityReducer, initialValidityState);
 
 	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
-		setFormValidityData({ type: "VALIDATE_ALL", payLoad: formData })
+		setFormValidityData({ type: "VALIDATE_ALL", payLoad: formData });
 
-		if (formValidityData.nameError || formValidityData.emailError || formValidityData.messageError || formValidityData.termsError) {
-			alert("Error!");
-			return;
+		const errorWrapper = document.querySelector("form .postsubmit-text");
+
+		if (formData.name === "" || formData.email === "" || formData.message === "" || formData.terms === false) {
+			if (errorWrapper) {
+				errorWrapper.className = "postsubmit-text";
+			}
+		} else {
+			fetch("/", {
+				method: "POST",
+				headers: { "Content-Type": "application/x-www-form-urlencoded" },
+				body: encode({ "form-name": "contacts-form", ...formData })
+			}).then((resp) => {
+				if (errorWrapper) {
+					if (resp.ok) {
+						errorWrapper.textContent = "Сообщение успешно отправлено!";
+						errorWrapper.classList.add("success");
+					} else {
+						errorWrapper.textContent = "Ошибка: " + resp.statusText;
+						errorWrapper.classList.add("error");
+					}
+				}
+			}).catch((error) => {
+				if (errorWrapper) {
+					errorWrapper.textContent = "Ошибка: " + error;
+					errorWrapper.classList.add("error");
+				}
+			});
 		}
-
-		fetch("/", {
-			method: "POST",
-			headers: { "Content-Type": "application/x-www-form-urlencoded" },
-			body: encode({ "form-name": "contacts-form", ...formData })
-		}).then(() => console.log(encode({ "form-name": "contacts-form", ...formData }))).catch((error) => alert(error));
 
 		event.preventDefault();
 	}
@@ -180,6 +198,7 @@ const ContactsForm: React.FC = () => {
 					</label>
 				</div>
 				<div className="form-row submit">
+					<div className="postsubmit-text"></div>
 					<input type="submit" value="Отправить" className="abutton rounded-all" />
 				</div>
 			</form>
