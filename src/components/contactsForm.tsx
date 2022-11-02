@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import React, { useReducer, useRef } from "react"
 import { Link } from "gatsby"
 
 type ContactsFormState = {
@@ -112,6 +112,10 @@ const ContactsForm: React.FC = () => {
 	const [formData, setFormData] = useReducer(formReducer, initialState);
 	const [formValidityData, setFormValidityData] = useReducer(formValidityReducer, initialValidityState);
 
+	const inputName = useRef<HTMLInputElement>(null)
+    const inputEmail = useRef<HTMLInputElement>(null)
+    const inputMessage = useRef<HTMLTextAreaElement>(null)
+
 	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 		setFormValidityData({ type: "VALIDATE_ALL", payLoad: formData });
 
@@ -140,6 +144,15 @@ const ContactsForm: React.FC = () => {
 						errorWrapper.textContent = "Ошибка: " + resp.statusText;
 						errorWrapper.classList.add("error");
 					}
+
+					if (inputName && inputName.current)
+						inputName.current.value = "";
+					if (inputEmail && inputEmail.current)
+						inputEmail.current.value = "";
+					if (inputMessage && inputMessage.current)
+						inputMessage.current.value = "";
+
+					setFormData({ type: "UPDATE_FIELDS", payloadString: "", payloadBoolean: false });
 				}
 			}).catch((error) => {
 				if (errorWrapper) {
@@ -160,6 +173,7 @@ const ContactsForm: React.FC = () => {
 				<input name="form-name" type="hidden" value="contacts-form" />
 				<div className="form-row">
 					<input name="name" id="name" type="text" placeholder="Введите ваше имя"
+						ref={inputName}
 						className={formValidityData.nameError ? "error_input_required" : ""}
 						onChange={(e) => {
 							setFormData({ type: "UPDATE_NAME", payloadString: e.target.value, payloadBoolean: false });
@@ -171,6 +185,7 @@ const ContactsForm: React.FC = () => {
 				</div>
 				<div className="form-row">
 					<input name="email" id="email" type="text" placeholder="Введите ваш e-mail"
+						ref={inputEmail}
 						className={formValidityData.emailError ? "error_input_required" : ""}
 						onChange={(e) => {
 							setFormData({ type: "UPDATE_EMAIL", payloadString: e.target.value, payloadBoolean: false });
@@ -182,6 +197,7 @@ const ContactsForm: React.FC = () => {
 				</div>
 				<div className="form-row">
 					<textarea name="message" id="message" placeholder="Введите сообщение"
+						ref={inputMessage}
 						className={formValidityData.messageError ? "error_input_required" : ""}
 						onChange={(e) => {
 							setFormData({ type: "UPDATE_MESSAGE", payloadString: e.target.value, payloadBoolean: false });
