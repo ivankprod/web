@@ -109,14 +109,28 @@ const ContactsForm: React.FC = () => {
 
 		setFormValidityData({ type: "VALIDATE_ALL", payLoad: formData })
 
+		if (formValidityData.nameError || formValidityData.emailError || formValidityData.messageError || formValidityData.termsError) {
+			alert("Error!");
+			return;
+		}
+
+		const newFormData = new FormData();
+		newFormData.append("name", formData.name);
+		newFormData.append("email", formData.email);
+		newFormData.append("message", formData.message);
+
 		// TODO: fetch form data
-		console.log(formData);
+		fetch("/", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: new URLSearchParams(newFormData as any).toString(),
+		}).then(() => console.log("Form successfully submitted")).catch((error) => alert(error));
 	}
 
 	return (
 		<div className="contacts-form-wrapper">
 			<h2>Остались вопросы?</h2>
-			<form onSubmit={onSubmitHandler}>
+			<form name="contacts-form" onSubmit={onSubmitHandler} data-netlify="true">
 				<div className="form-row">
 					<input id="name" type="text" placeholder="Введите ваше имя"
 						className={formValidityData.nameError ? "error_input_required" : ""}
