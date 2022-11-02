@@ -116,12 +116,6 @@ const ContactsForm: React.FC = () => {
 			return;
 		}
 
-		/*const newFormData = new FormData(event.target as HTMLFormElement);
-		newFormData.append("name", formData.name);
-		newFormData.append("email", formData.email);
-		newFormData.append("message", formData.message);*/
-
-		// TODO: fetch form data
 		fetch("/", {
 			method: "POST",
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -138,7 +132,7 @@ const ContactsForm: React.FC = () => {
 				<input name="bot-field" type="hidden" />
 				<input name="form-name" type="hidden" value="contacts-form" />
 				<div className="form-row">
-					<input id="name" type="text" placeholder="Введите ваше имя"
+					<input name="name" id="name" type="text" placeholder="Введите ваше имя"
 						className={formValidityData.nameError ? "error_input_required" : ""}
 						onChange={(e) => {
 							setFormData({ type: "UPDATE_NAME", payloadString: e.target.value, payloadBoolean: false });
@@ -149,7 +143,7 @@ const ContactsForm: React.FC = () => {
 					/>
 				</div>
 				<div className="form-row">
-					<input id="email" type="text" placeholder="Введите ваш e-mail"
+					<input name="email" id="email" type="text" placeholder="Введите ваш e-mail"
 						className={formValidityData.emailError ? "error_input_required" : ""}
 						onChange={(e) => {
 							setFormData({ type: "UPDATE_EMAIL", payloadString: e.target.value, payloadBoolean: false });
@@ -160,7 +154,7 @@ const ContactsForm: React.FC = () => {
 					/>
 				</div>
 				<div className="form-row">
-					<textarea id="message" placeholder="Введите сообщение"
+					<textarea name="message" id="message" placeholder="Введите сообщение"
 						className={formValidityData.messageError ? "error_input_required" : ""}
 						onChange={(e) => {
 							setFormData({ type: "UPDATE_MESSAGE", payloadString: e.target.value, payloadBoolean: false });
