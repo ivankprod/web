@@ -1,23 +1,116 @@
-import React, { useRef } from "react"
+import React, { useReducer, useRef } from "react"
 import { Link } from "gatsby"
 
-const ContactsForm: React.FC = () => {
-	const inputName = useRef<HTMLInputElement>(null)
-	const inputEmail = useRef<HTMLInputElement>(null)
-	const inputMessage = useRef<HTMLTextAreaElement>(null)
-	const inputAgree = useRef<HTMLInputElement>(null)
+type ContactsFormState = {
+	name: string,
+	email: string,
+	message: string,
+	terms: boolean
+}
 
-	interface FormDataType { name: string, email: string, message: string }
-	const formData: FormDataType = { name: "", email: "", message: "" }
+type ContactsFormAction = {
+	type: string,
+	payloadString: string,
+	payloadBoolean: boolean
+}
+
+const initialState: ContactsFormState = {
+	name: "",
+	email: "",
+	message: "",
+	terms: false
+}
+
+type ContactsFormValidityState = {
+	nameError: boolean,
+	emailError: boolean,
+	messageError: boolean,
+	termsError: boolean
+}
+
+type ContactsFormValidityAction = {
+	type: string,
+	payLoad: ContactsFormState
+}
+
+const initialValidityState: ContactsFormValidityState = {
+	nameError: false,
+	emailError: false,
+	messageError: false,
+	termsError: false
+}
+
+const formReducer = (state: ContactsFormState, action: ContactsFormAction): ContactsFormState => {
+	switch (action.type) {
+		case "UPDATE_NAME": return {
+			...state, name: action.payloadString,
+		}
+
+		case "UPDATE_EMAIL": return {
+			...state, email: action.payloadString,
+		}
+
+		case "UPDATE_MESSAGE": return {
+			...state, message: action.payloadString,
+		}
+
+		case "UPDATE_TERMS": return {
+			...state, terms: action.payloadBoolean,
+		}
+
+		default:
+			return state
+	}
+}
+
+const formValidityReducer = (state: ContactsFormValidityState, action: ContactsFormValidityAction): ContactsFormValidityState => {
+	switch (action.type) {
+		case "VALIDATE_NAME": return {
+			...state,
+			...({ nameError: action.payLoad.name.length > 0 ? false : true })
+		}
+
+		case "VALIDATE_EMAIL": return {
+			...state,
+			...({ emailError: action.payLoad.email.length > 0 ? false : true })
+		}
+
+		case "VALIDATE_MESSAGE": return {
+			...state,
+			...({ messageError: action.payLoad.message.length > 0 ? false : true })
+		}
+
+		case "VALIDATE_TERMS": return {
+			...state,
+			...({ termsError: action.payLoad.terms ? false : true })
+		}
+
+		case "VALIDATE_ALL": return {
+			...state,
+			...({
+				nameError: action.payLoad.name.length > 0 ? false : true,
+				emailError: action.payLoad.email.length > 0 ? false : true,
+				messageError: action.payLoad.message.length > 0 ? false : true,
+				termsError: action.payLoad.terms ? false : true
+			})
+		}
+
+		default:
+			return state
+	}
+}
+
+const ContactsForm: React.FC = () => {
+	const [formData, setFormData] = useReducer(formReducer, initialState)
+	const [formValidityData, setFormValidityData] = useReducer(formValidityReducer, initialValidityState)
 
 	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
-		formData.name = inputName?.current?.value || "";
-		formData.email = inputEmail?.current?.value || "";
-		formData.message = inputMessage?.current?.value || "";
+		setFormValidityData({ type: "VALIDATE_ALL", payLoad: formData })
 
-		if (inputAgree?.current?.checked) console.log(formData);
+		// TODO: fetch form data
+		console.log(formData);
 	}
 
 	return (
@@ -25,17 +118,49 @@ const ContactsForm: React.FC = () => {
 			<h2>Остались вопросы?</h2>
 			<form onSubmit={onSubmitHandler}>
 				<div className="form-row">
-					<input id="name" ref={inputName} type="text" placeholder="Введите ваше имя" />
+					<input id="name" type="text" placeholder="Введите ваше имя"
+						className={formValidityData.nameError ? "error_input_required" : ""}
+						onChange={(e) => {
+							setFormData({ type: "UPDATE_NAME", payloadString: e.target.value, payloadBoolean: false });
+
+							e.target.className = e.target.value === "" ? "error_input_required" : "";
+						}}
+						onBlur={() => setFormValidityData({ type: "VALIDATE_NAME", payLoad: formData })}
+					/>
 				</div>
 				<div className="form-row">
-					<input id="email" ref={inputEmail} type="text" placeholder="Введите ваш e-mail" />
+					<input id="email" type="text" placeholder="Введите ваш e-mail"
+						className={formValidityData.emailError ? "error_input_required" : ""}
+						onChange={(e) => {
+							setFormData({ type: "UPDATE_EMAIL", payloadString: e.target.value, payloadBoolean: false });
+
+							e.target.className = e.target.value === "" ? "error_input_required" : "";
+						}}
+						onBlur={() => setFormValidityData({ type: "VALIDATE_EMAIL", payLoad: formData })}
+					/>
 				</div>
 				<div className="form-row">
-					<textarea id="message" ref={inputMessage} placeholder="Введите сообщение" />
+					<textarea id="message" placeholder="Введите сообщение"
+						className={formValidityData.messageError ? "error_input_required" : ""}
+						onChange={(e) => {
+							setFormData({ type: "UPDATE_MESSAGE", payloadString: e.target.value, payloadBoolean: false });
+
+							e.target.className = e.target.value === "" ? "error_input_required" : "";
+						}}
+						onBlur={() => setFormValidityData({ type: "VALIDATE_MESSAGE", payLoad: formData })}
+					/>
 				</div>
 				<div className="form-row">
-					<input id="agree" ref={inputAgree} type="checkbox" />
-					<label htmlFor="agree">
+					<input id="terms" type="checkbox"
+						className={formValidityData.termsError ? "error_input_required" : ""}
+						onChange={(e) => {
+							setFormData({ type: "UPDATE_TERMS", payloadString: "", payloadBoolean: e.target.checked });
+
+							e.target.className = !e.target.checked ? "error_input_required" : "";
+						}}
+						onBlur={() => setFormValidityData({ type: "VALIDATE_TERMS", payLoad: formData })}
+					/>
+					<label htmlFor="terms">
 						Я выражаю согласие на обработку моих персональных данных, указанных в заявке, ознакомился и принимаю&nbsp;
 						<Link to="/legal/privacy-policy/" className="link-in-text">политику конфиденциальности</Link>
 					</label>
