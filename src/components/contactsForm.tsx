@@ -163,7 +163,7 @@ const ContactsForm: React.FC = () => {
 	return (
 		<div className="contacts-form-wrapper">
 			<h2>Остались вопросы?</h2>
-			<form name="contacts-form" method="POST" onSubmit={onSubmitHandler} data-netlify="true" netlify-honeypot="bot-field">
+			<form name="contacts-form" method="POST" onSubmit={onSubmitHandler} data-netlify="true" data-netlify-honeypot="bot-field">
 				<input name="bot-field" type="hidden" />
 				<input name="form-name" type="hidden" value="contacts-form" />
 				<div className="form-row">
