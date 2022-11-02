@@ -109,8 +109,6 @@ const ContactsForm: React.FC = () => {
 	const [formValidityData, setFormValidityData] = useReducer(formValidityReducer, initialValidityState);
 
 	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-
 		setFormValidityData({ type: "VALIDATE_ALL", payLoad: formData })
 
 		if (formValidityData.nameError || formValidityData.emailError || formValidityData.messageError || formValidityData.termsError) {
@@ -129,6 +127,8 @@ const ContactsForm: React.FC = () => {
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: encode({ "form-name": "contacts-form", ...formData })
 		}).then(() => console.log("Form successfully submitted")).catch((error) => alert(error));
+
+		event.preventDefault();
 	}
 
 	return (
