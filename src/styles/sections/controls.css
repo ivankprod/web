@@ -50,7 +50,7 @@ button:active,
 
 button[disabled],
 .abutton[disabled] {
-	color: #c5c5c5;
+	color: #c5c5c5 !important;
 
 	background: #f9f9f9;
 
@@ -198,19 +198,22 @@ input[type="checkbox"] {
 
 input[type="checkbox"] ~ label::before {
 	display: block;
-	content: '\2713';  
+	content: '\f00c';
 	float: left;
 
-	width: 1em;
-	height: 1em;
+	width:  14px;
+	height: 14px;
 
 	margin: 6px 12px 6px 0;
-	padding: 4px;
+	padding: 5px 5px 4px 5px;
+
+	font-family: 'Font Awesome 5 Free';
+	font-size:   1rem;
+	font-weight: 900;
 
 	text-align: center;
 	color: white;
-	line-height: 1em;
-	font-size: 1.2em;
+	line-height: 1rem;
 	cursor: pointer;
 
 	border: 1px solid #ddd;
