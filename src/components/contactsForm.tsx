@@ -114,7 +114,7 @@ const ContactsForm: React.FC = () => {
 			return;
 		}
 
-		const newFormData = new FormData();
+		const newFormData = new FormData(event.target as HTMLFormElement);
 		newFormData.append("name", formData.name);
 		newFormData.append("email", formData.email);
 		newFormData.append("message", formData.message);
@@ -130,8 +130,9 @@ const ContactsForm: React.FC = () => {
 	return (
 		<div className="contacts-form-wrapper">
 			<h2>Остались вопросы?</h2>
-			<form name="contacts-form" onSubmit={onSubmitHandler} data-netlify="true">
+			<form name="contacts-form" method="POST" onSubmit={onSubmitHandler} data-netlify="true" netlify-honeypot="bot-field">
 				<div className="form-row">
+					<input name="bot-field" style={{display: "none"}} />
 					<input id="name" type="text" placeholder="Введите ваше имя"
 						className={formValidityData.nameError ? "error_input_required" : ""}
 						onChange={(e) => {
