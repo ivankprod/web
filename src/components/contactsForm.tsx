@@ -58,6 +58,10 @@ const formReducer = (state: ContactsFormState, action: ContactsFormAction): Cont
 			...state, terms: action.payloadBoolean,
 		}
 
+		case "UPDATE_FIELDS": return {
+			...state, name: "", email: "", message: ""
+		}
+
 		default:
 			return state
 	}
@@ -125,6 +129,11 @@ const ContactsForm: React.FC = () => {
 			}).then((resp) => {
 				if (errorWrapper) {
 					if (resp.ok) {
+						const fields = document.querySelectorAll('form input[type="text"], form textarea');
+						fields.forEach((field) => (field as HTMLInputElement).value == "");
+
+						setFormData({ type: "UPDATE_FIELDS", payloadString: "", payloadBoolean: false });
+
 						errorWrapper.textContent = "Сообщение успешно отправлено!";
 						errorWrapper.classList.add("success");
 					} else {
