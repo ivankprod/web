@@ -126,7 +126,7 @@ const ContactsForm: React.FC = () => {
 			method: "POST",
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: encode({ "form-name": "contacts-form", ...formData })
-		}).then(() => console.log("Form successfully submitted")).catch((error) => alert(error));
+		}).then(() => console.log(encode({ "form-name": "contacts-form", ...formData }))).catch((error) => alert(error));
 
 		event.preventDefault();
 	}
