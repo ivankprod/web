@@ -131,8 +131,9 @@ const ContactsForm: React.FC = () => {
 		<div className="contacts-form-wrapper">
 			<h2>Остались вопросы?</h2>
 			<form name="contacts-form" method="POST" onSubmit={onSubmitHandler} data-netlify="true" netlify-honeypot="bot-field">
+				<input name="bot-field" type="hidden" />
+				<input name="form-name" type="hidden" value="contacts-form" />
 				<div className="form-row">
-					<input name="bot-field" style={{display: "none"}} />
 					<input id="name" type="text" placeholder="Введите ваше имя"
 						className={formValidityData.nameError ? "error_input_required" : ""}
 						onChange={(e) => {
