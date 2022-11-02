@@ -113,8 +113,8 @@ const ContactsForm: React.FC = () => {
 	const [formValidityData, setFormValidityData] = useReducer(formValidityReducer, initialValidityState);
 
 	const inputName = useRef<HTMLInputElement>(null)
-    const inputEmail = useRef<HTMLInputElement>(null)
-    const inputMessage = useRef<HTMLTextAreaElement>(null)
+	const inputEmail = useRef<HTMLInputElement>(null)
+	const inputMessage = useRef<HTMLTextAreaElement>(null)
 
 	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 		setFormValidityData({ type: "VALIDATE_ALL", payLoad: formData });
@@ -133,8 +133,12 @@ const ContactsForm: React.FC = () => {
 			}).then((resp) => {
 				if (errorWrapper) {
 					if (resp.ok) {
-						const fields = document.querySelectorAll('form input[type="text"], form textarea');
-						fields.forEach((field) => (field as HTMLInputElement).value == "");
+						if (inputName && inputName.current)
+							inputName.current.value = "";
+						if (inputEmail && inputEmail.current)
+							inputEmail.current.value = "";
+						if (inputMessage && inputMessage.current)
+							inputMessage.current.value = "";
 
 						setFormData({ type: "UPDATE_FIELDS", payloadString: "", payloadBoolean: false });
 
@@ -144,15 +148,6 @@ const ContactsForm: React.FC = () => {
 						errorWrapper.textContent = "Ошибка: " + resp.statusText;
 						errorWrapper.classList.add("error");
 					}
-
-					if (inputName && inputName.current)
-						inputName.current.value = "";
-					if (inputEmail && inputEmail.current)
-						inputEmail.current.value = "";
-					if (inputMessage && inputMessage.current)
-						inputMessage.current.value = "";
-
-					setFormData({ type: "UPDATE_FIELDS", payloadString: "", payloadBoolean: false });
 				}
 			}).catch((error) => {
 				if (errorWrapper) {
