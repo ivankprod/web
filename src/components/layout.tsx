@@ -8,14 +8,13 @@ import "../fonts/fontawesome/css/solid.min.css"
 import "../styles/app.css"
 
 interface LayoutProps {
-	scope?: string
 	children?: ReactNode
 }
 
-const Layout: React.FC<LayoutProps> = ({ scope = "", children = undefined }) => {
+const Layout: React.FC<LayoutProps> = ({ children = undefined }) => {
 	return (
 		<div id="master-container" className="master-container">
-			<Header scope={scope}></Header>
+			<Header />
 			{children}
 			<Footer />
 		</div>

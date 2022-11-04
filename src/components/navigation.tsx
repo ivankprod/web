@@ -1,6 +1,7 @@
-import React, { useEffect } from "react"
+import React, { useContext, useEffect } from "react"
 import { Link } from "gatsby"
 
+import ScopeContext from "../context/scopeContext"
 import animate from "../scripts/animate"
 import utils from "../scripts/utils"
 
@@ -14,13 +15,10 @@ const closeShowedSubnav = async () => {
 	document.querySelector(".subnav-container.showed")?.classList.remove("showed");
 }
 
-interface NavigationProps {
-	scope?: string
-}
+const Navigation: React.FC = () => {
+	const { scope } = useContext(ScopeContext);
 
-const Navigation: React.FC<NavigationProps> = ({ scope = "" }) => {
 	useEffect(() => {
-		//  Submenus
 		const elemSubnavWrappers = document.querySelectorAll('.subnav-container');
 
 		document.querySelectorAll("a.subnav").forEach(function (elem, i) {
@@ -80,18 +78,18 @@ const Navigation: React.FC<NavigationProps> = ({ scope = "" }) => {
 	return (
 		<nav className="nav-container">
 			<ul className="mnav">
-				<li><Link to="/" data-scope="home" className={checkActiveItem("home", scope)}>ГЛАВНАЯ</Link></li>
-				<li><Link to="/projects/" data-scope="projects"
+				<li><Link to="/" className={checkActiveItem("home", scope)}>ГЛАВНАЯ</Link></li>
+				<li><Link to="/projects/" 
 					className={"subnav " + checkActiveItem("projects", scope)}
 					onClick={closeShowedSubnav}>ПРОЕКТЫ
 				</Link></li>
-				<li><Link to="/services/" data-scope="services"
+				<li><Link to="/services/" 
 					className={"subnav " + checkActiveItem("services", scope)}
 					onClick={closeShowedSubnav}>УСЛУГИ
 				</Link></li>
-				<li><Link to="/blog/" data-scope="blog" className={checkActiveItem("blog", scope)}>БЛОГ</Link></li>
-				<li><Link to="/about/" data-scope="about" className={checkActiveItem("about", scope)}>О НАС</Link></li>
-				<li><Link to="/contacts/" data-scope="contacts" className={checkActiveItem("contacts", scope)}>КОНТАКТЫ</Link></li>
+				<li><Link to="/blog/" className={checkActiveItem("blog", scope)}>БЛОГ</Link></li>
+				<li><Link to="/about/" className={checkActiveItem("about", scope)}>О НАС</Link></li>
+				<li><Link to="/contacts/" className={checkActiveItem("contacts", scope)}>КОНТАКТЫ</Link></li>
 			</ul>
 			<div className="subnav-container animate-slidein-fadein-css">
 				<div className="subnav-column">
