@@ -4,6 +4,12 @@ on:
     branches:
       - main
       - master
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
+      - master
 
 jobs:
   ci:
