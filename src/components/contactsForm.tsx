@@ -169,11 +169,11 @@ const ContactsForm: React.FC = () => {
 				<div className="form-row">
 					<input name="name" id="name" type="text" placeholder="Введите ваше имя"
 						ref={inputName}
-						className={formValidityData.nameError ? "error_input_required" : ""}
+						className={formValidityData.nameError ? "error-input-required" : ""}
 						onChange={(e) => {
 							setFormData({ type: "UPDATE_NAME", payloadString: e.target.value, payloadBoolean: false });
 
-							e.target.className = e.target.value === "" ? "error_input_required" : "";
+							e.target.className = e.target.value === "" ? "error-input-required" : "";
 						}}
 						onBlur={() => setFormValidityData({ type: "VALIDATE_NAME", payLoad: formData })}
 					/>
@@ -181,11 +181,11 @@ const ContactsForm: React.FC = () => {
 				<div className="form-row">
 					<input name="email" id="email" type="text" placeholder="Введите ваш e-mail"
 						ref={inputEmail}
-						className={formValidityData.emailError ? "error_input_required" : ""}
+						className={formValidityData.emailError ? "error-input-required" : ""}
 						onChange={(e) => {
 							setFormData({ type: "UPDATE_EMAIL", payloadString: e.target.value, payloadBoolean: false });
 
-							e.target.className = e.target.value === "" ? "error_input_required" : "";
+							e.target.className = e.target.value === "" ? "error-input-required" : "";
 						}}
 						onBlur={() => setFormValidityData({ type: "VALIDATE_EMAIL", payLoad: formData })}
 					/>
@@ -193,22 +193,22 @@ const ContactsForm: React.FC = () => {
 				<div className="form-row">
 					<textarea name="message" id="message" placeholder="Введите сообщение"
 						ref={inputMessage}
-						className={formValidityData.messageError ? "error_input_required" : ""}
+						className={formValidityData.messageError ? "error-input-required" : ""}
 						onChange={(e) => {
 							setFormData({ type: "UPDATE_MESSAGE", payloadString: e.target.value, payloadBoolean: false });
 
-							e.target.className = e.target.value === "" ? "error_input_required" : "";
+							e.target.className = e.target.value === "" ? "error-input-required" : "";
 						}}
 						onBlur={() => setFormValidityData({ type: "VALIDATE_MESSAGE", payLoad: formData })}
 					/>
 				</div>
 				<div className="form-row">
 					<input id="terms" type="checkbox"
-						className={formValidityData.termsError ? "error_input_required" : ""}
+						className={formValidityData.termsError ? "error-input-required" : ""}
 						onChange={(e) => {
 							setFormData({ type: "UPDATE_TERMS", payloadString: "", payloadBoolean: e.target.checked });
 
-							e.target.className = !e.target.checked ? "error_input_required" : "";
+							e.target.className = !e.target.checked ? "error-input-required" : "";
 						}}
 						onBlur={() => setFormValidityData({ type: "VALIDATE_TERMS", payLoad: formData })}
 					/>

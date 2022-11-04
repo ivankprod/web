@@ -1,6 +1,4 @@
 button, .abutton {
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	appearance: none;
 	outline: none;
 
@@ -97,6 +95,8 @@ button.btn-auth img,
 	cursor: pointer !important;
 }
 
+button span, .abutton span { cursor: pointer !important; }
+
 button.btn-auth span,
 .abutton.btn-auth span {
 	display: inline-block;
@@ -105,8 +105,6 @@ button.btn-auth span,
 
 	font-size: 1.1rem;
 }
-
-button span, .abutton span { cursor: pointer !important; }
 
 .auth-form {
 	display: flex;
@@ -178,10 +176,10 @@ input[type="text"],
 input[type="date"],
 input[type="datetime-local"],
 textarea {
-	width:  100% !important;
+	width: 100% !important;
 
 	padding: 14px 16px;
-   
+
 	border: 1px solid #ddd;
 	border-radius: 6px;
 	outline: none;
@@ -207,7 +205,7 @@ textarea {
 textarea:focus { border-color: var(--color-theme-green); }
 
 input[type="checkbox"] {
-	width:  0;
+	width: 0;
 	height: 0;
 
 	opacity: 0;
@@ -215,17 +213,17 @@ input[type="checkbox"] {
 
 input[type="checkbox"] ~ label::before {
 	display: block;
-	content: '\f00c';
+	content: "\f00c";
 	float: left;
 
-	width:  14px;
+	width: 14px;
 	height: 14px;
 
 	margin: 6px 12px 6px 0;
-	padding: 5px 5px 4px 5px;
+	padding: 5px 5px 4px;
 
-	font-family: 'Font Awesome 5 Free';
-	font-size:   1rem;
+	font-family: "Font Awesome 5 Free";
+	font-size: 1rem;
 	font-weight: 900;
 
 	text-align: center;
@@ -245,8 +243,8 @@ input[type="checkbox"]:checked ~ label::before {
 	border: 1px solid var(--color-theme-green);
 }
 
-.error_input_required,
-input[type="checkbox"].error_input_required ~ label::before {
-	border-color: rgba(255, 0, 0, 0.5) !important;
-    outline: 1px solid rgba(255, 0, 0, 0.5) !important;
+.error-input-required,
+input[type="checkbox"].error-input-required ~ label::before {
+	border-color: rgb(255 0 0 / 50%) !important;
+	outline: 1px solid rgb(255 0 0 / 50%) !important;
 }

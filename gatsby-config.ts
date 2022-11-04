@@ -1,6 +1,3 @@
-const autoprefixer = require("autoprefixer");
-const postCssPresetEnv = require("postcss-preset-env");
-
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
@@ -16,16 +13,10 @@ const config: GatsbyConfig = {
 
 	plugins: [
 		"gatsby-plugin-netlify",
-		{
-			resolve: "gatsby-plugin-postcss",
-			options: {
-				postCssPlugins: [
-					autoprefixer({ remove: false }),
-					postCssPresetEnv()
-				]
-			}
-		}, 
-		"gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap",
+		"gatsby-plugin-postcss",
+		"gatsby-plugin-image",
+		"gatsby-plugin-react-helmet",
+		"gatsby-plugin-sitemap",
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
@@ -42,7 +33,9 @@ const config: GatsbyConfig = {
 				"orientation": "portrait"
 			}
 		},
-		"gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-transformer-json",
+		"gatsby-plugin-sharp",
+		"gatsby-transformer-sharp",
+		"gatsby-transformer-json",
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
