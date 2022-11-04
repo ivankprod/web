@@ -8,8 +8,6 @@ import Button, { ButtonSize } from "./controls/button";
 
 import "../styles/components/slider.css"
 
-let emptySlidesList: NodeListOf<HTMLElement>;
-
 type SliderConfig = {
 	speed: number,
 
@@ -23,7 +21,7 @@ type SliderConfig = {
 
 class SliderClass {
 	elemContainer: HTMLElement | null;
-	slidesList!: NodeListOf<HTMLElement>;
+	slidesList!: Array<HTMLElement>;
 	maxSlideHeight: number | undefined;
 	activeIdx!: number;
 	events!: any;
@@ -39,7 +37,7 @@ class SliderClass {
 		this.elemContainer = document.getElementById(sliderContainerID);
 		if (!this.elemContainer) return;
 
-		this.slidesList = this.elemContainer.querySelectorAll('.slider-slide');
+		this.slidesList = Array.from(this.elemContainer.querySelectorAll('.slider-slide'));
 		if (!this.slidesList || this.slidesList.length == 0) return;
 
 		this.maxSlideHeight = Math.max.apply(null, Array.from(this.slidesList).map(elem => {
@@ -150,11 +148,11 @@ class SliderClass {
 
 		this.events = {};
 		this.elemContainer = null;
-		this.slidesList = emptySlidesList;
+		this.slidesList = [];
 	}
 }
 
-const onSliderTransitionStart = function (slider: SliderClass) {
+const onSliderTransitionStart = (slider: SliderClass) => {
 	const slide = (slider.slides[slider.activeIndex].children[0] as HTMLElement);
 
 	slide.style.opacity = '0';
@@ -165,7 +163,7 @@ const onSliderTransitionStart = function (slider: SliderClass) {
 	(slide.children[2] as HTMLElement).style.animation = 'none';
 }
 
-const onSliderTransitionEnd = function (slider: SliderClass) {
+const onSliderTransitionEnd = (slider: SliderClass) => {
 	const slide = (slider.slides[slider.activeIndex].children[0] as HTMLElement);
 
 	animate({
