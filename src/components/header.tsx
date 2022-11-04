@@ -1,6 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+import "../styles/components/header.css"
+
 import Navigation from "./navigation"
 
 const Header: React.FC = () => {

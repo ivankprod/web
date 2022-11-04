@@ -1,0 +1,12 @@
+.contacts-emails {
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+
+	margin: 32px 0;
+
+	font-size: 1.6rem;
+}
+
+.contacts-emails-column { margin-right: 32px; }
+.contacts-emails-column h3 { color: #8b8b8b; font-size: 0.8em; }

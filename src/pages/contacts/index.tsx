@@ -8,6 +8,8 @@ import SEO from "../../components/seo"
 import Breadcrumbs, { Page } from "../../components/breadcrumbs"
 import ContactsForm from "../../components/contactsForm"
 
+import "../../styles/pages/contacts.css"
+
 const ContactsPage = () => {
 	const currentPage: Page = { title: "Контакты" };
 

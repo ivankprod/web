@@ -4,6 +4,8 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import "../styles/components/errorBox.css"
+
 const NotFoundPage = () => (
 	<Layout>
 		<SEO title="Ошибка 404" robots="noindex, nofollow" />
