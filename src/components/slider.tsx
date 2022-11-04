@@ -4,6 +4,8 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { animate, drawOpacity, makeLinear } from "../scripts/animate";
 import { sleep } from "../scripts/utils";
 
+import Button, { ButtonSize } from "./controls/button";
+
 import "../styles/components/slider.css"
 
 let emptySlidesList: NodeListOf<HTMLElement>;
@@ -255,7 +257,7 @@ const Slider: React.FC = () => {
 										<Fragment key={id}><span>{line}</span><br /></Fragment>
 									))}
 								</div>
-								<Link className="abutton middle rounded-all" to={action.url}>{action.text}</Link>
+								<Button to={action.url} size={ButtonSize.middle}>{action.text}</Button>
 							</div>
 						</div>
 					))}

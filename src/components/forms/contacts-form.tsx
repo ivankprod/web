@@ -1,6 +1,8 @@
 import React, { useReducer, useRef } from "react"
 import { Link } from "gatsby"
 
+import Button from "../controls/button"
+
 type ContactsFormState = {
 	name: string,
 	email: string,
@@ -219,7 +221,7 @@ const ContactsForm: React.FC = () => {
 				</div>
 				<div className="form-row submit">
 					<div className="postsubmit-text"></div>
-					<input type="submit" value="Отправить" className="abutton rounded-all" />
+					<Button as="input" type="submit" value="Отправить"></Button>
 				</div>
 			</form>
 		</div>
