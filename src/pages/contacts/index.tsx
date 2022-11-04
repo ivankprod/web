@@ -1,6 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+import ScopeContext from "../../context/scopeContext"
+
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Breadcrumbs, { Page } from "../../components/breadcrumbs"
@@ -27,26 +29,28 @@ const ContactsPage = () => {
 	).allFile?.nodes[0]?.childContentJson?.meta
 
 	return (
-		<Layout scope="contacts">
-			<SEO title={currentPage.title} description="Наши контакты" />
-			<section id="content-holder" className="container">
-				<Breadcrumbs page={currentPage} />
-				<div id="content" className="content animate-fadein-css">
-					<h1>Наши контакты</h1>
-					<div className="contacts-emails">
-						<div className="contacts-emails-column">
-							<h3>Обратная связь</h3>
-							<a href={`mailto:${meta.email_info}`}>{meta.email_info}</a>
+		<ScopeContext.Provider value={{ scope: "contacts" }}>
+			<Layout>
+				<SEO title={currentPage.title} description="Наши контакты" />
+				<section id="content-holder" className="container">
+					<Breadcrumbs page={currentPage} />
+					<div id="content" className="content animate-fadein-css">
+						<h1>Наши контакты</h1>
+						<div className="contacts-emails">
+							<div className="contacts-emails-column">
+								<h3>Обратная связь</h3>
+								<a href={`mailto:${meta.email_info}`}>{meta.email_info}</a>
+							</div>
+							<div className="contacts-emails-column">
+								<h3>Пресса / PR</h3>
+								<a href={`mailto:${meta.email_pr}`}>{meta.email_pr}</a>
+							</div>
 						</div>
-						<div className="contacts-emails-column">
-							<h3>Пресса / PR</h3>
-							<a href={`mailto:${meta.email_pr}`}>{meta.email_pr}</a>
-						</div>
+						<ContactsForm />
 					</div>
-					<ContactsForm />
-				</div>
-			</section>
-		</Layout>
+				</section>
+			</Layout>
+		</ScopeContext.Provider>
 	)
 }
 

@@ -3,11 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Navigation from "./navigation"
 
-interface HeaderProps {
-	scope?: string
-}
-
-const Header: React.FC<HeaderProps> = ({ scope = "" }) => {
+const Header: React.FC = () => {
 	const meta = useStaticQuery(
 		graphql`query {
 			allFile(filter: {relativePath: {eq: "meta.json"}}) {
@@ -40,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ scope = "" }) => {
 							</div>
 							<button className="rounded-all" data-href="/join/">Заполнить бриф</button>
 						</div>
-						<Navigation scope={scope} />
+						<Navigation />
 					</div>
 				</div>
 			</div>
