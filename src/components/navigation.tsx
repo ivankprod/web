@@ -5,6 +5,8 @@ import ScopeContext from "../context/scopeContext"
 import animate from "../scripts/animate"
 import utils from "../scripts/utils"
 
+import "../styles/components/navigation.css"
+
 const checkActiveItem = (page: string, scope: string): string => {
 	return page == scope ? "nav-item-active" : "";
 }

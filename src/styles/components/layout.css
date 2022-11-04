@@ -19,16 +19,6 @@ html, body {
 	min-height: 100vh;
 }
 
-header, footer {
-	position: relative;
-
-	flex: 0 0 auto;
-
-	width: 100%;
-
-	z-index: 2;
-}
-
 .container {
 	position: relative;
 
@@ -48,27 +38,14 @@ header, footer {
 	z-index: 1;
 }
 
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	padding: 32px 0;
+}
+
 /* @media (min-width: 768px) {  } */
 /* @media (min-width: 992px) {  } */
 @media (min-width: 1200px) { .container { max-width: 1200px; } }
-
-h1 { font-size: 3rem; }
-h2 { font-size: 2rem; }
-
-#progress-bar {
-	position: fixed;
-	top: 24px;
-
-	height: 3px;
-	width: 10%;
-
-	background: #bbde8e;
-
-	opacity: 0;
-	transition: opacity 0.4s linear;
-
-	z-index: 20;
-
-	backface-visibility: hidden;
-	will-change: width, opacity;
-}

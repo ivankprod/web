@@ -1,3 +1,12 @@
+footer {
+	position: relative;
+	flex: 0 0 auto;
+
+	width: 100%;
+
+	z-index: 2;
+}
+
 .footer-back {
 	position: absolute;
 	top: 0;

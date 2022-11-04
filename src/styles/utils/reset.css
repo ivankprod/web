@@ -89,6 +89,9 @@ hr {
 	border-radius: 6px;
 }
 
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+
 .clearfix::before, .clearfix::after { content: " "; display: table; }
 .clearfix::after, .clear { clear: both; }
 
