@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import { animate, drawOpacity, makeLinear } from "../scripts/animate";
 import { sleep } from "../scripts/utils";
