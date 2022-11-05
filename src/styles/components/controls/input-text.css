@@ -1,0 +1,38 @@
+input[type="text"],
+input[type="date"],
+input[type="datetime-local"],
+textarea {
+	width: 100% !important;
+
+	padding: 14px 16px;
+
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	outline: none;
+
+	font-size: 1.2rem;
+
+	box-shadow: 0 3px 10px #e9e9e9;
+
+	box-sizing: border-box;
+	resize: none;
+}
+
+textarea {
+	min-height: 148px;
+
+	padding: 16px;
+
+	resize: vertical;
+}
+
+input[type="text"]:focus,
+textarea:focus { border-color: var(--color-theme-green); }
+
+input[type="text"].error-input-required,
+input[type="date"].error-input-required,
+input[type="datetime-local"].error-input-required,
+textarea.error-input-required {
+	border-color: rgb(255 0 0 / 50%) !important;
+	outline: 1px solid rgb(255 0 0 / 50%) !important;
+}
