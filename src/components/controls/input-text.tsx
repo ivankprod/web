@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import BaseInputProps from "../../models/input-controls";
+import BaseInputProps from "../../models/controls"
 
 import "../../styles/components/controls/input-text.css"
 
