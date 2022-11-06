@@ -6,7 +6,7 @@ import ScopeContext from "../../context/scopeContext"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Breadcrumbs, { Page } from "../../components/breadcrumbs"
-import ContactsForm from "../../components/contactsForm"
+import ContactsForm from "../../components/forms/contacts-form"
 
 import "../../styles/pages/contacts.css"
 

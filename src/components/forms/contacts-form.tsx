@@ -1,5 +1,22 @@
-import React, { useReducer, useRef } from "react"
+import React, { useReducer } from "react"
+import { createUseStyles } from "react-jss"
 import { Link } from "gatsby"
+
+import Button from "../controls/button"
+import { TextField, TextArea } from "../controls/textfield"
+
+import "../../styles/components/form.css"
+import Checkbox from "../controls/checkbox"
+
+const useStyles = createUseStyles({
+	wrapper: {
+		width: "50%"
+	},
+
+	h2: {
+		marginBottom: 18
+	}
+});
 
 type ContactsFormState = {
 	name: string,
@@ -112,10 +129,6 @@ const ContactsForm: React.FC = () => {
 	const [formData, setFormData] = useReducer(formReducer, initialState);
 	const [formValidityData, setFormValidityData] = useReducer(formValidityReducer, initialValidityState);
 
-	const inputName = useRef<HTMLInputElement>(null)
-	const inputEmail = useRef<HTMLInputElement>(null)
-	const inputMessage = useRef<HTMLTextAreaElement>(null)
-
 	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 		setFormValidityData({ type: "VALIDATE_ALL", payLoad: formData });
 
@@ -133,13 +146,6 @@ const ContactsForm: React.FC = () => {
 			}).then((resp) => {
 				if (errorWrapper) {
 					if (resp.ok) {
-						if (inputName && inputName.current)
-							inputName.current.value = "";
-						if (inputEmail && inputEmail.current)
-							inputEmail.current.value = "";
-						if (inputMessage && inputMessage.current)
-							inputMessage.current.value = "";
-
 						setFormData({ type: "UPDATE_FIELDS", payloadString: "", payloadBoolean: false });
 
 						errorWrapper.textContent = "Сообщение успешно отправлено!";
@@ -160,66 +166,59 @@ const ContactsForm: React.FC = () => {
 		event.preventDefault();
 	}
 
+	const ContactsFormStyles = useStyles();
+
 	return (
-		<div className="contacts-form-wrapper">
-			<h2>Остались вопросы?</h2>
+		<div className={ContactsFormStyles.wrapper}>
+			<h2 className={ContactsFormStyles.h2}>Остались вопросы?</h2>
 			<form name="contacts-form" method="POST" onSubmit={onSubmitHandler} data-netlify="true" data-netlify-honeypot="bot-field">
 				<input name="bot-field" type="hidden" />
 				<input name="form-name" type="hidden" value="contacts-form" />
-				<div className="form-row">
-					<input name="name" id="name" type="text" placeholder="Введите ваше имя"
-						ref={inputName}
-						className={formValidityData.nameError ? "error-input-required" : ""}
-						onChange={(e) => {
-							setFormData({ type: "UPDATE_NAME", payloadString: e.target.value, payloadBoolean: false });
-
-							e.target.className = e.target.value === "" ? "error-input-required" : "";
-						}}
-						onBlur={() => setFormValidityData({ type: "VALIDATE_NAME", payLoad: formData })}
-					/>
-				</div>
-				<div className="form-row">
-					<input name="email" id="email" type="text" placeholder="Введите ваш e-mail"
-						ref={inputEmail}
-						className={formValidityData.emailError ? "error-input-required" : ""}
-						onChange={(e) => {
-							setFormData({ type: "UPDATE_EMAIL", payloadString: e.target.value, payloadBoolean: false });
-
-							e.target.className = e.target.value === "" ? "error-input-required" : "";
-						}}
-						onBlur={() => setFormValidityData({ type: "VALIDATE_EMAIL", payLoad: formData })}
-					/>
-				</div>
-				<div className="form-row">
-					<textarea name="message" id="message" placeholder="Введите сообщение"
-						ref={inputMessage}
-						className={formValidityData.messageError ? "error-input-required" : ""}
-						onChange={(e) => {
-							setFormData({ type: "UPDATE_MESSAGE", payloadString: e.target.value, payloadBoolean: false });
-
-							e.target.className = e.target.value === "" ? "error-input-required" : "";
-						}}
-						onBlur={() => setFormValidityData({ type: "VALIDATE_MESSAGE", payLoad: formData })}
-					/>
-				</div>
-				<div className="form-row">
-					<input id="terms" type="checkbox"
-						className={formValidityData.termsError ? "error-input-required" : ""}
-						onChange={(e) => {
-							setFormData({ type: "UPDATE_TERMS", payloadString: "", payloadBoolean: e.target.checked });
-
-							e.target.className = !e.target.checked ? "error-input-required" : "";
-						}}
-						onBlur={() => setFormValidityData({ type: "VALIDATE_TERMS", payLoad: formData })}
-					/>
-					<label htmlFor="terms">
-						Я выражаю согласие на обработку моих персональных данных, указанных в заявке, ознакомился и принимаю&nbsp;
-						<Link to="/legal/privacy-policy/" className="link-in-text">политику конфиденциальности</Link>
-					</label>
-				</div>
+				<TextField name="name" id="name" placeholder="Введите ваше имя"
+					inForm={true}
+					value={formData.name}
+					validable={true}
+					validityError={formValidityData.nameError}
+					onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+						setFormData({ type: "UPDATE_NAME", payloadString: e.target.value, payloadBoolean: false });
+					}}
+					onBlur={() => setFormValidityData({ type: "VALIDATE_NAME", payLoad: formData })}
+				/>
+				<TextField name="email" id="email" placeholder="Введите ваш e-mail"
+					inForm={true}
+					value={formData.email}
+					validable={true}
+					validityError={formValidityData.emailError}
+					onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+						setFormData({ type: "UPDATE_EMAIL", payloadString: e.target.value, payloadBoolean: false });
+					}}
+					onBlur={() => setFormValidityData({ type: "VALIDATE_EMAIL", payLoad: formData })}
+				/>
+				<TextArea name="message" id="message" placeholder="Введите сообщение"
+					inForm={true}
+					value={formData.message}
+					validable={true}
+					validityError={formValidityData.messageError}
+					onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
+						setFormData({ type: "UPDATE_MESSAGE", payloadString: e.target.value, payloadBoolean: false });
+					}}
+					onBlur={() => setFormValidityData({ type: "VALIDATE_MESSAGE", payLoad: formData })}
+				/>
+				<Checkbox id="terms"
+					inForm={true}
+					validable={true}
+					validityError={formValidityData.termsError}
+					onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+						setFormData({ type: "UPDATE_TERMS", payloadString: "", payloadBoolean: e.target.checked });
+					}}
+					onBlur={() => setFormValidityData({ type: "VALIDATE_TERMS", payLoad: formData })}
+				>
+					Я выражаю согласие на обработку моих персональных данных, указанных в заявке, ознакомился и принимаю&nbsp;
+					<Link to="/legal/privacy-policy/" className="link-in-text">политику конфиденциальности</Link>
+				</Checkbox>
 				<div className="form-row submit">
 					<div className="postsubmit-text"></div>
-					<input type="submit" value="Отправить" className="abutton rounded-all" />
+					<Button as="input" type="submit" value="Отправить"></Button>
 				</div>
 			</form>
 		</div>

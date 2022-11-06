@@ -1,9 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import "../styles/components/header.css"
-
+import Button from "../components/controls/button"
 import Navigation from "./navigation"
+
+import "../styles/components/header.css"
 
 const Header: React.FC = () => {
 	const meta = useStaticQuery(
@@ -36,7 +37,7 @@ const Header: React.FC = () => {
 									<a href={"mailto:" + meta?.email}>{String(meta?.email).toUpperCase()}</a>
 								</div>
 							</div>
-							<button className="rounded-all" data-href="/join/">Заполнить бриф</button>
+							<Button to="/join/">Заполнить бриф</Button>
 						</div>
 						<Navigation />
 					</div>
