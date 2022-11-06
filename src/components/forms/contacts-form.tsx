@@ -4,9 +4,10 @@ import { Link } from "gatsby"
 
 import Button from "../controls/button"
 import { TextField, TextArea } from "../controls/textfield"
+import Checkbox from "../controls/checkbox"
+import { encodeFormBody } from "../../scripts/utils"
 
 import "../../styles/components/form.css"
-import Checkbox from "../controls/checkbox"
 
 const useStyles = createUseStyles({
 	wrapper: {
@@ -123,10 +124,6 @@ const formValidityReducer = (state: ContactsFormValidityState, action: ContactsF
 	}
 }
 
-const encode = (data: any) => {
-	return Object.keys(data).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
-}
-
 const ContactsForm: React.FC = () => {
 	const [formData, setFormData] = useReducer(formReducer, initialState);
 	const [formValidityData, setFormValidityData] = useReducer(formValidityReducer, initialValidityState);
@@ -144,7 +141,7 @@ const ContactsForm: React.FC = () => {
 			fetch("/", {
 				method: "POST",
 				headers: { "Content-Type": "application/x-www-form-urlencoded" },
-				body: encode({ "form-name": "contacts-form", ...formData })
+				body: encodeFormBody({ "form-name": "contacts-form", ...formData })
 			}).then((resp) => {
 				if (errorWrapper) {
 					if (resp.ok) {
