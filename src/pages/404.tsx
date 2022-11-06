@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button, { ButtonSize } from "../components/controls/button"
 
-import "../styles/components/errorBox.css"
+import "../styles/components/error-box.css"
 
 const NotFoundPage = () => (
 	<Layout>
