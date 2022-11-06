@@ -4,9 +4,10 @@ import { Link } from "gatsby"
 
 import Button from "../controls/button"
 import { TextField, TextArea } from "../controls/textfield"
+import Checkbox from "../controls/checkbox"
+import { encodeFormBody } from "../../scripts/utils"
 
 import "../../styles/components/form.css"
-import Checkbox from "../controls/checkbox"
 
 const useStyles = createUseStyles({
 	wrapper: {
@@ -27,8 +28,7 @@ type ContactsFormState = {
 
 type ContactsFormAction = {
 	type: string,
-	payloadString: string,
-	payloadBoolean: boolean
+	payload: string | boolean
 }
 
 const initialState: ContactsFormState = {
@@ -47,7 +47,7 @@ type ContactsFormValidityState = {
 
 type ContactsFormValidityAction = {
 	type: string,
-	payLoad: ContactsFormState
+	payload: ContactsFormState
 }
 
 const initialValidityState: ContactsFormValidityState = {
@@ -60,23 +60,26 @@ const initialValidityState: ContactsFormValidityState = {
 const formReducer = (state: ContactsFormState, action: ContactsFormAction): ContactsFormState => {
 	switch (action.type) {
 		case "UPDATE_NAME": return {
-			...state, name: action.payloadString,
+			...state, name: (action.payload as string),
 		}
 
 		case "UPDATE_EMAIL": return {
-			...state, email: action.payloadString,
+			...state, email: (action.payload as string),
 		}
 
 		case "UPDATE_MESSAGE": return {
-			...state, message: action.payloadString,
+			...state, message: (action.payload as string),
 		}
 
 		case "UPDATE_TERMS": return {
-			...state, terms: action.payloadBoolean,
+			...state, terms: (action.payload as boolean),
 		}
 
-		case "UPDATE_FIELDS": return {
-			...state, name: "", email: "", message: ""
+		case "UPDATE_ALL_FIELDS": return {
+			...state,
+			name: (action.payload as string),
+			email: (action.payload as string),
+			message: (action.payload as string)
 		}
 
 		default:
@@ -88,31 +91,31 @@ const formValidityReducer = (state: ContactsFormValidityState, action: ContactsF
 	switch (action.type) {
 		case "VALIDATE_NAME": return {
 			...state,
-			...({ nameError: action.payLoad.name.length > 0 ? false : true })
+			...({ nameError: action.payload.name.length > 0 ? false : true })
 		}
 
 		case "VALIDATE_EMAIL": return {
 			...state,
-			...({ emailError: action.payLoad.email.length > 0 ? false : true })
+			...({ emailError: action.payload.email.length > 0 ? false : true })
 		}
 
 		case "VALIDATE_MESSAGE": return {
 			...state,
-			...({ messageError: action.payLoad.message.length > 0 ? false : true })
+			...({ messageError: action.payload.message.length > 0 ? false : true })
 		}
 
 		case "VALIDATE_TERMS": return {
 			...state,
-			...({ termsError: action.payLoad.terms ? false : true })
+			...({ termsError: action.payload.terms ? false : true })
 		}
 
 		case "VALIDATE_ALL": return {
 			...state,
 			...({
-				nameError: action.payLoad.name.length > 0 ? false : true,
-				emailError: action.payLoad.email.length > 0 ? false : true,
-				messageError: action.payLoad.message.length > 0 ? false : true,
-				termsError: action.payLoad.terms ? false : true
+				nameError: action.payload.name.length > 0 ? false : true,
+				emailError: action.payload.email.length > 0 ? false : true,
+				messageError: action.payload.message.length > 0 ? false : true,
+				termsError: action.payload.terms ? false : true
 			})
 		}
 
@@ -121,16 +124,12 @@ const formValidityReducer = (state: ContactsFormValidityState, action: ContactsF
 	}
 }
 
-const encode = (data: any) => {
-	return Object.keys(data).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
-}
-
 const ContactsForm: React.FC = () => {
 	const [formData, setFormData] = useReducer(formReducer, initialState);
 	const [formValidityData, setFormValidityData] = useReducer(formValidityReducer, initialValidityState);
 
 	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
-		setFormValidityData({ type: "VALIDATE_ALL", payLoad: formData });
+		setFormValidityData({ type: "VALIDATE_ALL", payload: formData });
 
 		const errorWrapper = document.querySelector("form .postsubmit-text");
 
@@ -142,11 +141,11 @@ const ContactsForm: React.FC = () => {
 			fetch("/", {
 				method: "POST",
 				headers: { "Content-Type": "application/x-www-form-urlencoded" },
-				body: encode({ "form-name": "contacts-form", ...formData })
+				body: encodeFormBody({ "form-name": "contacts-form", ...formData })
 			}).then((resp) => {
 				if (errorWrapper) {
 					if (resp.ok) {
-						setFormData({ type: "UPDATE_FIELDS", payloadString: "", payloadBoolean: false });
+						setFormData({ type: "UPDATE_ALL_FIELDS", payload: "" });
 
 						errorWrapper.textContent = "Сообщение успешно отправлено!";
 						errorWrapper.classList.add("success");
@@ -180,9 +179,9 @@ const ContactsForm: React.FC = () => {
 					validable={true}
 					validityError={formValidityData.nameError}
 					onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-						setFormData({ type: "UPDATE_NAME", payloadString: e.target.value, payloadBoolean: false });
+						setFormData({ type: "UPDATE_NAME", payload: e.target.value });
 					}}
-					onBlur={() => setFormValidityData({ type: "VALIDATE_NAME", payLoad: formData })}
+					onBlur={() => setFormValidityData({ type: "VALIDATE_NAME", payload: formData })}
 				/>
 				<TextField name="email" id="email" placeholder="Введите ваш e-mail"
 					inForm={true}
@@ -190,9 +189,9 @@ const ContactsForm: React.FC = () => {
 					validable={true}
 					validityError={formValidityData.emailError}
 					onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-						setFormData({ type: "UPDATE_EMAIL", payloadString: e.target.value, payloadBoolean: false });
+						setFormData({ type: "UPDATE_EMAIL", payload: e.target.value });
 					}}
-					onBlur={() => setFormValidityData({ type: "VALIDATE_EMAIL", payLoad: formData })}
+					onBlur={() => setFormValidityData({ type: "VALIDATE_EMAIL", payload: formData })}
 				/>
 				<TextArea name="message" id="message" placeholder="Введите сообщение"
 					inForm={true}
@@ -200,18 +199,18 @@ const ContactsForm: React.FC = () => {
 					validable={true}
 					validityError={formValidityData.messageError}
 					onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
-						setFormData({ type: "UPDATE_MESSAGE", payloadString: e.target.value, payloadBoolean: false });
+						setFormData({ type: "UPDATE_MESSAGE", payload: e.target.value });
 					}}
-					onBlur={() => setFormValidityData({ type: "VALIDATE_MESSAGE", payLoad: formData })}
+					onBlur={() => setFormValidityData({ type: "VALIDATE_MESSAGE", payload: formData })}
 				/>
 				<Checkbox id="terms"
 					inForm={true}
 					validable={true}
 					validityError={formValidityData.termsError}
 					onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-						setFormData({ type: "UPDATE_TERMS", payloadString: "", payloadBoolean: e.target.checked });
+						setFormData({ type: "UPDATE_TERMS", payload: e.target.checked });
 					}}
-					onBlur={() => setFormValidityData({ type: "VALIDATE_TERMS", payLoad: formData })}
+					onBlur={() => setFormValidityData({ type: "VALIDATE_TERMS", payload: formData })}
 				>
 					Я выражаю согласие на обработку моих персональных данных, указанных в заявке, ознакомился и принимаю&nbsp;
 					<Link to="/legal/privacy-policy/" className="link-in-text">политику конфиденциальности</Link>
