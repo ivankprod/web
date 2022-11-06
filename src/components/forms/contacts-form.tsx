@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss"
 import { Link } from "gatsby"
 
 import Button from "../controls/button"
-import { InputText, InputTextArea } from "../controls/input-text"
+import { TextField, TextArea } from "../controls/textfield"
 
 import "../../styles/components/form.css"
 import Checkbox from "../controls/checkbox"
@@ -174,7 +174,7 @@ const ContactsForm: React.FC = () => {
 			<form name="contacts-form" method="POST" onSubmit={onSubmitHandler} data-netlify="true" data-netlify-honeypot="bot-field">
 				<input name="bot-field" type="hidden" />
 				<input name="form-name" type="hidden" value="contacts-form" />
-				<InputText name="name" id="name" placeholder="Введите ваше имя"
+				<TextField name="name" id="name" placeholder="Введите ваше имя"
 					inForm={true}
 					value={formData.name}
 					validable={true}
@@ -184,7 +184,7 @@ const ContactsForm: React.FC = () => {
 					}}
 					onBlur={() => setFormValidityData({ type: "VALIDATE_NAME", payLoad: formData })}
 				/>
-				<InputText name="email" id="email" placeholder="Введите ваш e-mail"
+				<TextField name="email" id="email" placeholder="Введите ваш e-mail"
 					inForm={true}
 					value={formData.email}
 					validable={true}
@@ -194,7 +194,7 @@ const ContactsForm: React.FC = () => {
 					}}
 					onBlur={() => setFormValidityData({ type: "VALIDATE_EMAIL", payLoad: formData })}
 				/>
-				<InputTextArea name="message" id="message" placeholder="Введите сообщение"
+				<TextArea name="message" id="message" placeholder="Введите сообщение"
 					inForm={true}
 					value={formData.message}
 					validable={true}

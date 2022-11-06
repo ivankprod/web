@@ -2,19 +2,19 @@ import React from "react"
 
 import BaseInputProps from "../../models/controls"
 
-import "../../styles/components/controls/input-text.css"
+import "../../styles/components/controls/textfield.css"
 
-type InputTextProps = BaseInputProps
+type TextFieldProps = BaseInputProps
 	& Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, keyof BaseInputProps>
-type InputTextAreaProps = BaseInputProps
+type TextAreaProps = BaseInputProps
 	& Omit<React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, keyof BaseInputProps>
 
-export const InputText: React.FC<InputTextProps> = ({
+export const TextField: React.FC<TextFieldProps> = ({
 	inForm = false,
 	validable = false,
 	validityError = undefined,
 	...otherProps
-}: InputTextProps) => {
+}: TextFieldProps) => {
 	const parentOnChange = otherProps.onChange;
 	otherProps.onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		parentOnChange?.(e);
@@ -36,12 +36,12 @@ export const InputText: React.FC<InputTextProps> = ({
 	)
 }
 
-export const InputTextArea: React.FC<InputTextAreaProps> = ({
+export const TextArea: React.FC<TextAreaProps> = ({
 	inForm = false,
 	validable = false,
 	validityError = undefined,
 	...otherProps
-}: InputTextAreaProps) => {
+}: TextAreaProps) => {
 	const parentOnChange = otherProps.onChange;
 	otherProps.onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
 		parentOnChange?.(e);
@@ -63,4 +63,4 @@ export const InputTextArea: React.FC<InputTextAreaProps> = ({
 	)
 }
 
-export default { InputText, InputTextArea }
+export default { TextField, TextArea }
