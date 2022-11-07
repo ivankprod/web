@@ -4,43 +4,45 @@
 	background: #f7f7f7;
 
 	overflow: hidden;
+
+	& .breadcrumbs-last { margin-left: 12px; }
+
+	& li {
+		display: inline-block;
+
+		& a {
+			position: relative;
+
+			padding: 6px 10px 6px 6px;
+			margin: 0 0 0 6px;
+
+			font-size: 1rem;
+
+			&::before, &::after {
+				position: absolute;
+				right: 0;
+
+				content: "";
+
+				height: 32px;
+				width: 5px;
+
+				background: #fff;
+			}
+
+			&::before {
+				top: -12px;
+
+				transform: rotate(-30deg);
+			}
+
+			&::after {
+				bottom: -14px;
+
+				transform: rotate(30deg);
+			}
+
+			& span { cursor: pointer !important; }
+		}
+	}
 }
-
-.breadcrumbs li { display: inline-block; }
-
-.breadcrumbs li a {
-	position: relative;
-
-	padding: 6px 10px 6px 6px;
-	margin: 0 0 0 6px;
-
-	font-size: 1rem;
-}
-
-.breadcrumbs li a span { cursor: pointer !important; }
-
-.breadcrumbs li a::before, .breadcrumbs li a::after {
-	position: absolute;
-	right: 0;
-
-	content: "";
-
-	height: 32px;
-	width: 5px;
-
-	background: #fff;
-}
-
-.breadcrumbs li a::before {
-	top: -12px;
-
-	transform: rotate(-30deg);
-}
-
-.breadcrumbs li a::after {
-	bottom: -14px;
-
-	transform: rotate(30deg);
-}
-
-.breadcrumbs .breadcrumbs-last { margin-left: 12px; }

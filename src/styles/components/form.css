@@ -1,17 +1,22 @@
-.form-row { display: flex; margin-bottom: 20px; }
-.form-row.submit { justify-content: space-between; }
-
-.form-row.submit .postsubmit-text {
+.form-row {
 	display: flex;
-	align-items: center;
-	justify-content: end;
 
-	width: 100%;
+	margin-bottom: 20px;
 
-	padding-right: 24px;
+	&.submit { justify-content: space-between; }
 
-	opacity: 0;
+	& .postsubmit-text {
+		display: flex;
+		align-items: center;
+		justify-content: end;
+
+		width: 100%;
+
+		padding-right: 24px;
+
+		opacity: 0;
+
+		&.success { opacity: 1; color: var(--color-theme-green); }
+		&.error { opacity: 1; color: red; }
+	}
 }
-
-.form-row.submit .postsubmit-text.success { opacity: 1; color: var(--color-theme-green); }
-.form-row.submit .postsubmit-text.error { opacity: 1; color: red; }

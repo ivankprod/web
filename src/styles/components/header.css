@@ -13,30 +13,34 @@ header {
 	z-index: 2;
 }
 
-.stretch-container.headtop {
-	height: 24px;
+.stretch-container {
+	&.headtop {
+		height: 24px;
 
-	background: linear-gradient(to top, #f3f3f3, #fff);
+		background: linear-gradient(to top, #f3f3f3, #fff);
 
-	border-bottom: 1px solid #ececec;
+		border-bottom: 1px solid #ececec;
 
-	font-size: 0.85rem;
-	color: #4a4a4a;
+		font-size: 0.85rem;
+		color: #4a4a4a;
+	}
+
+	&.headline {
+		position: relative;
+
+		height: 160px;
+	}
 }
 
-.stretch-container.headline {
-	position: relative;
+.container {
+	&.headline {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
 
-	height: 160px;
-}
-
-.container.headline {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-
-	height: 100%;
+		height: 100%;
+	}
 }
 
 .logotype {
