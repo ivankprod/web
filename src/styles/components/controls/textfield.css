@@ -16,6 +16,13 @@ textarea {
 
 	box-sizing: border-box;
 	resize: none;
+
+	&:focus { border-color: var(--color-theme-green); }
+
+	&.error-input-required {
+		border-color: rgb(255 0 0 / 50%) !important;
+		outline: 1px solid rgb(255 0 0 / 50%) !important;
+	}
 }
 
 textarea {
@@ -24,15 +31,4 @@ textarea {
 	padding: 16px;
 
 	resize: vertical;
-}
-
-input[type="text"]:focus,
-textarea:focus { border-color: var(--color-theme-green); }
-
-input[type="text"].error-input-required,
-input[type="date"].error-input-required,
-input[type="datetime-local"].error-input-required,
-textarea.error-input-required {
-	border-color: rgb(255 0 0 / 50%) !important;
-	outline: 1px solid rgb(255 0 0 / 50%) !important;
 }

@@ -6,22 +6,22 @@
 	padding: 48px;
 
 	font-size: 1.2rem;
-}
 
-.error-box .error-title {
-	padding-bottom: 8px;
+	& .error-title {
+		padding-bottom: 8px;
 
-	font-size: 2.4rem;
+		font-size: 2.4rem;
 
-	border-bottom: 2px solid rgb(0 0 0 / 10%);
-}
+		border-bottom: 2px solid rgb(0 0 0 / 10%);
+	}
 
-.error-box .error-message { margin-top: 12px; }
+	& .error-message { margin-top: 12px; }
 
-.error-box button, .error-box .abutton {
-	margin: 24px auto 0;
-
-	align-self: center;
-
-	text-transform: uppercase;
+	& button, & .abutton {
+		margin: 24px auto 0;
+	
+		align-self: center;
+	
+		text-transform: uppercase;
+	}
 }

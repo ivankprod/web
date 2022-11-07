@@ -20,50 +20,41 @@ button, .abutton {
 	box-shadow: 0 3px 10px #d8d8d8;
 
 	transition: opacity 0.1s !important;
+
+	&:hover { opacity: 0.8 !important; }
+	&:active { opacity: 0.6 !important; }
+
+	&.middle {
+		padding: 9px 12px;
+
+		font-size: 1rem !important;
+	}
+
+	&.small {
+		padding: 10px 12px 9px;
+
+		font-size: 0.9rem !important;
+	}
+
+	& span { cursor: pointer !important; }
+
+	& img.btn-icon-loader {
+		display: none;
+		float: left;
+
+		width: 20px;
+		height: 20px;
+
+		margin-right: 6px;
+	}
 }
 
-button.middle,
-.abutton.middle {
-	padding: 9px 12px;
-
-	font-size: 1rem !important;
-}
-
-button.small,
-.abutton.small {
-	padding: 10px 12px 9px;
-
-	font-size: 0.9rem !important;
-}
-
-button:hover,
-.abutton:hover {
-	opacity: 0.8 !important;
-}
-
-button:active,
-.abutton:active {
-	opacity: 0.6 !important;
-}
-
-button[disabled],
-.abutton[disabled] {
+button[disabled], .abutton[disabled] {
 	color: #c5c5c5 !important;
 
 	background: #f9f9f9;
 
 	pointer-events: none;
-}
-
-button img.btn-icon-loader,
-.abutton img.btn-icon-loader {
-	display: none;
-	float: left;
-
-	width: 20px;
-	height: 20px;
-
-	margin-right: 6px;
 }
 
 button.btn-auth,
@@ -85,23 +76,19 @@ button.btn-auth,
 	box-shadow: 0 3px 0 #d8d8d8;
 
 	overflow: hidden;
-}
 
-button.btn-auth img,
-.abutton.btn-auth img {
-	height: 24px;
-	width: 24px;
+	& img {
+		height: 24px;
+		width: 24px;
 
-	cursor: pointer !important;
-}
+		cursor: pointer !important;
+	}
 
-button span, .abutton span { cursor: pointer !important; }
+	& span {
+		display: inline-block;
 
-button.btn-auth span,
-.abutton.btn-auth span {
-	display: inline-block;
+		margin: 0 6px 0 4px;
 
-	margin: 0 6px 0 4px;
-
-	font-size: 1.1rem;
+		font-size: 1.1rem;
+	}
 }
