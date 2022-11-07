@@ -19,9 +19,9 @@
 
 	& button, & .abutton {
 		margin: 24px auto 0;
-	
+
 		align-self: center;
-	
+
 		text-transform: uppercase;
 	}
 }

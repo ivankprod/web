@@ -21,12 +21,12 @@
 			&::before, &::after {
 				position: absolute;
 				right: 0;
-			
+
 				content: "";
-			
+
 				height: 32px;
 				width: 5px;
-			
+
 				background: #fff;
 			}
 
@@ -45,5 +45,4 @@
 			& span { cursor: pointer !important; }
 		}
 	}
-	
 }

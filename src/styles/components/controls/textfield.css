@@ -25,6 +25,7 @@ textarea {
 	}
 }
 
+/* stylelint-disable-next-line */
 textarea {
 	min-height: 148px;
 
