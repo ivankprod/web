@@ -1,6 +1,6 @@
 import React from "react"
 
-import ScopeContext from "../context/ScopeContext"
+import ScopeContext from "../context/scope"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
