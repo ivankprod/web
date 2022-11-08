@@ -2,7 +2,7 @@ import React from "react"
 
 import BaseInputProps from "../../models/controls"
 
-import "../../styles/components/controls/textfield.css"
+import "./TextField.css"
 
 type TextFieldProps = BaseInputProps
 	& Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, keyof BaseInputProps>

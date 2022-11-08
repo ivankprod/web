@@ -1,8 +1,8 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Button, { ButtonSize } from "../components/controls/button"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import Button, { ButtonSize } from "../elements/Button"
 
 import "../styles/components/error-box.css"
 

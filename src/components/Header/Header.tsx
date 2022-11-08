@@ -1,10 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Button from "../components/controls/button"
-import Navigation from "./navigation"
+import Button from "../../elements/Button"
+import Navigation from "../Navigation/Navigation"
 
-import "../styles/components/header.css"
+import "./Header.css"
 
 const Header: React.FC = () => {
 	const meta = useStaticQuery(

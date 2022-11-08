@@ -1,8 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import "../styles/components/footer.css"
-import "../styles/utils/social.css"
+import "./Footer.css"
+import "../../styles/utils/social.css"
 
 const Footer: React.FC = () => {
 	const { site } = useStaticQuery(

@@ -1,7 +1,7 @@
 import React, { ComponentProps, ElementType, ReactNode } from "react"
 import { Link } from "gatsby"
 
-import "../../styles/components/controls/button.css"
+import "./Button.css"
 
 export enum ButtonSize {
 	small = "small",

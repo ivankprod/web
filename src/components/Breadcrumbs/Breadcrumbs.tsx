@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import "../styles/components/breadcrumbs.css"
+import "./Breadcrumbs.css"
 
 export type Page = {
 	title: string,
@@ -13,7 +13,7 @@ interface BreadcrumbsProps {
 	parentPages?: Page[]
 }
 
-const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = [] }) => {
+export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = [] }) => {
 	const { site } = useStaticQuery(
 		graphql`query {
 			site {
@@ -55,5 +55,3 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = [] }) => 
 		</div>
 	)
 }
-
-export default Breadcrumbs

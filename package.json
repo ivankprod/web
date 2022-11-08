@@ -23,8 +23,8 @@
 		"clean": "gatsby clean",
 		"typecheck": "tsc --noEmit",
 		"lint": "npm run lint:es && npm run lint:css",
-		"lint:es": "eslint src/** --no-error-on-unmatched-pattern",
-		"lint:css": "stylelint src/styles/** --config .stylelintrc"
+		"lint:es": "eslint src/** --config .eslintrc.js",
+		"lint:css": "stylelint src/** --config .stylelintrc"
 	},
 	"dependencies": {
 		"@fontsource/open-sans": "^4.5.13",
