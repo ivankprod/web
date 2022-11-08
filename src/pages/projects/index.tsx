@@ -1,10 +1,10 @@
 import React from "react"
 
-import ScopeContext from "../../context/scopeContext"
+import ScopeContext from "../../context/ScopeContext"
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import Breadcrumbs, { Page } from "../../components/breadcrumbs"
+import Layout from "../../components/Layout"
+import SEO from "../../components/SEO"
+import Breadcrumbs, { Page } from "../../components/Breadcrumbs"
 
 const ProjectsPage = () => {
 	const currentPage: Page = { title: "Проекты" };

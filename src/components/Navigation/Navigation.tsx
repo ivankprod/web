@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react"
 import { Link } from "gatsby"
 
-import ScopeContext from "../context/scopeContext"
-import animate from "../scripts/animate"
-import utils from "../scripts/utils"
+import ScopeContext from "../../context/ScopeContext"
+import animate from "../../scripts/animate"
+import utils from "../../scripts/utils"
 
-import "../styles/components/navigation.css"
+import "./Navigation.css"
 
 const checkActiveItem = (page: string, scope: string): string => {
 	return page == scope ? "nav-item-active" : "";

@@ -2,7 +2,7 @@ import React, { ReactNode } from "react"
 
 import BaseInputProps from "../../models/controls"
 
-import "../../styles/components/controls/checkbox.css"
+import "./Checkbox.css"
 
 interface CheckboxOwnProps extends BaseInputProps {
 	children?: ReactNode

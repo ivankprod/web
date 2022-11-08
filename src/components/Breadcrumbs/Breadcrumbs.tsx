@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import "../styles/components/breadcrumbs.css"
+import "./Breadcrumbs.css"
 
 export type Page = {
 	title: string,
