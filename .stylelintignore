@@ -1,0 +1,6 @@
+src/fonts/
+src/images/
+**/*.js
+**/*.jsx
+**/*.ts
+**/*.tsx
