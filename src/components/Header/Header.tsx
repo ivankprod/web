@@ -20,7 +20,7 @@ const Header: React.FC = () => {
 				}
 			}
 		}`
-	).allFile?.nodes[0]?.childContentJson?.meta
+	).allFile?.nodes[0]?.childContentJson?.meta;
 
 	return (
 		<header>

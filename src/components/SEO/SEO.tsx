@@ -23,10 +23,10 @@ const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = 
 				}
 			}
 		}`
-	)
+	);
 
-	const metaDescription = description || site.siteMetadata.description
-	const linkCanonical = `${site.siteMetadata.siteUrl}/${path}`
+	const metaDescription = description || site.siteMetadata.description;
+	const linkCanonical = `${site.siteMetadata.siteUrl}/${path}`;
 
 	return (
 		<Helmet

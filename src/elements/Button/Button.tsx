@@ -9,8 +9,8 @@ export enum ButtonSize {
 }
 
 interface ButtonOwnProps<E extends ElementType = ElementType> {
-	children?: ReactNode
-	as?: E
+	children?: ReactNode,
+	as?: E,
 	size?: string
 }
 
@@ -19,7 +19,7 @@ type ButtonProps<E extends ElementType> = ButtonOwnProps<E> & Omit<ComponentProp
 const defaultElement = Link;
 
 const Button: React.FC<ButtonProps<ElementType>> = <E extends ElementType = typeof defaultElement>({
-	children = undefined, as, size = undefined, ...otherProps
+	children = undefined, as = undefined, size = undefined, ...otherProps
 }: ButtonProps<E>) => {
 	const TagName = as || defaultElement;
 

@@ -22,7 +22,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = []
 				}
 			}
 		}`
-	)
+	);
 
 	return (
 		<div id="breadcrumbs" className="breadcrumbs rounded-bottom">
