@@ -184,14 +184,14 @@ const onSliderTransitionEnd = (slider: SliderClass) => {
 }
 
 type Slides = {
-	id: string
-	caption: string
+	id: string,
+	caption: string,
 	text: {
-		id: string
+		id: string,
 		line: string
-	}[]
+	}[],
 	action: {
-		text: string
+		text: string,
 		url: string
 	}
 }
