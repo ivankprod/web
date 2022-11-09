@@ -17,7 +17,7 @@ type SliderConfig = {
 		element: string,
 		clickable: boolean
 	}
-};
+}
 
 class SliderClass {
 	elemContainer: HTMLElement | null;
@@ -239,7 +239,7 @@ const Slider: React.FC = () => {
 				}
 			}
 		}`
-	).allFile?.nodes[0]?.childContentJson?.slides
+	).allFile?.nodes[0]?.childContentJson?.slides;
 
 	return (
 		<div className="container slider-section">

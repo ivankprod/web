@@ -23,7 +23,7 @@
 		"clean": "gatsby clean",
 		"typecheck": "tsc --noEmit",
 		"lint": "npm run lint:es && npm run lint:css",
-		"lint:es": "eslint src/** --config .eslintrc.js",
+		"lint:es": "eslint src/** --config .eslintrc.js --no-error-on-unmatched-pattern",
 		"lint:css": "stylelint src/** --config .stylelintrc"
 	},
 	"dependencies": {

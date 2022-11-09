@@ -1,6 +1,6 @@
 export interface BaseInputProps {
-	inForm?: boolean
-	validable?: boolean
+	inForm?: boolean,
+	validable?: boolean,
 	validityError?: boolean
 }
 

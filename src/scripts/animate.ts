@@ -1,11 +1,11 @@
 type AnimateOpts = {
-	stoppable?: boolean
-	duration: number
-	timing: Function
-	elem?: HTMLElement
-	elemw?: HTMLElement
-	draw?: Function
-	move?: Function
+	stoppable?: boolean,
+	duration: number,
+	timing: Function,
+	elem?: HTMLElement,
+	elemw?: HTMLElement,
+	draw?: Function,
+	move?: Function,
 	callback?: Function
 }
 
