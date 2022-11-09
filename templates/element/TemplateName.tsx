@@ -1,16 +1,18 @@
-import React from "react"
+import React, { ReactNode } from "react"
+
+import BaseInputProps from "../../models/controls"
 
 import "./TemplateName.css"
 
-interface TemplateNameOwnProps {
-	/* children?: ReactNode */
+interface TemplateNameOwnProps extends BaseInputProps {
+	children?: ReactNode
 }
 
 type TemplateNameProps = TemplateNameOwnProps
 	& Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, keyof TemplateNameOwnProps>
 
 const TemplateName: React.FC<TemplateNameProps> = ({
-	/* children = undefined, */
+	children = undefined,
 	...otherProps
 }: TemplateNameProps) => {
 	/* const parentOnChange = otherProps.onChange;
@@ -19,7 +21,10 @@ const TemplateName: React.FC<TemplateNameProps> = ({
 	} */
 
 	return (
-		<input type="text" {...otherProps} />
+		<>
+			<input type="text" {...otherProps} />
+			{children}
+		</>
 	)
 }
 
