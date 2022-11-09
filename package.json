@@ -21,10 +21,17 @@
 		"build": "gatsby build",
 		"serve": "gatsby serve",
 		"clean": "gatsby clean",
+
 		"typecheck": "tsc --noEmit",
+
 		"lint": "npm run lint:es && npm run lint:css",
 		"lint:es": "eslint src/** --config .eslintrc.js --no-error-on-unmatched-pattern",
-		"lint:css": "stylelint src/** --config .stylelintrc"
+		"lint:css": "stylelint src/** --config .stylelintrc",
+
+		"gen:component": "generate-react component",
+		"gen:element": "generate-react component --type=element",
+		"gen:form": "generate-react component --type=form",
+		"gen:page": "generate-react component --type=page"
 	},
 	"dependencies": {
 		"@fontsource/open-sans": "^4.5.13",
@@ -57,6 +64,7 @@
 		"@typescript-eslint/parser": "^5.37.0",
 		"eslint": "^7.32.0",
 		"eslint-plugin-react": "^7.31.10",
+		"generate-react-cli": "^8.0.1",
 		"stylelint": "^14.14.1",
 		"stylelint-config-standard": "^29.0.0",
 		"typescript": "^4.8.4"
