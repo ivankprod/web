@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import React, { useReducer, useRef } from "react"
 import { createUseStyles } from "react-jss"
 import { Link } from "gatsby"
 
@@ -128,37 +128,31 @@ const ContactsForm: React.FC = () => {
 	const [formData, setFormData] = useReducer(formReducer, initialState);
 	const [formValidityData, setFormValidityData] = useReducer(formValidityReducer, initialValidityState);
 
+	const errorWrapper = useRef<HTMLDivElement>(null);
+
 	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 		setFormValidityData({ type: "VALIDATE_ALL", payload: formData });
 
-		const errorWrapper = document.querySelector("form .postsubmit-text");
-
 		if (formData.name === "" || formData.email === "" || formData.message === "" || formData.terms === false) {
-			if (errorWrapper) {
-				errorWrapper.className = "postsubmit-text";
-			}
+			errorWrapper.current!.className = "postsubmit-text";
 		} else {
 			fetch("/", {
 				method: "POST",
 				headers: { "Content-Type": "application/x-www-form-urlencoded" },
 				body: encodeFormBody({ "form-name": "contacts-form", ...formData })
 			}).then((resp) => {
-				if (errorWrapper) {
-					if (resp.ok) {
-						setFormData({ type: "UPDATE_ALL_FIELDS", payload: "" });
+				if (resp.ok) {
+					setFormData({ type: "UPDATE_ALL_FIELDS", payload: "" });
 
-						errorWrapper.textContent = "Сообщение успешно отправлено!";
-						errorWrapper.classList.add("success");
-					} else {
-						errorWrapper.textContent = "Ошибка: " + resp.statusText;
-						errorWrapper.classList.add("error");
-					}
+					errorWrapper.current!.textContent = "Сообщение успешно отправлено!";
+					errorWrapper.current!.classList.add("success");
+				} else {
+					errorWrapper.current!.textContent = "Ошибка: " + resp.statusText;
+					errorWrapper.current!.classList.add("error");
 				}
 			}).catch((error) => {
-				if (errorWrapper) {
-					errorWrapper.textContent = "Ошибка: " + error;
-					errorWrapper.classList.add("error");
-				}
+				errorWrapper.current!.textContent = "Ошибка: " + error;
+				errorWrapper.current!.classList.add("error");
 			});
 		}
 
@@ -216,7 +210,7 @@ const ContactsForm: React.FC = () => {
 					<Link to="/legal/privacy-policy/" className="link-in-text">политику конфиденциальности</Link>
 				</Checkbox>
 				<div className="form-row submit">
-					<div className="postsubmit-text"></div>
+					<div ref={errorWrapper} className="postsubmit-text"></div>
 					<Button as="input" type="submit" value="Отправить"></Button>
 				</div>
 			</form>
