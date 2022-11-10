@@ -24,7 +24,6 @@ const ContactsPage = () => {
 					childContentJson {
 						meta {
 							phone
-							email
 							email_info
 							email_pr
 						}

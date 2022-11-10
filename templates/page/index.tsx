@@ -4,15 +4,19 @@ import ScopeContext from "../../context/scope"
 
 import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
-import { Breadcrumbs, Page } from "../../components/Breadcrumbs"
+import Breadcrumbs from "../../components/Breadcrumbs"
+import Page from "../../models/page"
 
 //import "./templateName.css"
 
 const TemplateNamePage = () => {
-	const currentPage: Page = { title: "" };
+	const currentPage: Page = {
+		title: "",
+		path: "template-name"
+	};
 
 	return (
-		<ScopeContext.Provider value={{ scope: "template-name" }}>
+		<ScopeContext.Provider value={{ scope: currentPage.path }}>
 			<Layout>
 				<SEO title={currentPage.title} description="" />
 				<section id="content-holder" className="container">

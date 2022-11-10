@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 					childContentJson {
 						meta {
 							phone
-							email
+							email_info
 						}
 					}
 				}
@@ -24,17 +24,21 @@ const Header: React.FC = () => {
 
 	return (
 		<header>
-			<div className="container header-picture"><div className="header-picture-wrapper"></div></div>
+			<div className="container header-picture">
+				<div className="header-picture-wrapper"></div>
+			</div>
 			<div className="stretch-container headline">
 				<div className="container headline">
-					<a href="/"><div className="logotype"></div></a>
+					<a href="/">
+						<div className="logotype"></div>
+					</a>
 					<div className="header-right">
 						<div></div>
 						<div className="global-info">
 							<div className="global-info-row">
 								<div>{meta?.phone}</div>
 								<div className="global-info-stroke">
-									<a href={"mailto:" + meta?.email}>{String(meta?.email).toUpperCase()}</a>
+									<a href={`mailto:${meta?.email_info}`}>{String(meta?.email_info).toUpperCase()}</a>
 								</div>
 							</div>
 							<Button to="/join/">Заполнить бриф</Button>

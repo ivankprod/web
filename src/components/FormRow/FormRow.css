@@ -1,9 +1,11 @@
 .form-row {
 	display: flex;
 
-	margin-bottom: 20px;
-
 	&.submit { justify-content: space-between; }
+
+	& + .form-row {
+		margin-top: 20px;
+	}
 
 	& .postsubmit-text {
 		display: flex;

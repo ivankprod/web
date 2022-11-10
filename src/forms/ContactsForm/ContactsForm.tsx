@@ -212,7 +212,7 @@ const ContactsForm: React.FC = () => {
 						}}
 						onBlur={() => setFormValidityData({ type: "VALIDATE_TERMS", payload: formData })}
 					>
-						<span style={{cursor: "pointer"}}>
+						<span>
 							Я выражаю согласие на обработку моих персональных данных, указанных в заявке, ознакомился и принимаю&nbsp;
 						</span>
 						<Link to="/legal/privacy-policy/" className="link-in-text">политику конфиденциальности</Link>

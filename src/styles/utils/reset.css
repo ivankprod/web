@@ -91,8 +91,8 @@ hr {
 	border-radius: 6px;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2rem; }
+h1 { font-size: 3rem; line-height: 1; }
+h2 { font-size: 2rem; line-height: 1; }
 
 .clearfix::before, .clearfix::after { content: " "; display: table; }
 .clearfix::after, .clear { clear: both; }
