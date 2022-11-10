@@ -17,6 +17,8 @@ textarea {
 	box-sizing: border-box;
 	resize: none;
 
+	transition: border-color 0.1s;
+
 	&:focus { border-color: var(--color-theme-green); }
 
 	&.error-input-required {

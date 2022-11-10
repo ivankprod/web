@@ -28,7 +28,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 	return (
 		<>
 			<input type="checkbox" className={clsx({ "error-input-required": validityError })} {...otherProps} />
-			<label htmlFor={otherProps.id}>{children}</label>
+			<label htmlFor={otherProps.id} style={{cursor: "pointer"}}>{children}</label>
 		</>
 	)
 }
