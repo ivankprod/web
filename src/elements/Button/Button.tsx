@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps<ElementType>> = <E extends ElementType = type
 	const TagName = as || defaultElement;
 
 	return (
-		<TagName className={clsx("abutton", { size: size }, "rounded-all")} {...otherProps}>
+		<TagName className={clsx("abutton", size, "rounded-all")} {...otherProps}>
 			{children}
 		</TagName>
 	)
