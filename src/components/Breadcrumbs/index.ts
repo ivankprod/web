@@ -1,1 +1,1 @@
-export { Breadcrumbs, Page } from "./Breadcrumbs"
+export { default } from "./Breadcrumbs"

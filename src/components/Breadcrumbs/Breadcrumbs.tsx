@@ -1,19 +1,16 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import "./Breadcrumbs.css"
+import Page from "../../models/page"
 
-export type Page = {
-	title: string,
-	path?: string
-}
+import "./Breadcrumbs.css"
 
 interface BreadcrumbsProps {
 	page: Page,
 	parentPages?: Page[]
 }
 
-export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = [] }) => {
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = [] }) => {
 	const { site } = useStaticQuery(
 		graphql`query {
 			site {
@@ -28,23 +25,35 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = []
 		<div id="breadcrumbs" className="breadcrumbs rounded-bottom">
 			<div>
 				<ul itemScope itemType="http://schema.org/BreadcrumbList">
-					<li itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem">
-						<Link itemScope itemType="http://schema.org/WebPage" itemProp="item" id={site.siteMetadata.siteUrl} to="/">
+					<li itemScope itemType="http://schema.org/ListItem" itemProp="itemListElement">
+						<Link itemScope
+							itemType="http://schema.org/WebPage"
+							itemProp="item"
+							id={site.siteMetadata.siteUrl}
+							to="/"
+						>
 							<span itemProp="name">Главная</span>
 						</Link>
 						<meta itemProp="position" content="1" />
 					</li>
 					{parentPages.map(({ title, path }: Page, index: number) => (
-						<li itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem"
+						<li itemScope
+							itemType="http://schema.org/ListItem"
+							itemProp="itemListElement"
 							key={site.siteMetadata.siteUrl + "/" + path + "/"}
 						>
-							<Link itemScope itemType="http://schema.org/WebPage" itemProp="item" id={site.siteMetadata.siteUrl + "/" + path + "/"} to={"/" + path + "/"}>
+							<Link itemScope
+								itemType="http://schema.org/WebPage"
+								itemProp="item"
+								id={site.siteMetadata.siteUrl + "/" + path + "/"}
+								to={"/" + path + "/"}
+							>
 								<span itemProp="name">{title}</span>
 							</Link>
 							<meta itemProp="position" content={String(index + 2)} />
 						</li>
 					))}
-					<li itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem">
+					<li itemScope itemType="http://schema.org/ListItem" itemProp="itemListElement">
 						<span itemScope itemType="http://schema.org/WebPage" itemProp="item" className="breadcrumbs-last">
 							<span itemProp="name">{page.title}</span>
 						</span>
@@ -55,3 +64,5 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = []
 		</div>
 	)
 }
+
+export default Breadcrumbs

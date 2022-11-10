@@ -5,13 +5,17 @@ import ScopeContext from "../../context/scope"
 
 import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
-import { Breadcrumbs, Page } from "../../components/Breadcrumbs"
+import Breadcrumbs from "../../components/Breadcrumbs"
+import Page from "../../models/page"
 import ContactsForm from "../../forms/ContactsForm"
 
 import "./contacts.css"
 
 const ContactsPage = () => {
-	const currentPage: Page = { title: "Контакты" };
+	const currentPage: Page = {
+		title: "Контакты",
+		path: "contacts"
+	};
 
 	const meta = useStaticQuery(
 		graphql`query {
@@ -31,7 +35,7 @@ const ContactsPage = () => {
 	).allFile?.nodes[0]?.childContentJson?.meta
 
 	return (
-		<ScopeContext.Provider value={{ scope: "contacts" }}>
+		<ScopeContext.Provider value={{ scope: currentPage.path }}>
 			<Layout>
 				<SEO title={currentPage.title} description="Наши контакты" />
 				<section id="content-holder" className="container">

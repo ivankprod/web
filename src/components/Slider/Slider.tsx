@@ -4,7 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import { animate, drawOpacity, makeLinear } from "../../scripts/animate";
 import { sleep } from "../../scripts/utils";
 
-import Button, { ButtonSize } from "../../elements/Button";
+import Button from "../../elements/Button";
+import { ButtonSize } from "../../models/element"
 
 import "./Slider.css"
 

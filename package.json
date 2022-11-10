@@ -21,13 +21,10 @@
 		"build": "gatsby build",
 		"serve": "gatsby serve",
 		"clean": "gatsby clean",
-
 		"typecheck": "tsc --noEmit",
-
 		"lint": "npm run lint:es && npm run lint:css",
 		"lint:es": "eslint src/** --config .eslintrc.js --no-error-on-unmatched-pattern",
 		"lint:css": "stylelint src/** --config .stylelintrc",
-
 		"gen:component": "generate-react component",
 		"gen:element": "generate-react component --type=element",
 		"gen:form": "generate-react component --type=form",
@@ -36,6 +33,7 @@
 	"dependencies": {
 		"@fontsource/open-sans": "^4.5.13",
 		"autoprefixer": "^10.4.8",
+		"clsx": "^1.2.1",
 		"gatsby": "^4.24.5",
 		"gatsby-plugin-image": "^2.17.0",
 		"gatsby-plugin-manifest": "^4.24.0",
