@@ -41,6 +41,34 @@ header {
 
 		height: 100%;
 	}
+
+	&.header-picture {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+
+		opacity: 0.05 !important;
+
+		z-index: -1;
+
+		& .header-picture-wrapper {
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			width: 40%;
+			height: 100%;
+
+			background-image: url("../../images/art.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: right center;
+
+			filter: grayscale(1);
+		}
+	}
 }
 
 .logotype {
@@ -65,36 +93,9 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	font-size: 1.4rem;
 }
 
 .global-info-row { margin-right: 20px; color: #4a4a4a; text-align: right; }
 .global-info-stroke { font-size: 1rem; }
-
-.header-picture {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-
-	opacity: 0.05 !important;
-
-	z-index: -1;
-}
-
-.header-picture-wrapper {
-	position: absolute;
-	top: 0;
-	right: 0;
-
-	width: 40%;
-	height: 100%;
-
-	background-image: url("../../images/art.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: right center;
-
-	filter: grayscale(1);
-}

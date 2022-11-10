@@ -4,13 +4,17 @@ import ScopeContext from "../../context/scope"
 
 import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
-import { Breadcrumbs, Page } from "../../components/Breadcrumbs"
+import Breadcrumbs from "../../components/Breadcrumbs"
+import Page from "../../models/page"
 
 const BlogPage = () => {
-	const currentPage: Page = { title: "Блог" };
+	const currentPage: Page = {
+		title: "Блог",
+		path: "blog"
+	};
 
 	return (
-		<ScopeContext.Provider value={{ scope: "blog" }}>
+		<ScopeContext.Provider value={{ scope: currentPage.path }}>
 			<Layout>
 				<SEO title={currentPage.title} description="Блог нашей компании" />
 				<section id="content-holder" className="container">

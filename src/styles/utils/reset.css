@@ -23,7 +23,6 @@ time, mark, audio, video {
 	box-sizing: border-box;
 
 	font: inherit;
-	cursor: default;
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -60,8 +59,8 @@ a, a:link, a:active, a:hover, a:visited {
 	& img { cursor: pointer !important; }
 }
 
-p::-moz-selection { background: #4a9fce; } /* stylelint-disable-line */
-p::selection { background: #4a9fce; }
+::-moz-selection { color: #fff; background: var(--color-theme-green); } /* stylelint-disable-line */
+::selection { color: #fff; background: var(--color-theme-green); }
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section { display: block; }

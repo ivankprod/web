@@ -1,1 +1,1 @@
-export { ButtonSize, default } from "./Button"
+export { default } from "./Button"

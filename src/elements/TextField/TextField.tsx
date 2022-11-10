@@ -1,6 +1,7 @@
 import React from "react"
+import clsx from "clsx"
 
-import BaseInputProps from "../../models/controls"
+import { BaseInputProps } from "../../models/element"
 
 import "./TextField.css"
 
@@ -10,7 +11,6 @@ type TextAreaProps = BaseInputProps
 	& Omit<React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, keyof BaseInputProps>
 
 export const TextField: React.FC<TextFieldProps> = ({
-	inForm = false,
 	validable = false,
 	validityError = undefined,
 	...otherProps
@@ -19,25 +19,15 @@ export const TextField: React.FC<TextFieldProps> = ({
 	otherProps.onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		parentOnChange?.(e);
 
-		if (validable) e.target.className = e.target.value === "" ? "error-input-required" : "";
+		if (validable) e.target.className = clsx({ "error-input-required": e.target.value === "" });
 	}
 
 	return (
-		<>
-			{inForm
-				? (
-					<div className="form-row">
-						<input type="text" className={validityError ? "error-input-required" : ""} {...otherProps} />
-					</div>
-				)
-				: <input type="text" className={validityError ? "error-input-required" : ""} {...otherProps} />
-			}
-		</>
+		<input type="text" className={clsx({ "error-input-required": validityError })} {...otherProps} />
 	)
 }
 
 export const TextArea: React.FC<TextAreaProps> = ({
-	inForm = false,
 	validable = false,
 	validityError = undefined,
 	...otherProps
@@ -46,20 +36,11 @@ export const TextArea: React.FC<TextAreaProps> = ({
 	otherProps.onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
 		parentOnChange?.(e);
 
-		if (validable) e.target.className = e.target.value === "" ? "error-input-required" : "";
+		if (validable) e.target.className = clsx({ "error-input-required": e.target.value === "" });
 	}
 
 	return (
-		<>
-			{inForm
-				? (
-					<div className="form-row">
-						<textarea className={validityError ? "error-input-required" : ""} {...otherProps} />
-					</div>
-				)
-				: <textarea className={validityError ? "error-input-required" : ""} {...otherProps} />
-			}
-		</>
+		<textarea className={clsx({ "error-input-required": validityError })} {...otherProps} />
 	)
 }
 
