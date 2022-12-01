@@ -34,7 +34,7 @@
 		"@fontsource/open-sans": "^4.5.13",
 		"autoprefixer": "^10.4.8",
 		"clsx": "^1.2.1",
-		"gatsby": "^4.24.5",
+		"gatsby": "^4.24.8",
 		"gatsby-plugin-image": "^2.17.0",
 		"gatsby-plugin-manifest": "^4.24.0",
 		"gatsby-plugin-netlify": "^5.0.1",
@@ -46,7 +46,7 @@
 		"gatsby-transformer-json": "^4.24.0",
 		"gatsby-transformer-sharp": "^4.24.0",
 		"normalize.css": "^8.0.1",
-		"postcss": "^8.4.14",
+		"postcss": "^8.4.19",
 		"postcss-preset-env": "^7.8.3",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0",
@@ -54,17 +54,17 @@
 		"react-jss": "^10.9.2"
 	},
 	"devDependencies": {
-		"@types/node": "^18.11.8",
+		"@types/node": "^18.11.9",
 		"@types/react": "^18.0.25",
 		"@types/react-dom": "^18.0.8",
 		"@types/react-helmet": "^6.1.5",
-		"@typescript-eslint/eslint-plugin": "^5.42.1",
+		"@typescript-eslint/eslint-plugin": "^5.44.0",
 		"@typescript-eslint/parser": "^5.37.0",
 		"eslint": "^8.27.0",
 		"eslint-plugin-react": "^7.31.10",
 		"generate-react-cli": "^8.0.1",
 		"stylelint": "^14.14.1",
 		"stylelint-config-standard": "^29.0.0",
-		"typescript": "^4.8.4"
+		"typescript": "^4.9.3"
 	}
 }
