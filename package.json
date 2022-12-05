@@ -60,7 +60,7 @@
 		"@types/react-helmet": "^6.1.5",
 		"@typescript-eslint/eslint-plugin": "^5.44.0",
 		"@typescript-eslint/parser": "^5.45.0",
-		"eslint": "^8.27.0",
+		"eslint": "^8.29.0",
 		"eslint-plugin-react": "^7.31.11",
 		"generate-react-cli": "^8.0.1",
 		"stylelint": "^14.14.1",
