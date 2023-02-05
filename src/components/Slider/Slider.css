@@ -16,7 +16,19 @@
 
 	z-index: 10;
 
-	& .slide-block { opacity: 0; }
+	& .slide-block {
+		display: flex;
+		justify-content: space-between;
+
+		position: relative;
+
+		height: 178px;
+
+		opacity: 0;
+	}
+
+	& .slide-block-icon { min-width: 178px; margin-left: 12px; opacity: 0.2; }
+
 	& .slide-block-title { display: inline-block; opacity: 0; }
 
 	& .slide-block-desc {
@@ -33,7 +45,14 @@
 
 	& .slide-block-desc-wm { margin: 8px 0 22px 9px; font-size: 1.2rem; }
 
-	& button, & .abutton { display: inline-block; opacity: 0; }
+	& button, & .abutton {
+		display: inline-block;
+		position: absolute;
+
+		bottom: 0;
+
+		opacity: 0;
+	}
 }
 
 .slider-pagination {
