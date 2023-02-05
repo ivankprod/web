@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import { animate, drawOpacity, makeLinear } from "../../scripts/animate"
 import { sleep } from "../../scripts/utils"

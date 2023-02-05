@@ -18,11 +18,11 @@
 
 	& .slide-block {
 		display: flex;
-    	justify-content: space-between;
+		justify-content: space-between;
 
 		position: relative;
 
-    	height: 178px;
+		height: 178px;
 
 		opacity: 0;
 	}
