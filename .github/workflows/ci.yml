@@ -16,7 +16,7 @@ jobs:
     name: CI
     strategy:
       matrix:
-        node-version: [ '16' ]
+        node-version: [ '18' ]
         os: [ ubuntu-latest ]
     runs-on: ${{ matrix.os }}
     env:
