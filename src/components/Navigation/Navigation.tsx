@@ -81,14 +81,11 @@ const Navigation: React.FC = () => {
 		<nav className="nav-container">
 			<ul className="mnav">
 				<li><Link to="/" className={checkActiveItem("home", scope)}>ГЛАВНАЯ</Link></li>
-				<li><Link to="/projects/" 
-					className={"subnav " + checkActiveItem("projects", scope)}
-					onClick={closeShowedSubnav}>ПРОЕКТЫ
-				</Link></li>
 				<li><Link to="/services/" 
-					className={"subnav " + checkActiveItem("services", scope)}
-					onClick={closeShowedSubnav}>УСЛУГИ
-				</Link></li>
+						className={"subnav " + checkActiveItem("services", scope)}
+						onClick={closeShowedSubnav}>УСЛУГИ
+					</Link>
+				</li>
 				<li><Link to="/blog/" className={checkActiveItem("blog", scope)}>БЛОГ</Link></li>
 				<li><Link to="/about/" className={checkActiveItem("about", scope)}>О НАС</Link></li>
 				<li><Link to="/contacts/" className={checkActiveItem("contacts", scope)}>КОНТАКТЫ</Link></li>
@@ -97,29 +94,26 @@ const Navigation: React.FC = () => {
 				<div className="subnav-column">
 					<div className="subnav-title">Медиа</div>
 					<ul className="snav">
-						<li><Link to="/projects/media/audio/">Аудио-продакшн</Link></li>
-						<li><Link to="/projects/media/video/">Видео-продакшн</Link></li>
-						<li><Link to="/projects/media/common/">Полный цикл</Link></li>
+						<li><Link to="/services/media/audio/">Аудио-продакшн</Link></li>
+						<li><Link to="/services/media/video/">Видео-продакшн</Link></li>
+						<li><Link to="/services/media/common/">Полный цикл</Link></li>
 					</ul>
 				</div>
 				<div className="subnav-column">
 					<div className="subnav-title">Дизайн</div>
 					<ul className="snav">
-						<li><Link to="/projects/design/common/">Оформление</Link></li>
-						<li><Link to="/projects/design/covers/">Обложки релизов</Link></li>
-						<li><Link to="/projects/design/prints/">Полиграфия</Link></li>
+						<li><Link to="/services/design/common/">Оформление</Link></li>
+						<li><Link to="/services/design/covers/">Обложки релизов</Link></li>
+						<li><Link to="/services/design/prints/">Полиграфия</Link></li>
 					</ul>
 				</div>
 				<div className="subnav-column">
 					<div className="subnav-title">IT-технологии</div>
 					<ul className="snav">
-						<li><Link to="/projects/it/web/">Разработка веб-сайтов</Link></li>
-						<li><Link to="/projects/it/software/">Разработка прикладного ПО</Link></li>
+						<li><Link to="/services/it/web/">Разработка веб-сайтов</Link></li>
+						<li><Link to="/services/it/software/">Разработка прикладного ПО</Link></li>
 					</ul>
 				</div>
-			</div>
-			<div className="subnav-container animate-slidein-fadein-css">
-				Subnav for services
 			</div>
 		</nav>
 	)
