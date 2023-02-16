@@ -33,7 +33,6 @@ const Footer: React.FC = () => {
 				<div className="footer-block second">
 					<div className="footer-block-title">МЕНЮ</div>
 					<ul>
-						<li><Link to="/projects/">ПРОЕКТЫ</Link></li>
 						<li><Link to="/services/">УСЛУГИ</Link></li>
 						<li><Link to="/blog/">БЛОГ</Link></li>
 						<li><Link to="/about/">О НАС</Link></li>
