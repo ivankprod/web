@@ -1,9 +1,7 @@
 {
 	"extends": ["stylelint-config-standard"],
 	"rules": {
-		"indentation": ["tab"],
 		"comment-empty-line-before": null,
-		"selector-list-comma-newline-after": null,
 		"declaration-block-single-line-max-declarations": null,
 		"declaration-empty-line-before": null,
 		"font-family-no-missing-generic-family-keyword": null
