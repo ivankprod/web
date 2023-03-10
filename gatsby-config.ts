@@ -36,15 +36,23 @@ const config: GatsbyConfig = {
 		"gatsby-plugin-sharp",
 		"gatsby-transformer-sharp",
 		"gatsby-transformer-json",
+		"gatsby-transformer-remark",
 		{
-			resolve: 'gatsby-source-filesystem',
+			resolve: "gatsby-source-filesystem",
 			options: {
 				"name": "content",
 				"path": "./content"
 			}
 		},
 		{
-			resolve: 'gatsby-source-filesystem',
+			resolve: "gatsby-source-filesystem",
+			options: {
+				name: "legal",
+				path: "./content/legal",
+			},
+		  },
+		{
+			resolve: "gatsby-source-filesystem",
 			options: {
 				"name": "images",
 				"path": "./src/images/"
