@@ -26,9 +26,9 @@ const Footer: React.FC = () => {
 					Копирование материлов сайта без указания источника запрещено!
 					<br />
 					<br />
-					<Link to="/legal/user-agreement/">Пользовательское соглашение</Link>
+					<Link to="/legal/offer/">Публичная оферта</Link>
 					<br />
-					<Link to="/legal/privacy-policy/">Политика конфиденциальности</Link>
+					<Link to="/legal/privacy/">Политика конфиденциальности</Link>
 				</div>
 				<div className="footer-block second">
 					<div className="footer-block-title">МЕНЮ</div>
