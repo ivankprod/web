@@ -100,8 +100,8 @@ class SliderClass {
 
 			if (this.paginationBullets) this.paginationBullets[this.activeIdx - 1].classList.add('slider-pagination-bullet-active');
 
-			this.slidesList[this.activeIdx - 1].style.zIndex = '11';
-			this.slidesList[this.activeIdx - 1].style.opacity = '1';
+			const slide = this.slidesList[this.activeIdx - 1];
+			if (slide) { slide.style.zIndex = '11'; slide.style.opacity = '1'; }
 
 			sleep(this.speed + 10).then(() => {
 				if (this.events['transitionEnd']) this.events['transitionEnd'](this);
