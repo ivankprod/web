@@ -31,7 +31,7 @@
 		"gen:page": "generate-react component --type=page"
 	},
 	"dependencies": {
-		"@fontsource/open-sans": "^4.5.14",
+		"@fontsource/open-sans": "^5.0.3",
 		"autoprefixer": "^10.4.14",
 		"clsx": "^1.2.1",
 		"gatsby": "^5.11.0",
