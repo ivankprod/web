@@ -33,7 +33,7 @@
 	"dependencies": {
 		"@fontsource/open-sans": "^5.0.9",
 		"autoprefixer": "^10.4.14",
-		"clsx": "^1.2.1",
+		"clsx": "^2.0.0",
 		"gatsby": "^5.11.0",
 		"gatsby-plugin-image": "^3.11.0",
 		"gatsby-plugin-manifest": "^5.7.0",
