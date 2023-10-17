@@ -50,7 +50,7 @@ const config: GatsbyConfig = {
 				name: "legal",
 				path: "./content/legal",
 			},
-		  },
+		},
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {

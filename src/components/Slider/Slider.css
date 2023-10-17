@@ -36,11 +36,11 @@
 
 		font-size: 1.2rem;
 
-		@media (min-width: 768px) { text-align: justify; }
+		@media (width >= 768px) { text-align: justify; }
 
-		@media (min-width: 992px) { text-align: left; }
+		@media (width >= 992px) { text-align: left; }
 
-		@media (min-width: 1200px) { text-align: left; }
+		@media (width >= 1200px) { text-align: left; }
 	}
 
 	& .slide-block-desc-wm { margin: 8px 0 22px 9px; font-size: 1.2rem; }
