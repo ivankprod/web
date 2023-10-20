@@ -1,7 +1,7 @@
 import React from "react"
 
-import Button from "../../elements/Button"
-import { ButtonSize } from "../../models/element"
+import Button from "elements/Button"
+import { ButtonSize } from "models/element"
 
 import "./ErrorBox.css"
 

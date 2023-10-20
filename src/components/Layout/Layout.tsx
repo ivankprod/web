@@ -1,13 +1,13 @@
 import React, { ReactNode } from "react"
 
 import "normalize.css"
-import "../../fonts/fontawesome/css/solid.min.css"
-import "../../styles/utils/reset.css"
+import "fonts/fontawesome/css/solid.min.css"
+import "styles/utils/reset.css"
 
 import "./Layout.css"
 
-import Header from "../Header"
-import Footer from "../Footer"
+import Header from "components/Header"
+import Footer from "components/Footer"
 
 interface LayoutProps {
 	children?: ReactNode

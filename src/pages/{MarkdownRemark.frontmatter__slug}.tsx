@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import Breadcrumbs from "../components/Breadcrumbs"
-import Page from "../models/page"
+import Layout from "components/Layout"
+import SEO from "components/SEO"
+import Breadcrumbs from "components/Breadcrumbs"
+import Page from "models/page"
 
 interface LegalPageTemplateProps {
 	data: {

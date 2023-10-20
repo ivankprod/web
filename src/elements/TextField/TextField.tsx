@@ -1,7 +1,7 @@
 import React from "react"
 import clsx from "clsx"
 
-import { BaseInputProps } from "../../models/element"
+import { BaseInputProps } from "models/element"
 
 import "./TextField.css"
 

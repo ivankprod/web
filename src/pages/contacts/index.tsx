@@ -1,13 +1,13 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import ScopeContext from "../../context/scope"
+import ScopeContext from "context/scope"
 
-import Layout from "../../components/Layout"
-import SEO from "../../components/SEO"
-import Breadcrumbs from "../../components/Breadcrumbs"
-import Page from "../../models/page"
-import ContactsForm from "../../forms/ContactsForm"
+import Layout from "components/Layout"
+import SEO from "components/SEO"
+import Breadcrumbs from "components/Breadcrumbs"
+import Page from "models/page"
+import ContactsForm from "forms/ContactsForm"
 
 import "./contacts.css"
 

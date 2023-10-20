@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import "./Footer.css"
-import "../../styles/utils/social.css"
+import "styles/utils/social.css"
 
 const Footer: React.FC = () => {
 	const { site } = useStaticQuery(

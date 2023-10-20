@@ -2,11 +2,11 @@ import React, { Fragment, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import { animate, drawOpacity, makeLinear } from "../../scripts/animate"
-import { sleep } from "../../scripts/utils"
+import { animate, drawOpacity, makeLinear } from "scripts/animate"
+import { sleep } from "scripts/utils"
 
-import Button from "../../elements/Button"
-import { ButtonSize } from "../../models/element"
+import Button from "elements/Button"
+import { ButtonSize } from "models/element"
 
 import "./Slider.css"
 

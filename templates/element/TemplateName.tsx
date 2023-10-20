@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react"
 
-import BaseInputProps from "../../models/controls"
+import { BaseInputProps } from "models/element"
 
 import "./TemplateName.css"
 

@@ -1,10 +1,10 @@
 import React from "react"
 
-import ScopeContext from "../context/scope"
+import ScopeContext from "context/scope"
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import Slider from "../components/Slider"
+import Layout from "components/Layout"
+import SEO from "components/SEO"
+import Slider from "components/Slider"
 
 const IndexPage = () => (
 	<ScopeContext.Provider value={{ scope: "home" }}>

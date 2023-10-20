@@ -2,7 +2,7 @@ import React, { ComponentProps, ElementType, ReactNode } from "react"
 import { Link } from "gatsby"
 import clsx from "clsx"
 
-import { ButtonSize } from "../../models/element"
+import { ButtonSize } from "models/element"
 
 import "./Button.css"
 
