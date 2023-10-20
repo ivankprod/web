@@ -1,8 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Button from "../../elements/Button"
-import Navigation from "../Navigation/Navigation"
+import Button from "elements/Button"
+import Navigation from "components/Navigation"
 
 import "./Header.css"
 

@@ -2,11 +2,11 @@ import React, { useReducer, useRef } from "react"
 import { createUseStyles } from "react-jss"
 import { Link } from "gatsby"
 
-import FormRow from "../../components/FormRow"
-import Button from "../../elements/Button"
-import { TextField, TextArea } from "../../elements/TextField"
-import Checkbox from "../../elements/Checkbox"
-import { encodeFormBody } from "../../scripts/utils"
+import FormRow from "components/FormRow"
+import Button from "elements/Button"
+import { TextField, TextArea } from "elements/TextField"
+import Checkbox from "elements/Checkbox"
+import { encodeFormBody } from "scripts/utils"
 
 const useStyles = createUseStyles({
 	wrapper: {

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react"
 import { Link } from "gatsby"
 
-import ScopeContext from "../../context/scope"
-import animate from "../../scripts/animate"
-import utils from "../../scripts/utils"
+import ScopeContext from "context/scope"
+import animate from "scripts/animate"
+import utils from "scripts/utils"
 
 import "./Navigation.css"
 

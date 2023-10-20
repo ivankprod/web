@@ -1,11 +1,11 @@
 import React from "react"
 
-import ScopeContext from "../../context/scope"
+import ScopeContext from "context/scope"
 
-import Layout from "../../components/Layout"
-import SEO from "../../components/SEO"
-import Breadcrumbs from "../../components/Breadcrumbs"
-import Page from "../../models/page"
+import Layout from "components/Layout"
+import SEO from "components/SEO"
+import Breadcrumbs from "components/Breadcrumbs"
+import Page from "models/page"
 
 //import "./templateName.css"
 

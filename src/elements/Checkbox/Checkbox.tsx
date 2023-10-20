@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react"
 import clsx from "clsx"
 
-import { BaseInputProps } from "../../models/element"
+import { BaseInputProps } from "models/element"
 
 import "./Checkbox.css"
 

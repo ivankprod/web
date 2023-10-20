@@ -1,4 +1,14 @@
-import type { GatsbyConfig } from "gatsby"
+import path from 'path'
+import fs from 'fs'
+
+import type { GatsbyConfig, IPluginRefOptions } from "gatsby"
+
+const rootDirsConfig: IPluginRefOptions = {};
+
+const srcDirs = fs.readdirSync(path.resolve(__dirname, "src"));
+srcDirs.forEach((srcDir) => {
+    rootDirsConfig[srcDir] = path.resolve(__dirname, "src", srcDir);
+});
 
 const config: GatsbyConfig = {
 	siteMetadata: {
@@ -12,6 +22,10 @@ const config: GatsbyConfig = {
 	graphqlTypegen: true,
 
 	plugins: [
+		{
+			resolve: "gatsby-plugin-root-import",
+			options: rootDirsConfig
+		},
 		"gatsby-plugin-netlify",
 		"gatsby-plugin-postcss",
 		"gatsby-plugin-image",

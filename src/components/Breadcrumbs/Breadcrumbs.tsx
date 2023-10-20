@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import Page from "../../models/page"
+import Page from "models/page"
 
 import "./Breadcrumbs.css"
 

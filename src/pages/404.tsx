@@ -1,8 +1,8 @@
 import React from "react"
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import ErrorBox from "../components/ErrorBox"
+import Layout from "components/Layout"
+import SEO from "components/SEO"
+import ErrorBox from "components/ErrorBox"
 
 const NotFoundPage = () => (
 	<Layout>
