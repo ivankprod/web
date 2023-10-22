@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, HeadFC } from "gatsby"
 
 import ScopeContext from "context/scope"
 
@@ -36,7 +36,6 @@ const ContactsPage = () => {
 	return (
 		<ScopeContext.Provider value={{ scope: currentPage.path }}>
 			<Layout>
-				<SEO title={currentPage.title} description="Наши контакты" />
 				<section id="content-holder" className="container">
 					<Breadcrumbs page={currentPage} />
 					<div id="content" className="content animate-fadein-css">
@@ -60,3 +59,9 @@ const ContactsPage = () => {
 }
 
 export default ContactsPage
+
+export const Head: HeadFC = () => {
+	return (
+		<SEO title="Контакты" description="Наши контакты" path="contacts" />
+	)
+}

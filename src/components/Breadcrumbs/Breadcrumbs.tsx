@@ -1,5 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { Link } from "gatsby"
+
+import { useSiteMetadata } from "hooks/useSiteMetadata"
 
 import Page from "models/page"
 
@@ -11,15 +13,7 @@ interface BreadcrumbsProps {
 }
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = [] }) => {
-	const { site } = useStaticQuery(
-		graphql`query {
-			site {
-				siteMetadata {
-					siteUrl
-				}
-			}
-		}`
-	);
+	const siteMetadata = useSiteMetadata();
 
 	return (
 		<div id="breadcrumbs" className="breadcrumbs rounded-bottom">
@@ -29,7 +23,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = [] }) => 
 						<Link itemScope
 							itemType="http://schema.org/WebPage"
 							itemProp="item"
-							id={site.siteMetadata.siteUrl}
+							id={siteMetadata.siteUrl}
 							to="/"
 						>
 							<span itemProp="name">Главная</span>
@@ -40,12 +34,12 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = [] }) => 
 						<li itemScope
 							itemType="http://schema.org/ListItem"
 							itemProp="itemListElement"
-							key={site.siteMetadata.siteUrl + "/" + path + "/"}
+							key={siteMetadata.siteUrl + "/" + path + "/"}
 						>
 							<Link itemScope
 								itemType="http://schema.org/WebPage"
 								itemProp="item"
-								id={site.siteMetadata.siteUrl + "/" + path + "/"}
+								id={siteMetadata.siteUrl + "/" + path + "/"}
 								to={"/" + path + "/"}
 							>
 								<span itemProp="name">{title}</span>

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { HeadFC, HeadProps, PageProps, graphql } from "gatsby"
 
 import Layout from "components/Layout"
 import SEO from "components/SEO"
@@ -7,30 +7,27 @@ import Breadcrumbs from "components/Breadcrumbs"
 import Page from "models/page"
 
 interface LegalPageTemplateProps {
-	data: {
-		markdownRemark: {
-			html: string,
-			excerpt: string,
-			frontmatter: {
-				title: string,
-				slug: string,
-				date: string
-			}
+	markdownRemark: {
+		html: string,
+		excerpt: string,
+		frontmatter: {
+			title: string,
+			slug: string,
+			date: string
 		}
 	}
 }
 
-const LegalPageTemplate: React.FC<LegalPageTemplateProps> = ({ data: { markdownRemark } }) => {
+const LegalPageTemplate: React.FC<PageProps<LegalPageTemplateProps>> = ({ data: { markdownRemark }}: PageProps<LegalPageTemplateProps>) => {
 	const { frontmatter, html } = markdownRemark;
 
 	const currentPage: Page = {
 		title: frontmatter.title,
-		path: String(frontmatter.slug).slice(1, -1)
+		path: frontmatter.slug.slice(1, -1)
 	};
 
 	return (
 		<Layout>
-			<SEO title={currentPage.title} description={currentPage.title} />
 			<section id="content-holder" className="container">
 				<Breadcrumbs page={currentPage} />
 				<div id="content" className="content animate-fadein-css">
@@ -43,6 +40,16 @@ const LegalPageTemplate: React.FC<LegalPageTemplateProps> = ({ data: { markdownR
 }
 
 export default LegalPageTemplate
+
+export const Head: HeadFC<LegalPageTemplateProps> = ({ data: { markdownRemark }}: HeadProps<LegalPageTemplateProps>) => {
+	return (
+		<SEO title={markdownRemark.frontmatter.title}
+			description={markdownRemark.frontmatter.title}
+			path={markdownRemark.frontmatter.slug.slice(1, -1)}
+			robots="noindex, nofollow"
+		/>
+	)
+}
 
 export const pageQuery = graphql`
 	query ($id: String!) {

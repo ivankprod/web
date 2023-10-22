@@ -1,4 +1,5 @@
 import React from "react"
+import { HeadFC } from "gatsby"
 
 import ScopeContext from "context/scope"
 
@@ -21,7 +22,6 @@ const ServicesMediaPage = () => {
 	return (
 		<ScopeContext.Provider value={{ scope: parentPages[0].path }}>
 			<Layout>
-				<SEO title="Медиа-услуги" description="Услуги в сфере медиа" />
 				<section id="content-holder" className="container">
 					<Breadcrumbs page={currentPage} parentPages={parentPages} />
 					<div id="content" className="content animate-fadein-css">
@@ -34,3 +34,9 @@ const ServicesMediaPage = () => {
 }
 
 export default ServicesMediaPage
+
+export const Head: HeadFC = () => {
+	return (
+		<SEO title="Услуги: медиа" description="Услуги в сфере медиа" path="services/media" />
+	)
+}
