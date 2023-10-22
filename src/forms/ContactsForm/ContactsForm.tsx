@@ -1,5 +1,4 @@
 import React, { useReducer, useRef } from "react"
-import { createUseStyles } from "react-jss"
 import { Link } from "gatsby"
 
 import FormRow from "components/FormRow"
@@ -8,15 +7,7 @@ import { TextField, TextArea } from "elements/TextField"
 import Checkbox from "elements/Checkbox"
 import { encodeFormBody } from "scripts/utils"
 
-const useStyles = createUseStyles({
-	wrapper: {
-		width: "50%"
-	},
-
-	h2: {
-		marginBottom: 18
-	}
-});
+import "./ContactsForm.css"
 
 type ContactsFormState = {
 	name: string,
@@ -162,11 +153,9 @@ const ContactsForm: React.FC = () => {
 		event.preventDefault();
 	}
 
-	const ContactsFormStyles = useStyles();
-
 	return (
-		<div className={ContactsFormStyles.wrapper}>
-			<h2 className={ContactsFormStyles.h2}>Остались вопросы?</h2>
+		<div className="contacts-from-wrapper">
+			<h2>Остались вопросы?</h2>
 			<form name="contacts-form" method="POST" onSubmit={onSubmitHandler} data-netlify="true" data-netlify-honeypot="bot-field">
 				<input name="bot-field" type="hidden" />
 				<input name="form-name" type="hidden" value="contacts-form" />

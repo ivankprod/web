@@ -1,0 +1,5 @@
+.contacts-from-wrapper {
+	width: 50%;
+
+	& h2 { margin-bottom: 18px; }
+}
