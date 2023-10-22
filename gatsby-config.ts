@@ -29,7 +29,6 @@ const config: GatsbyConfig = {
 		"gatsby-plugin-netlify",
 		"gatsby-plugin-postcss",
 		"gatsby-plugin-image",
-		"gatsby-plugin-react-helmet",
 		"gatsby-plugin-sitemap",
 		{
 			resolve: 'gatsby-plugin-manifest',

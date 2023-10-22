@@ -1,19 +1,13 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { Link } from "gatsby"
+
+import useSiteMetadata from "hooks/useSiteMetadata"
 
 import "./Footer.css"
 import "styles/utils/social.css"
 
 const Footer: React.FC = () => {
-	const { site } = useStaticQuery(
-		graphql`query {
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}`
-	);
+	const siteMetadata = useSiteMetadata();
 
 	return (
 		<footer>
@@ -21,7 +15,7 @@ const Footer: React.FC = () => {
 			<div className="container">
 				<div className="footer-block first">
 					<div className="footer-block-title">ИНФО</div>
-					© 2008-{new Date().getFullYear()} {site.siteMetadata.title}. Все права защищены.
+					© 2008-{new Date().getFullYear()} {siteMetadata.title}. Все права защищены.
 					<br />
 					Копирование материлов сайта без указания источника запрещено!
 					<br />
