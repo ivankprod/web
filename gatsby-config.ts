@@ -27,7 +27,18 @@ const config: GatsbyConfig = {
 			options: rootDirsConfig
 		},
 		"gatsby-plugin-netlify",
-		"gatsby-plugin-postcss",
+		{
+			resolve: "gatsby-plugin-postcss",
+			options: {
+				postCssPlugins: [
+					require("autoprefixer")({ remove: false }),
+					require("postcss-preset-env")({
+						stage: 3,
+						features: { "nesting-rules": true }
+					})
+				],
+			},
+		},
 		"gatsby-plugin-image",
 		"gatsby-plugin-sitemap",
 		{
