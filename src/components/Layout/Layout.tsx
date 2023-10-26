@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react"
+import React from "react"
 
 import "normalize.css"
 import "fonts/fontawesome/css/solid.min.css"
@@ -9,9 +9,7 @@ import "./Layout.css"
 import Header from "components/Header"
 import Footer from "components/Footer"
 
-interface LayoutProps {
-	children?: ReactNode
-}
+interface LayoutProps extends React.PropsWithChildren {}
 
 const Layout: React.FC<LayoutProps> = ({ children = undefined }) => {
 	return (

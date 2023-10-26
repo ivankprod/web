@@ -4,6 +4,6 @@ export enum ButtonSize {
 }
 
 export interface BaseInputProps {
-	validable?: boolean,
-	validityError?: boolean
+	validable?: boolean;
+	validityError?: boolean;
 }
