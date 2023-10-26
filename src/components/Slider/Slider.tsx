@@ -2,11 +2,11 @@ import React, { Fragment, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import { animate, drawOpacity, makeLinear } from "scripts/animate"
-import { sleep } from "scripts/utils"
-
 import Button from "elements/Button"
 import { ButtonSize } from "models/element"
+
+import { animate, drawOpacity, makeLinear } from "scripts/animate"
+import { sleep } from "scripts/utils"
 
 import "./Slider.css"
 
@@ -185,19 +185,6 @@ const onSliderTransitionEnd = (slider: SliderClass) => {
 	(slide.children[0].children[0] as HTMLElement).style.animation = 'slideBlockTitle 1600ms cubic-bezier(0.190, 1.000, 0.220, 1.000), fadeIn 600ms linear';
 }
 
-type Slides = {
-	id: string,
-	caption: string,
-	text: {
-		id: string,
-		line: string
-	}[],
-	action: {
-		text: string,
-		url: string
-	}
-}
-
 const Slider: React.FC = () => {
 	useEffect(() => {
 		const sliderConfig: SliderConfig = {
@@ -221,7 +208,7 @@ const Slider: React.FC = () => {
 	}, []);
 
 	const query = useStaticQuery(
-		graphql`query {
+		graphql`query Slider {
 			slides: allSlide {
 				nodes {
 					id
@@ -269,30 +256,34 @@ const Slider: React.FC = () => {
 		}`
 	);
 
-	const { slides, iconWelcome, iconWhyUs, iconNeedHelp } = query;
-	const icons = [iconWelcome.nodes[0], iconWhyUs.nodes[0], iconNeedHelp.nodes[0]];
+	const slides = query.slides.nodes as Queries.Slide[];
+
+	const iconWelcome = query.iconWelcome.nodes[0] as Queries.File;
+	const iconWhyUs = query.iconWhyUs.nodes[0] as Queries.File;
+	const iconNeedHelp = query.iconNeedHelp.nodes[0] as Queries.File;
+	const icons = [iconWelcome, iconWhyUs, iconNeedHelp];
 
 	return (
 		<div className="container slider-section">
 			<div className="slider-container" id="slider-container">
 				<div className="slider-wrapper">
-					{slides.nodes.map(({ id, caption, text, action }: Slides, index: number) => (
+					{slides.map(({ id, caption, text, action }, index: number) => (
 						<div key={id} className="slider-slide">
 							<div className="slide-block">
 								<div>
 									<div className="slide-block-title"><h1>{caption}</h1></div>
 									<div className="slide-block-desc">
-										{text.map(({ id, line }, index) => (
-											index == text.length - 1 ? <span key={id}>{line}</span> :
-												<Fragment key={id}><span>{line}</span><br /></Fragment>
+										{text && text.map((item, index) => (
+											index == text.length - 1 ? <span key={item?.id}>{item?.line}</span> :
+												<Fragment key={item?.id}><span>{item?.line}</span><br /></Fragment>
 										))}
 									</div>
-									<Button to={action.url} size={ButtonSize.middle}>{action.text}</Button>
+									{action && <Button to={action?.url} size={ButtonSize.middle}>{action?.text}</Button>}
 								</div>
-								<GatsbyImage className="slide-block-icon"
-									image={icons[index].childImageSharp.gatsbyImageData}
-									alt="Welcome!"
-								></GatsbyImage>
+								{(icons && icons[index]) && <GatsbyImage className="slide-block-icon"
+									// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+									image={icons[index].childImageSharp?.gatsbyImageData!} alt="Welcome!"
+								/>}
 							</div>
 						</div>
 					))}

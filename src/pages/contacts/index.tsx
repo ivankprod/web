@@ -1,13 +1,16 @@
 import React from "react"
-import { useStaticQuery, graphql, HeadFC } from "gatsby"
+import { HeadFC } from "gatsby"
 
 import ScopeContext from "context/scope"
 
+import useMetaJSON from "hooks/useMetaJSON"
+
 import Layout from "components/Layout"
-import SEO from "components/SEO"
 import Breadcrumbs from "components/Breadcrumbs"
-import Page from "models/page"
+import SEO from "components/SEO"
 import ContactsForm from "forms/ContactsForm"
+
+import Page from "models/page"
 
 import "./contacts.css"
 
@@ -17,21 +20,7 @@ const ContactsPage = () => {
 		path: "contacts"
 	};
 
-	const meta = useStaticQuery(
-		graphql`query {
-			allFile(filter: {relativePath: {eq: "meta.json"}}) {
-				nodes {
-					childContentJson {
-						meta {
-							phone
-							email_info
-							email_pr
-						}
-					}
-				}
-			}
-		}`
-	).allFile?.nodes[0]?.childContentJson?.meta
+	const meta = useMetaJSON();
 
 	return (
 		<ScopeContext.Provider value={{ scope: currentPage.path }}>
@@ -43,11 +32,11 @@ const ContactsPage = () => {
 						<div className="contacts-emails">
 							<div className="contacts-emails-column">
 								<h3>Обратная связь</h3>
-								<a href={`mailto:${meta.email_info}`}>{meta.email_info}</a>
+								<a href={`mailto:${meta?.email_info}`}>{meta?.email_info}</a>
 							</div>
 							<div className="contacts-emails-column">
 								<h3>Пресса / PR</h3>
-								<a href={`mailto:${meta.email_pr}`}>{meta.email_pr}</a>
+								<a href={`mailto:${meta?.email_pr}`}>{meta?.email_pr}</a>
 							</div>
 						</div>
 						<ContactsForm />

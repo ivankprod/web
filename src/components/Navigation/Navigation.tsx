@@ -1,17 +1,15 @@
 import React, { useContext, useEffect } from "react"
+import clsx from "clsx"
 import { Link } from "gatsby"
 
 import ScopeContext from "context/scope"
-import animate from "scripts/animate"
+
+import { animate, drawOpacity, makeLinearEaseInOut } from "scripts/animate"
 import utils from "scripts/utils"
 
 import "./Navigation.css"
 
-const checkActiveItem = (page: string, scope: string): string => {
-	return page == scope ? "nav-item-active" : "";
-}
-
-const closeShowedSubnav = async () => {
+const closeShowedSubnav = async (): Promise<void> => {
 	await utils.sleep(30); // depends on many factors (network speed, RAM etc...)
 
 	document.querySelector(".subnav-container.showed")?.classList.remove("showed");
@@ -26,7 +24,7 @@ const Navigation: React.FC = () => {
 		document.querySelectorAll("a.subnav").forEach(function (elem, i) {
 			elem.addEventListener("mouseover", () => {
 				elemSubnavWrappers[i].classList.add("showed");
-				animate.drawOpacity((elemSubnavWrappers[i] as HTMLElement), '1');
+				drawOpacity((elemSubnavWrappers[i] as HTMLElement), '1');
 			});
 
 			elem.addEventListener("mousemove", () => {
@@ -39,11 +37,11 @@ const Navigation: React.FC = () => {
 				if (event.relatedTarget != elemSubnavWrappers[i]) {
 					elem.classList.remove("hovered");
 
-					animate.animate({
+					animate({
 						duration: 100,
-						timing: animate.makeLinearEaseInOut,
+						timing: makeLinearEaseInOut,
 						draw: (perc: number) => {
-							animate.drawOpacity((elemSubnavWrappers[i] as HTMLElement), String(1 - perc));
+							drawOpacity((elemSubnavWrappers[i] as HTMLElement), String(1 - perc));
 						},
 						callback: () => {
 							elemSubnavWrappers[i].classList.remove("showed");
@@ -52,7 +50,7 @@ const Navigation: React.FC = () => {
 				}
 
 				elemSubnavWrappers[i].addEventListener("mouseover", function () {
-					elemSubnavWrappers[i].classList.add("showed"); animate.drawOpacity((elemSubnavWrappers[i] as HTMLElement), '1');
+					elemSubnavWrappers[i].classList.add("showed"); drawOpacity((elemSubnavWrappers[i] as HTMLElement), '1');
 					elem.classList.add("hovered");
 				});
 
@@ -60,12 +58,12 @@ const Navigation: React.FC = () => {
 					if (_event.relatedTarget != event.target) {
 						elem.classList.remove("hovered");
 
-						animate.animate({
+						animate({
 							duration: 100,
 							elemw: (elemSubnavWrappers[i] as HTMLElement),
-							timing: animate.makeLinearEaseInOut,
+							timing: makeLinearEaseInOut,
 							draw: function (perc: number) {
-								animate.drawOpacity(this.elemw, String(1 - perc));
+								drawOpacity(this.elemw, String(1 - perc));
 							},
 							callback: function () {
 								this.elemw?.classList.remove("showed");
@@ -80,15 +78,15 @@ const Navigation: React.FC = () => {
 	return (
 		<nav className="nav-container">
 			<ul className="mnav">
-				<li><Link to="/" className={checkActiveItem("home", scope)}>ГЛАВНАЯ</Link></li>
+				<li><Link to="/" className={clsx({ "nav-item-active": scope === "home" })}>ГЛАВНАЯ</Link></li>
 				<li><Link to="/services/" 
-						className={"subnav " + checkActiveItem("services", scope)}
+						className={clsx("subnav", { "nav-item-active": scope === "services" })}
 						onClick={closeShowedSubnav}>УСЛУГИ
 					</Link>
 				</li>
-				<li><Link to="/blog/" className={checkActiveItem("blog", scope)}>БЛОГ</Link></li>
-				<li><Link to="/about/" className={checkActiveItem("about", scope)}>О НАС</Link></li>
-				<li><Link to="/contacts/" className={checkActiveItem("contacts", scope)}>КОНТАКТЫ</Link></li>
+				<li><Link to="/blog/" className={clsx({ "nav-item-active": scope === "blog" })}>БЛОГ</Link></li>
+				<li><Link to="/about/" className={clsx({ "nav-item-active": scope === "about" })}>О НАС</Link></li>
+				<li><Link to="/contacts/" className={clsx({ "nav-item-active": scope === "contacts" })}>КОНТАКТЫ</Link></li>
 			</ul>
 			<div className="subnav-container animate-slidein-fadein-css">
 				<div className="subnav-column">

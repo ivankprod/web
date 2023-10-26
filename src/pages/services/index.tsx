@@ -4,10 +4,10 @@ import { HeadFC } from "gatsby"
 import ScopeContext from "context/scope"
 
 import Layout from "components/Layout"
-import SEO from "components/SEO"
 import Breadcrumbs from "components/Breadcrumbs"
-import Page from "models/page"
+import SEO from "components/SEO"
 
+import Page from "models/page"
 
 const ServicesPage = () => {
 	const currentPage: Page = {

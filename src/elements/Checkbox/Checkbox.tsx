@@ -1,21 +1,19 @@
-import React, { ReactNode } from "react"
+import React from "react"
 import clsx from "clsx"
 
 import { BaseInputProps } from "models/element"
 
 import "./Checkbox.css"
 
-interface CheckboxOwnProps extends BaseInputProps {
-	children?: ReactNode
-}
+interface CheckboxOwnProps extends React.PropsWithChildren<BaseInputProps> {}
 
 type CheckboxProps = CheckboxOwnProps
 	& Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, keyof CheckboxOwnProps>
 
 const Checkbox: React.FC<CheckboxProps> = ({
-	children = undefined,
 	validable = false,
 	validityError = undefined,
+	children = undefined,
 	...otherProps
 }: CheckboxProps) => {
 	const parentOnChange = otherProps.onChange;

@@ -1,15 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { useSiteMetadata } from "hooks/useSiteMetadata"
+import useSiteMetadata from "hooks/useSiteMetadata"
 
 import Page from "models/page"
 
 import "./Breadcrumbs.css"
 
 interface BreadcrumbsProps {
-	page: Page,
-	parentPages?: Page[]
+	page: Page;
+	parentPages?: Page[];
 }
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = [] }) => {
@@ -23,7 +23,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ page, parentPages = [] }) => 
 						<Link itemScope
 							itemType="http://schema.org/WebPage"
 							itemProp="item"
-							id={siteMetadata.siteUrl}
+							id={siteMetadata.siteUrl!}
 							to="/"
 						>
 							<span itemProp="name">Главная</span>

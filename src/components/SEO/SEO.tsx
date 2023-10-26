@@ -5,19 +5,19 @@ import useSiteMetadata from "hooks/useSiteMetadata"
 type Meta = React.DetailedHTMLProps<React.MetaHTMLAttributes<HTMLMetaElement>, HTMLMetaElement>
 
 interface SeoProps {
-	title: string
-	description?: string
-	lang?: string
-	meta?: Meta[]
-	path?: string
-	robots?: string
+	title: string;
+	description?: string;
+	lang?: string;
+	meta?: Meta[];
+	path?: string;
+	robots?: string;
 }
 
 const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = [], path = "", robots = "index, follow" }) => {
 	const siteMetadata = useSiteMetadata();
 
-	const metaTitle = `${siteMetadata.title} | ${title}`;
-	const metaDescription = description || siteMetadata.description;
+	const metaTitle = `${siteMetadata.title!} | ${title}`;
+	const metaDescription = description || siteMetadata.description!;
 	const linkCanonical = `${siteMetadata.siteUrl}/${path}/`.replace(/\/\/$/, "/");
 
 	const metaDefault: Meta[] = [
@@ -55,7 +55,7 @@ const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = 
 		},
 		{
 			property: "og:site_name",
-			content: siteMetadata.title,
+			content: siteMetadata.title!,
 		},
 		{
 			property: "og:locale",
@@ -67,7 +67,7 @@ const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = 
 		},
 		{
 			name: "twitter:creator",
-			content: siteMetadata.author,
+			content: siteMetadata.author!,
 		},
 		{
 			name: "twitter:title",
@@ -87,7 +87,7 @@ const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = 
 			<title>{metaTitle}</title>
 			<link rel="canonical" href={linkCanonical} />
 			{metaFinal.map(({ name, property, content }: Meta, index: number) => (
-				<meta key={index} name={name} property={property} content={content} />
+				<meta key={`${index}-${name || property}`} name={name} property={property} content={content} />
 			))}
 		</>
 	)

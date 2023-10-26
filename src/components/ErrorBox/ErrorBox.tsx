@@ -6,8 +6,8 @@ import { ButtonSize } from "models/element"
 import "./ErrorBox.css"
 
 interface ErrorBoxProps {
-	title: string,
-	message: string
+	title: string;
+	message: string;
 }
 
 const ErrorBox: React.FC<ErrorBoxProps> = ({ title, message }) => {
