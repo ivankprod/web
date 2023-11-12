@@ -83,6 +83,12 @@ export function drawHeight(elem: HTMLElement, value: string) {
 	elem.style.height = value + 'px';
 }
 
+declare global {
+	interface Window {
+		lastRAF: number | null;
+	}
+}
+
 export default {
 	animate, makeLinear, makePow, makeCirc, makeEaseOut, makeEaseInOut, makeLinearEaseInOut, makePowEaseOut, makeCircEaseInOut,
 	drawOpacity, drawHeight, fadeOut
