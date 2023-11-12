@@ -62,10 +62,17 @@ const config: GatsbyConfig = {
 		"gatsby-transformer-json",
 		"gatsby-transformer-remark",
 		{
+			resolve: "gatsby-plugin-nprogress",
+			options: {
+				color: "#6dab1e",
+				showSpinner: false
+			}
+		},
+		{
 			resolve: "gatsby-source-filesystem",
 			options: {
-				"name": "content",
-				"path": "./content"
+				name: "content",
+				path: "./content"
 			}
 		},
 		{
@@ -78,8 +85,8 @@ const config: GatsbyConfig = {
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
-				"name": "images",
-				"path": "./src/images/"
+				name: "images",
+				path: "./src/images/"
 			},
 			__key: "images"
 		}
