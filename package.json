@@ -36,7 +36,7 @@
 		"clsx": "^2.0.0",
 		"gatsby": "^5.11.0",
 		"gatsby-plugin-image": "^3.11.0",
-		"gatsby-plugin-manifest": "^5.7.0",
+		"gatsby-plugin-manifest": "^5.12.3",
 		"gatsby-plugin-netlify": "^5.1.0",
 		"gatsby-plugin-nprogress": "^5.12.0",
 		"gatsby-plugin-postcss": "^6.12.0",
