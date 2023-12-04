@@ -61,7 +61,7 @@
 		"eslint": "^8.38.0",
 		"eslint-plugin-react": "^7.33.2",
 		"gatsby-plugin-root-import": "^2.0.9",
-		"generate-react-cli": "^8.3.0",
+		"generate-react-cli": "^8.4.0",
 		"stylelint": "^15.10.3",
 		"stylelint-config-standard": "^30.0.1",
 		"typescript": "^5.2.2"
