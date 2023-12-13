@@ -1,5 +1,7 @@
-import React from "react"
+import React, { useContext } from "react"
+import clsx from "clsx"
 
+import ScopeContext from "context/scope"
 import useMetaJSON from "hooks/useMetaJSON"
 
 import Button from "elements/Button"
@@ -7,11 +9,13 @@ import Navigation from "components/Navigation"
 
 import "./Header.css"
 
+
 const Header: React.FC = () => {
+	const { scope } = useContext(ScopeContext);
 	const meta = useMetaJSON();
 
 	return (
-		<header>
+		<header className={clsx({"homepage-header": scope === "home"})}>
 			<div className="container header-picture">
 				<div className="header-picture-wrapper"></div>
 			</div>

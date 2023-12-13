@@ -4,13 +4,15 @@ header {
 
 	width: 100%;
 
-	border-bottom: 1px solid #dedede;
+	border-bottom: 2px solid var(--color-theme-green);
 
 	box-shadow: 0 3px 8px 0 rgb(0 0 0 / 10%);
 
 	backdrop-filter: blur(5px);
 
 	z-index: 2;
+
+	&.homepage-header { border-bottom-color: var(--color-theme-green); }
 }
 
 .stretch-container {

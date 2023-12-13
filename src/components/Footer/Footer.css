@@ -24,11 +24,11 @@ footer {
 
 	background: linear-gradient(to bottom, #f6fdf0, #fff);
 
-	border-top: 1px solid #e2e2e2;
+	border-top: 2px solid var(--color-theme-green);
 
 	opacity: 0.9;
 
-	box-shadow: 0 -6px 8px 0 rgb(0 0 0 / 7%);
+	box-shadow: inset 0 6px 8px 0 rgb(0 0 0 / 7%);
 }
 
 .footer-block {
@@ -47,8 +47,6 @@ footer {
 
 		& a {
 			font-size: 1rem;
-
-			border-bottom: 1px solid transparent;
 
 			&:hover { border-color: var(--color-theme-green); }
 		}
@@ -75,6 +73,7 @@ footer {
 	margin-bottom: 12px;
 
 	font-size: 1.3rem;
+	font-style: italic;
 	color: var(--color-theme-green);
 
 	border-bottom: 2px solid rgb(0 0 0 / 10%);
