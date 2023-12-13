@@ -26,6 +26,7 @@ export class SliderClass {
 	paginationElement!: HTMLDivElement | null;
 	paginationClickable!: boolean;
 	paginationBullets!: HTMLDivElement[];
+	paginationInitialized!: boolean;
 	autoplayEnabled!: boolean;
 	autoplayDelay!: number;
 	private _timer!: number | null;
@@ -120,7 +121,7 @@ export class SliderClass {
 	}
 
 	initPagination() {
-		if (!this.paginationElement) return false;
+		if (!this.paginationElement || this.paginationInitialized) return false;
 
 		const wrapper = this.paginationElement;
 
@@ -134,6 +135,8 @@ export class SliderClass {
 			this.paginationBullets[i] = bullet;
 			wrapper.append(bullet);
 		});
+
+		this.paginationInitialized = true;
 	}
 
 	destroy() {

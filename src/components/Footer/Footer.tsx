@@ -27,12 +27,12 @@ const Footer: React.FC = () => {
 				<div className="footer-block second">
 					<div className="footer-block-title">МЕНЮ</div>
 					<ul>
-						<li><Link to="/services/">УСЛУГИ</Link></li>
-						<li><Link to="/blog/">БЛОГ</Link></li>
-						<li><Link to="/about/">О НАС</Link></li>
-						<li><Link to="/contacts/">КОНТАКТЫ</Link></li>
-						<li><Link to="/join/">ЗАПОЛНИТЬ БРИФ</Link></li>
-						<li><Link to="/sitemap/">КАРТА САЙТА</Link></li>
+						<li><Link to="/services/">Услуги</Link></li>
+						<li><Link to="/blog/">Блог</Link></li>
+						<li><Link to="/about/">О нас</Link></li>
+						<li><Link to="/contacts/">Контакты</Link></li>
+						<li><Link to="/join/">Заполнить бриф</Link></li>
+						<li><Link to="/sitemap/">Карта сайта</Link></li>
 					</ul>
 				</div>
 				<div className="footer-block third">

@@ -9,7 +9,9 @@
 				padding-left: 16px;
 
 				& a {
-					display: block;
+					display: flex;
+					justify-content: center;
+					align-items: center;
 
 					position: relative;
 
@@ -20,47 +22,31 @@
 					&::before {
 						content: "";
 
-						position: absolute;
-
 						display: block;
 
+						position: absolute;
+						bottom: 0;
+
 						width: 100%;
+						height: 3px;
 
-						padding-top: 38px;
+						background-color: transparent;
 
-						border-bottom: 0 solid transparent;
-
-						will-change: border-color, border-bottom-width, padding-top;
-						transition: border-color 0.1s linear, border-bottom-width 0.1s linear, padding-top 0.1s linear;
+						will-change: background-color;
+						transition: background-color 0.1s linear;
 					}
 
-					&:hover, &.hovered {
-						color: var(--color-theme-green) !important;
+					&:hover, &.hovered { color: var(--color-theme-green) !important; }
 
-						&::before {
-							border-color: var(--color-theme-green);
-							border-bottom-width: 3px;
-
-							padding-top: 35px;
-						}
-					}
-
-					&.nav-item-active::before {
-						border-color: var(--color-theme-green);
-						border-bottom-width: 3px;
-
-						padding-top: 35px;
-					}
+					&.nav-item-active::before { background-color: var(--color-theme-green); }
 
 					&.subnav::after {
 						content: "\f107";
 
 						display: inline-block;
 
-						left: 0;
-						top: 0;
-
 						margin-left: 4px;
+						margin-top: 2px;
 
 						font-family: "Font Awesome 5 Free";
 						font-size: 1rem;

@@ -13,32 +13,36 @@ import "./Slider.css"
 const onSliderTransitionStart: SliderEvent = (slider: SliderClass) => {
 	const slide = (slider.slides[slider.activeIndex].children[0] as HTMLElement);
 
-	slide.style.opacity = "0";
+	if (slide) {
+		slide.style.opacity = "0";
 
-	(slide.children[0].children[0] as HTMLElement).style.opacity = "0";
-	(slide.children[0].children[0] as HTMLElement).style.animation = "none";
-	(slide.children[0].children[2] as HTMLElement).style.opacity = "0";
-	(slide.children[0].children[2] as HTMLElement).style.animation = "none";
+		(slide.children[0].children[0] as HTMLElement).style.opacity = "0";
+		(slide.children[0].children[0] as HTMLElement).style.animation = "none";
+		(slide.children[0].children[2] as HTMLElement).style.opacity = "0";
+		(slide.children[0].children[2] as HTMLElement).style.animation = "none";
+	}
 }
 
 const onSliderTransitionEnd: SliderEvent = (slider: SliderClass) => {
-	const slide = (slider.slides[slider.activeIndex].children[0] as HTMLElement);
+	const slide = (slider.slides[slider.activeIndex]?.children[0] as HTMLElement);
 
-	animate({
-		duration: 800,
-		timing: makeLinear,
-		elem: slide,
-		draw: function (perc: number) { drawOpacity(this.elem, String(perc)); },
-		callback: function () {
-			if (!this.elem?.children[0]) return;
+	if (slide) {
+		animate({
+			duration: 800,
+			timing: makeLinear,
+			elem: slide,
+			draw: function (perc: number) { drawOpacity(this.elem, String(perc)); },
+			callback: function () {
+				if (!this.elem?.children[0]) return;
 
-			(this.elem.children[0].children[2] as HTMLElement).style.opacity = "1";
-			(this.elem.children[0].children[2] as HTMLElement).style.animation = "slideIn 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000), fadeIn 400ms linear";
-		}
-	});
+				(this.elem.children[0].children[2] as HTMLElement).style.opacity = "1";
+				(this.elem.children[0].children[2] as HTMLElement).style.animation = "slideIn 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000), fadeIn 400ms linear";
+			}
+		});
 
-	(slide.children[0].children[0] as HTMLElement).style.opacity = "1";
-	(slide.children[0].children[0] as HTMLElement).style.animation = "slideBlockTitle 1600ms cubic-bezier(0.190, 1.000, 0.220, 1.000), fadeIn 600ms linear";
+		(slide.children[0].children[0] as HTMLElement).style.opacity = "1";
+		(slide.children[0].children[0] as HTMLElement).style.animation = "slideBlockTitle 1600ms cubic-bezier(0.190, 1.000, 0.220, 1.000), fadeIn 600ms linear";
+	}
 }
 
 const Slider: React.FC = () => {

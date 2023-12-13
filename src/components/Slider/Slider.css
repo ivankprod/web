@@ -1,4 +1,30 @@
-.slider-section { align-self: center; padding: 32px; }
+.slider-section {
+	align-self: center; padding: 32px;
+
+	&::before {
+		content: "";
+
+		display: block;
+		position: absolute;
+
+		top: 0;
+		left: 50%;
+
+		width: 3840px;
+		height: 100%;
+
+		margin-top: -32px;
+		margin-left: -1920px;
+
+		background: linear-gradient(225deg, var(--color-theme-green), transparent);
+
+		box-shadow: 0 4px 4px 0 rgb(0 0 0 / 7%);
+		border-bottom: 2px solid rgb(0 0 0 / 10%);
+
+		z-index: -10;
+	}
+}
+
 .slider-wrapper { position: relative; }
 
 .slider-slide {
@@ -7,8 +33,6 @@
 	width: 100%;
 
 	padding: 16px;
-
-	background: #fff;
 
 	opacity: 0;
 
@@ -70,7 +94,7 @@
 
 	margin: 4px;
 
-	background: #d3d3d3;
+	background: var(--color-theme-green-dark);
 
 	border-radius: 50%;
 
