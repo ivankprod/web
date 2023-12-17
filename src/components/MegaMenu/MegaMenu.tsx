@@ -28,7 +28,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ menuStructure }) => {
 	useEffect(() => {
 		const elemSubnavWrappers = document.querySelectorAll('.nav-container .subnav-container');
 
-		document.querySelectorAll(".nav-container a.subnav").forEach(function (elem, i) {
+		document.querySelectorAll(".nav-container a.subnav").forEach((elem, i) => {
 			elem.addEventListener("mouseover", () => {
 				elemSubnavWrappers[i].classList.add("showed");
 				drawOpacity((elemSubnavWrappers[i] as HTMLElement), '1');
@@ -40,7 +40,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ menuStructure }) => {
 				}
 			});
 
-			elem.addEventListener("mouseleave", function (event: Event) {
+			elem.addEventListener("mouseleave", (event: Event) => {
 				if ((event as MouseEvent).relatedTarget != elemSubnavWrappers[i]) {
 					elem.classList.remove("hovered");
 
@@ -57,14 +57,14 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ menuStructure }) => {
 					});
 				}
 
-				elemSubnavWrappers[i].addEventListener("mouseover", function () {
+				elemSubnavWrappers[i].addEventListener("mouseover", () => {
 					elemSubnavWrappers[i].classList.add("showed");
 					drawOpacity((elemSubnavWrappers[i] as HTMLElement), '1');
 
 					elem.classList.add("hovered");
 				});
 
-				elemSubnavWrappers[i].addEventListener("mouseleave", function (_event: Event) {
+				elemSubnavWrappers[i].addEventListener("mouseleave", (_event: Event) => {
 					if ((_event as MouseEvent).relatedTarget != event.target) {
 						elem.classList.remove("hovered");
 
@@ -85,7 +85,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ menuStructure }) => {
 		});
 
 		return () => {
-			document.querySelectorAll("a.subnav").forEach(function (elem) {
+			document.querySelectorAll("a.subnav").forEach((elem) => {
 				elem.replaceWith(elem.cloneNode(true));
 			});
 		}
