@@ -1,11 +1,13 @@
+type TimingFunction = (timeFraction: number) => number;
+
 type AnimateOpts = {
 	stoppable?: boolean,
 	duration: number,
-	timing: Function,
+	timing: TimingFunction,
 	elem?: HTMLElement,
 	elemw?: HTMLElement,
-	draw?: Function,
-	move?: Function,
+	draw?: (perc: number) => void,
+	move?: (perc: number) => void,
 	callback?: Function
 }
 
@@ -34,29 +36,29 @@ export function animate(opts: AnimateOpts) {
 }
 
 //  Animations: linear
-export function makeLinear(timeFraction: number) {
+export function makeLinear(timeFraction: number): number {
 	return timeFraction;
 }
 
 //  Animations: pow
-export function makePow(timeFraction: number) {
+export function makePow(timeFraction: number): number {
 	return Math.pow(timeFraction, 5);
 }
 
 //  Animations: circ
-export function makeCirc(timeFraction: number) {
+export function makeCirc(timeFraction: number): number {
 	return 1 - Math.sin(Math.acos(timeFraction));
 }
 
 //  Animations: EaseOut
-export function makeEaseOut(timing: Function) {
+export function makeEaseOut(timing: TimingFunction): TimingFunction {
 	return function(timeFraction: number) {
 		return 1 - timing(1 - timeFraction);
 	};
 }
 
 //  Animations: EaseInOut
-export function makeEaseInOut(timing: Function) {
+export function makeEaseInOut(timing: TimingFunction): TimingFunction {
 	return function(timeFraction: number) {
 		if (timeFraction < 0.5) return timing(2 * timeFraction) / 2;
 		else return (2 - timing(2 * (1 - timeFraction))) / 2;
@@ -73,14 +75,14 @@ export function drawOpacity(elem: HTMLElement | undefined, value: string) {
 	if (elem) elem.style.opacity = value;
 }
 
-//  Animations: async opacity (fadeout)
-export async function fadeOut(elem: HTMLElement) {
-	elem.style.opacity = '0';
+//  Animations: opacity (fadeout)
+export function fadeOut(elem: HTMLElement | undefined) {
+	if (elem) elem.style.opacity = '0';
 }
 
 //  Animations: height
-export function drawHeight(elem: HTMLElement, value: string) {
-	elem.style.height = value + 'px';
+export function drawHeight(elem: HTMLElement | undefined, value: string) {
+	if (elem) elem.style.height = value + 'px';
 }
 
 declare global {

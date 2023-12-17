@@ -18,6 +18,8 @@
 
 		background: linear-gradient(225deg, var(--color-theme-green), transparent);
 
+		opacity: 0.3;
+
 		box-shadow: 0 4px 4px 0 rgb(0 0 0 / 7%);
 		border-bottom: 2px solid rgb(0 0 0 / 10%);
 

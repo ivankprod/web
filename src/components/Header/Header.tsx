@@ -9,7 +9,6 @@ import Navigation from "components/Navigation"
 
 import "./Header.css"
 
-
 const Header: React.FC = () => {
 	const { scope } = useContext(ScopeContext);
 	const meta = useMetaJSON();

@@ -1,0 +1,85 @@
+{
+	"menu": [
+		{
+			"id": "0-home",
+			"title": "Главная",
+			"href": "/",
+			"scope": "home"
+		}, {
+			"id": "1-services",
+			"title": "Услуги",
+			"href": "/services/",
+			"scope": "services",
+			"subnav": {
+				"columns": [
+					{
+						"id": "1-0-services-media",
+						"title": "Медиа",
+						"items": [
+							{
+								"id": "1-0-0-services-media-audio",
+								"title": "Аудио-продакшн",
+								"href": "/services/media/audio/"
+							}, {
+								"id": "1-0-1-services-media-video",
+								"title": "Видео-продакшн",
+								"href": "/services/media/video/"
+							}, {
+								"id": "1-0-2-services-media-common",
+								"title": "Полный цикл",
+								"href": "/services/media/common/"
+							}
+						]
+					}, {
+						"id": "1-1-services-design",
+						"title": "Дизайн",
+						"items": [
+							{
+								"id": "1-1-0-services-design-common",
+								"title": "Оформление",
+								"href": "/services/design/common/"
+							}, {
+								"id": "1-1-1-services-design-covers",
+								"title": "Обложки релизов",
+								"href": "/services/design/covers/"
+							}, {
+								"id": "1-1-2-services-design-prints",
+								"title": "Полиграфия",
+								"href": "/services/design/prints/"
+							}
+						]
+					}, {
+						"id": "1-2-services-it",
+						"title": "IT-технологии",
+						"items": [
+							{
+								"id": "1-2-0-services-it-web",
+								"title": "Разработка веб-сайтов",
+								"href": "/services/it/web/"
+							}, {
+								"id": "1-2-1-services-it-software",
+								"title": "Разработка прикладного ПО",
+								"href": "/services/it/software/"
+							}
+						]
+					}
+				]
+			}
+		}, {
+			"id": "2-blog",
+			"title": "Блог",
+			"href": "/blog/",
+			"scope": "blog"
+		}, {
+			"id": "3-about",
+			"title": "О нас",
+			"href": "/about/",
+			"scope": "about"
+		}, {
+			"id": "4-contacts",
+			"title": "Контакты",
+			"href": "/contacts/",
+			"scope": "contacts"
+		}
+	]
+}
