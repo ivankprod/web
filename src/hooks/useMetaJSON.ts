@@ -7,6 +7,7 @@ export const useMetaJSON = (): Queries.ContentJsonMeta => {
 				nodes {
 					childContentJson {
 						meta {
+							worktime
 							phone
 							email_info
 							email_pr

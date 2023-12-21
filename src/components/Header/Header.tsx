@@ -27,7 +27,9 @@ const Header: React.FC = () => {
 						<div></div>
 						<div className="global-info">
 							<div className="global-info-row">
-								<div>{meta?.phone}</div>
+								<div>
+									<a href={`tel:${meta?.phone}`}>{meta?.phone}</a>
+								</div>
 								<div className="global-info-stroke">
 									<a href={`mailto:${meta?.email_info}`}>{meta?.email_info?.toUpperCase()}</a>
 								</div>
