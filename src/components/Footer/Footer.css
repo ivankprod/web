@@ -40,7 +40,17 @@ footer {
 	vertical-align: top;
 	text-align: left;
 
-	order: 1;
+	&.copyright {
+		position: relative;
+
+		width: auto;
+
+    	margin: 18px 0 44px;
+
+    	text-align: center;
+
+		& ul { margin-bottom: 12px; }
+	}
 
 	& li {
 		margin-bottom: 6px;
@@ -51,21 +61,75 @@ footer {
 			&:hover { border-color: var(--color-theme-green); }
 		}
 	}
+
+	& dl {
+		margin-top: -2px;
+
+		font-size: 1rem;
+
+		& i {
+			&::before {
+				display: inline-block;
+
+				position: relative;
+
+				top: 4px;
+
+				width: 26px;
+				height: 26px;
+
+				margin-right: 6px;
+
+				font-family: "Font Awesome 5 Free";
+				font-size: 1.7rem;
+				font-weight: 900;
+
+				text-align: center;
+			}
+
+			&.fix-top::before { top: 5px; }
+
+			&.fa-time::before  { content: "\f017"; }
+			&.fa-phone::before { content: "\f095"; }
+			&.fa-email::before { content: "\f003"; }
+		}
+
+		& dt {
+			display: inline-block;
+
+			width: 42px;
+
+			margin: 0 6px 6px 0;
+		}
+
+		& dd {
+			display: inline-block;
+		}
+	}
 }
 
 @media (width <= 767px) {
 	.footer-block { width: 100%; }
-	.footer-block.first { order: 3; }
 }
 
 @media (width >= 768px) {
+	footer {
+		& .container {
+			justify-content: space-around;
+		}
+	}
+
 	.footer-block { width: 46%; }
-	.footer-block.first { order: 3; }
 }
 
 @media (width >= 992px) {
+	footer {
+		& .container {
+			justify-content: space-between;
+		}
+	}
+
 	.footer-block { width: 30%; }
-	.footer-block.first { order: 1; }
 }
 
 .footer-block-title {
@@ -73,7 +137,7 @@ footer {
 	margin-bottom: 12px;
 
 	font-size: 1.3rem;
-	font-style: italic;
+	text-transform: uppercase;
 	color: var(--color-theme-green);
 
 	border-bottom: 2px solid rgb(0 0 0 / 10%);
