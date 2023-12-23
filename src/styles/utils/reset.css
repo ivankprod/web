@@ -41,6 +41,8 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+button, input, optgroup, select, textarea { line-height: 1.2; }
+
 .rounded-all { border-radius: 6px; }
 .rounded-top { border-radius: 6px 6px 0 0; }
 .rounded-bottom { border-radius: 0 0 6px 6px; }
