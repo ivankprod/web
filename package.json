@@ -38,7 +38,7 @@
 		"gatsby-plugin-image": "^3.12.3",
 		"gatsby-plugin-manifest": "^5.12.3",
 		"gatsby-plugin-netlify": "^5.1.1",
-		"gatsby-plugin-nprogress": "^5.12.0",
+		"gatsby-plugin-nprogress": "^5.13.0",
 		"gatsby-plugin-postcss": "^6.12.0",
 		"gatsby-plugin-sharp": "^5.12.0",
 		"gatsby-plugin-sitemap": "^6.13.0",
