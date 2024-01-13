@@ -38,23 +38,23 @@
 		"gatsby-plugin-image": "^3.12.3",
 		"gatsby-plugin-manifest": "^5.12.3",
 		"gatsby-plugin-netlify": "^5.1.1",
-		"gatsby-plugin-nprogress": "^5.12.0",
+		"gatsby-plugin-nprogress": "^5.13.0",
 		"gatsby-plugin-postcss": "^6.12.0",
-		"gatsby-plugin-sharp": "^5.12.0",
+		"gatsby-plugin-sharp": "^5.13.0",
 		"gatsby-plugin-sitemap": "^6.13.0",
 		"gatsby-source-filesystem": "^5.13.0",
 		"gatsby-transformer-json": "^5.12.0",
 		"gatsby-transformer-remark": "^6.12.3",
 		"gatsby-transformer-sharp": "^5.13.0",
 		"normalize.css": "^8.0.1",
-		"postcss": "^8.4.31",
+		"postcss": "^8.4.33",
 		"postcss-preset-env": "^9.3.0",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0"
 	},
 	"devDependencies": {
 		"@types/node": "^20.10.6",
-		"@types/react": "^18.0.27",
+		"@types/react": "^18.2.47",
 		"@types/react-dom": "^18.2.17",
 		"@typescript-eslint/eslint-plugin": "^6.18.0",
 		"@typescript-eslint/parser": "^6.16.0",
@@ -63,7 +63,7 @@
 		"gatsby-plugin-root-import": "^2.0.9",
 		"generate-react-cli": "^8.4.0",
 		"stylelint": "^16.1.0",
-		"stylelint-config-standard": "^35.0.0",
+		"stylelint-config-standard": "^36.0.0",
 		"typescript": "^5.2.2"
 	}
 }
