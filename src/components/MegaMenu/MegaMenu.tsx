@@ -96,7 +96,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ menuStructure }) => {
 			<ul className="mnav">
 				{menuStructure.map(({ id, title, href, scope, subnav }: MegaMenuItem) => {
 					if (subnav) { subnavs.push(
-						<div className="subnav-container animate-slidein-fadein-css">
+						<div className="subnav-container animate-slidein-fadein-css" key={id}>
 							{subnav.columns.map(({ id, title, items }: MenuSubnavColumn) => (
 								<div className="subnav-column" key={id}>
 									<div className="subnav-title">{title}</div>
