@@ -1,5 +1,9 @@
 .slider-section {
-	align-self: center; padding: 32px;
+	align-self: center;
+	
+	padding: 32px;
+
+	min-height: 316px;
 
 	&::before {
 		content: "";
