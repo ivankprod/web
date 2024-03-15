@@ -36,7 +36,6 @@ footer {
 
 	margin-top: 34px;
 
-	font-size: 0.9rem;
 	vertical-align: top;
 	text-align: left;
 
@@ -56,16 +55,14 @@ footer {
 		margin-bottom: 6px;
 
 		& a {
-			font-size: 1rem;
+			font-size: 1.2rem;
 
 			&:hover { border-color: var(--color-theme-green); }
 		}
 	}
 
 	& dl {
-		margin-top: -2px;
-
-		font-size: 1rem;
+		margin-top: -6px;
 
 		& i {
 			&::before {
@@ -99,7 +96,7 @@ footer {
 
 			width: 42px;
 
-			margin: 0 6px 6px 0;
+			margin: 0 6px 4px 0;
 		}
 
 		& dd {
