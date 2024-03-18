@@ -59,7 +59,7 @@
 		"@typescript-eslint/eslint-plugin": "^7.0.0",
 		"@typescript-eslint/parser": "^7.2.0",
 		"eslint": "^8.56.0",
-		"eslint-plugin-react": "^7.33.2",
+		"eslint-plugin-react": "^7.34.1",
 		"gatsby-plugin-root-import": "^2.0.9",
 		"generate-react-cli": "^8.4.1",
 		"stylelint": "^16.2.0",
