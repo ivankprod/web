@@ -31,9 +31,9 @@
 		"gen:page": "generate-react component --type=page"
 	},
 	"dependencies": {
-		"@fontsource/open-sans": "^5.0.27",
+		"@fontsource/open-sans": "^5.0.28",
 		"autoprefixer": "^10.4.19",
-		"clsx": "^2.1.0",
+		"clsx": "^2.1.1",
 		"gatsby": "^5.13.3",
 		"gatsby-plugin-image": "^3.13.1",
 		"gatsby-plugin-manifest": "^5.13.1",
@@ -53,16 +53,16 @@
 		"react-dom": "^18.3.1"
 	},
 	"devDependencies": {
-		"@types/node": "^20.11.10",
+		"@types/node": "^20.12.9",
 		"@types/react": "^18.3.1",
 		"@types/react-dom": "^18.3.0",
 		"@typescript-eslint/eslint-plugin": "^7.0.0",
-		"@typescript-eslint/parser": "^7.2.0",
+		"@typescript-eslint/parser": "^7.8.0",
 		"eslint": "^8.57.0",
 		"eslint-plugin-react": "^7.34.1",
 		"gatsby-plugin-root-import": "^2.0.9",
 		"generate-react-cli": "^8.4.1",
-		"stylelint": "^16.2.1",
+		"stylelint": "^16.5.0",
 		"stylelint-config-standard": "^36.0.0",
 		"typescript": "^5.3.3"
 	}
