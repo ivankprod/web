@@ -24,6 +24,8 @@ button, .abutton {
 
 	&:hover, &:active { opacity: 80% !important; }
 
+	& span { cursor: pointer !important; }
+
 	&[disabled] {
 		color: #c5c5c5 !important;
 	
@@ -78,8 +80,6 @@ button, .abutton {
 			font-size: 1.1rem;
 		}
 	}
-
-	& span { cursor: pointer !important; }
 
 	& img.btn-icon-loader {
 		display: none;

@@ -79,17 +79,25 @@
 
 			font-size: 1.2rem;
 
-			@media (width >=768px) { text-align: justify; }
-			@media (width >=992px) { text-align: left; }
-			@media (width >=1200px) { text-align: left; }
+			@media (width >=768px) {
+				text-align: justify;
+			}
+
+			@media (width >=992px) {
+				text-align: left;
+			}
+
+			@media (width >=1200px) {
+				text-align: left;
+			}
 		}
 
 		&__action {
 			display: inline-block;
 			position: absolute;
-	
+
 			bottom: 0;
-	
+
 			opacity: 0;
 		}
 	}
