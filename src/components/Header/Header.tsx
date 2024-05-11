@@ -1,37 +1,36 @@
-import React, { useContext } from "react"
-import clsx from "clsx"
+import React from "react";
 
-import ScopeContext from "context/scope"
-import useMetaJSON from "hooks/useMetaJSON"
+import useMetaJSON from "hooks/useMetaJSON";
 
-import Button from "elements/Button"
-import Navigation from "components/Navigation"
+import Button from "elements/Button";
+import Navigation from "components/Navigation";
 
-import "./Header.css"
+import "./Header.scss";
 
 const Header: React.FC = () => {
-	const { scope } = useContext(ScopeContext);
 	const meta = useMetaJSON();
 
 	return (
-		<header className={clsx({"homepage-header": scope === "home"})}>
+		<header className="header">
 			<div className="container header-picture">
-				<div className="header-picture-wrapper"></div>
+				<div className="header-picture__wrapper"></div>
 			</div>
-			<div className="stretch-container headline">
-				<div className="container headline">
+			<div className="stretch-container stretch-container_headline">
+				<div className="container container_headline">
 					<a href="/">
 						<div className="logotype"></div>
 					</a>
 					<div className="header-right">
 						<div></div>
 						<div className="global-info">
-							<div className="global-info-row">
+							<div className="global-info__row">
 								<div>
 									<a href={`tel:${meta?.phone}`}>{meta?.phone}</a>
 								</div>
-								<div className="global-info-stroke">
-									<a href={`mailto:${meta?.email_info}`}>{meta?.email_info?.toUpperCase()}</a>
+								<div className="global-info__stroke">
+									<a href={`mailto:${meta?.email_info}`}>
+										{meta?.email_info?.toUpperCase()}
+									</a>
 								</div>
 							</div>
 							<Button to="/join/">Заполнить бриф</Button>
@@ -41,7 +40,7 @@ const Header: React.FC = () => {
 				</div>
 			</div>
 		</header>
-	)
-}
+	);
+};
 
-export default Header
+export default Header;

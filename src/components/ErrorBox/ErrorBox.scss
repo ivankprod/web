@@ -3,11 +3,12 @@
 	flex-direction: column;
 
 	width: 100%;
+
 	padding: 48px;
 
 	font-size: 1.2rem;
 
-	& .error-title {
+	&__title {
 		padding-bottom: 8px;
 
 		font-size: 2.4rem;
@@ -15,9 +16,9 @@
 		border-bottom: 2px solid rgb(0 0 0 / 10%);
 	}
 
-	& .error-message { margin-top: 12px; }
+	&__message { margin-top: 12px; }
 
-	& button, & .abutton {
+	&__button {
 		margin: 24px auto 0;
 
 		align-self: center;

@@ -1,15 +1,18 @@
-import React, { ReactNode } from "react"
+import React, { ReactNode } from "react";
 
-import { BaseInputProps } from "models/element"
+import { BaseInputProps } from "models/element";
 
-import "./TemplateName.css"
+import "./TemplateName.scss";
 
 interface TemplateNameOwnProps extends BaseInputProps {
-	children?: ReactNode
+	children?: ReactNode;
 }
 
-type TemplateNameProps = TemplateNameOwnProps
-	& Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, keyof TemplateNameOwnProps>
+type TemplateNameProps = TemplateNameOwnProps &
+	Omit<
+		React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+		keyof TemplateNameOwnProps
+	>;
 
 const TemplateName: React.FC<TemplateNameProps> = ({
 	children = undefined,
@@ -25,7 +28,7 @@ const TemplateName: React.FC<TemplateNameProps> = ({
 			<input type="text" {...otherProps} />
 			{children}
 		</>
-	)
-}
+	);
+};
 
-export default TemplateName
+export default TemplateName;

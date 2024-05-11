@@ -1,14 +1,17 @@
-import React from "react"
-import clsx from "clsx"
+import React from "react";
+import clsx from "clsx";
 
-import { BaseInputProps } from "models/element"
+import { BaseInputProps } from "models/element";
 
-import "./Checkbox.css"
+import "./Checkbox.scss";
 
 interface CheckboxOwnProps extends React.PropsWithChildren<BaseInputProps> {}
 
-type CheckboxProps = CheckboxOwnProps
-	& Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, keyof CheckboxOwnProps>
+type CheckboxProps = CheckboxOwnProps &
+	Omit<
+		React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+		keyof CheckboxOwnProps
+	>;
 
 const Checkbox: React.FC<CheckboxProps> = ({
 	validable = false,
@@ -21,14 +24,20 @@ const Checkbox: React.FC<CheckboxProps> = ({
 		parentOnChange?.(e);
 
 		if (validable) e.target.className = clsx({ "error-input-required": !e.target.checked });
-	}
+	};
 
 	return (
 		<>
-			<input type="checkbox" className={clsx({ "error-input-required": validityError })} {...otherProps} />
-			<label htmlFor={otherProps.id} style={{cursor: "pointer"}}>{children}</label>
+			<input
+				type="checkbox"
+				className={clsx({ "error-input-required": validityError })}
+				{...otherProps}
+			/>
+			<label htmlFor={otherProps.id} style={{ cursor: "pointer" }}>
+				{children}
+			</label>
 		</>
-	)
-}
+	);
+};
 
-export default Checkbox
+export default Checkbox;

@@ -1,0 +1,93 @@
+@import "styles/theme";
+
+button, .abutton {
+	appearance: none;
+	outline: none;
+
+	display: block;
+
+	padding: 10px 14px;
+
+	border: 0;
+
+	font-size: 1.2rem !important;
+	color: #fff !important;
+	cursor: pointer !important;
+
+	line-height: normal;
+
+	background-color: $color-theme-green;
+
+	box-shadow: 0 3px 10px #d8d8d8;
+
+	transition: opacity 0.1s !important;
+
+	&:hover, &:active { opacity: 80% !important; }
+
+	& span { cursor: pointer !important; }
+
+	&[disabled] {
+		color: #c5c5c5 !important;
+	
+		background: #f9f9f9;
+	
+		pointer-events: none;
+	}
+
+	&.middle {
+		padding: 9px 12px;
+
+		font-size: 1rem !important;
+	}
+
+	&.small {
+		padding: 10px 12px 9px;
+
+		font-size: 0.9rem !important;
+	}
+
+	&.btn-auth {
+		display: flex;
+		align-items: center;
+	
+		position: relative;
+	
+		padding: 8px;
+	
+		color: #000;
+		text-align: left;
+	
+		background-color: #fff;
+	
+		border: 1px solid #d8d8d8;
+	
+		box-shadow: 0 3px 0 #d8d8d8;
+	
+		overflow: hidden;
+	
+		& img {
+			height: 24px;
+			width: 24px;
+	
+			cursor: pointer !important;
+		}
+	
+		& span {
+			display: inline-block;
+	
+			margin: 0 6px 0 4px;
+	
+			font-size: 1.1rem;
+		}
+	}
+
+	& img.btn-icon-loader {
+		display: none;
+		float: left;
+
+		width: 20px;
+		height: 20px;
+
+		margin-right: 6px;
+	}
+}

@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react"
+import React, { ReactNode } from "react";
 
-import "./TemplateName.css"
+import "./TemplateName.scss";
 
 interface TemplateNameProps {
-	children?: ReactNode
+	children?: ReactNode;
 }
 
 const TemplateName: React.FC<TemplateNameProps> = ({ children = undefined }) => {
@@ -11,7 +11,7 @@ const TemplateName: React.FC<TemplateNameProps> = ({ children = undefined }) => 
 		<div>
 			{children}
 		</div>
-	)
-}
+	);
+};
 
-export default TemplateName
+export default TemplateName;

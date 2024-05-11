@@ -1,13 +1,13 @@
-import React from "react"
-import { HeadFC } from "gatsby"
+import React from "react";
+import { HeadFC } from "gatsby";
 
-import ScopeContext from "context/scope"
+import ScopeContext from "context/scope";
 
-import Layout from "components/Layout"
-import Breadcrumbs from "components/Breadcrumbs"
-import SEO from "components/SEO"
+import Layout from "components/Layout";
+import Breadcrumbs from "components/Breadcrumbs";
+import SEO from "components/SEO";
 
-import Page from "models/page"
+import Page from "models/page";
 
 const BlogPage = () => {
 	const currentPage: Page = {
@@ -26,13 +26,11 @@ const BlogPage = () => {
 				</section>
 			</Layout>
 		</ScopeContext.Provider>
-	)
-}
+	);
+};
 
-export default BlogPage
+export default BlogPage;
 
 export const Head: HeadFC = () => {
-	return (
-		<SEO title="Блог" description="Блог нашей компании" path="blog" />
-	)
-}
+	return <SEO title="Блог" description="Блог нашей компании" path="blog" />;
+};

@@ -1,6 +1,8 @@
+@import "styles/theme";
+
 .slider-section {
 	align-self: center;
-	
+
 	padding: 32px;
 
 	min-height: 316px;
@@ -20,7 +22,7 @@
 		margin-top: -32px;
 		margin-left: -1920px;
 
-		background: linear-gradient(225deg, var(--color-theme-green), transparent);
+		background: linear-gradient(225deg, $color-theme-green, transparent);
 
 		opacity: 0.3;
 
@@ -31,7 +33,9 @@
 	}
 }
 
-.slider-wrapper { position: relative; }
+.slider-wrapper {
+	position: relative;
+}
 
 .slider-slide {
 	position: absolute;
@@ -55,33 +59,47 @@
 		height: 178px;
 
 		opacity: 0;
-	}
 
-	& .slide-block-icon { min-width: 178px; margin-left: 12px; opacity: 0.2; }
+		&__icon {
+			min-width: 178px;
 
-	& .slide-block-title { display: inline-block; opacity: 0; }
+			margin-left: 12px;
 
-	& .slide-block-desc {
-		margin: 8px 0 22px;
+			opacity: 0.2;
+		}
 
-		font-size: 1.2rem;
+		&__title {
+			display: inline-block;
 
-		@media (width >= 768px) { text-align: justify; }
+			opacity: 0;
+		}
 
-		@media (width >= 992px) { text-align: left; }
+		&__desc {
+			margin: 8px 0 22px;
 
-		@media (width >= 1200px) { text-align: left; }
-	}
+			font-size: 1.2rem;
 
-	& .slide-block-desc-wm { margin: 8px 0 22px 9px; font-size: 1.2rem; }
+			@media (width >=768px) {
+				text-align: justify;
+			}
 
-	& button, & .abutton {
-		display: inline-block;
-		position: absolute;
+			@media (width >=992px) {
+				text-align: left;
+			}
 
-		bottom: 0;
+			@media (width >=1200px) {
+				text-align: left;
+			}
+		}
 
-		opacity: 0;
+		&__action {
+			display: inline-block;
+			position: absolute;
+
+			bottom: 0;
+
+			opacity: 0;
+		}
 	}
 }
 
@@ -100,11 +118,13 @@
 
 	margin: 4px;
 
-	background: var(--color-theme-green-dark);
+	background: $color-theme-green-dark;
 
 	border-radius: 50%;
 
 	cursor: pointer;
 }
 
-.slider-pagination-bullet-active { background: var(--color-theme-green); }
+.slider-pagination-bullet-active {
+	background: $color-theme-green;
+}

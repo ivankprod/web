@@ -1,18 +1,18 @@
-import React from "react"
-import { HeadFC } from "gatsby"
+import React from "react";
+import { HeadFC } from "gatsby";
 
-import ScopeContext from "context/scope"
+import ScopeContext from "context/scope";
 
-import useMetaJSON from "hooks/useMetaJSON"
+import useMetaJSON from "hooks/useMetaJSON";
 
-import Layout from "components/Layout"
-import Breadcrumbs from "components/Breadcrumbs"
-import SEO from "components/SEO"
-import ContactsForm from "forms/ContactsForm"
+import Layout from "components/Layout";
+import Breadcrumbs from "components/Breadcrumbs";
+import SEO from "components/SEO";
+import ContactsForm from "forms/ContactsForm";
 
-import Page from "models/page"
+import Page from "models/page";
 
-import "./contacts.css"
+import "./contacts.scss";
 
 const ContactsPage = () => {
 	const currentPage: Page = {
@@ -30,11 +30,11 @@ const ContactsPage = () => {
 					<div id="content" className="content animate-fadein-css">
 						<h1>Наши контакты</h1>
 						<div className="contacts-emails">
-							<div className="contacts-emails-column">
+							<div className="contacts-emails__column">
 								<h3>Обратная связь</h3>
 								<a href={`mailto:${meta?.email_info}`}>{meta?.email_info}</a>
 							</div>
-							<div className="contacts-emails-column">
+							<div className="contacts-emails__column">
 								<h3>Пресса / PR</h3>
 								<a href={`mailto:${meta?.email_pr}`}>{meta?.email_pr}</a>
 							</div>
@@ -44,13 +44,11 @@ const ContactsPage = () => {
 				</section>
 			</Layout>
 		</ScopeContext.Provider>
-	)
-}
+	);
+};
 
-export default ContactsPage
+export default ContactsPage;
 
 export const Head: HeadFC = () => {
-	return (
-		<SEO title="Контакты" description="Наши контакты" path="contacts" />
-	)
-}
+	return <SEO title="Контакты" description="Наши контакты" path="contacts" />;
+};

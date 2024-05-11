@@ -1,6 +1,21 @@
+@import "styles/theme";
+
 :root {
-	--color-theme-green: #6dab1e;
-	--color-theme-green-dark: #9caf88;
+	font-family: "Open Sans", system-ui !important;
+	line-height: 1.4;
+	font-size: 14px;
+	font-weight: 400;
+
+	color: #000;
+
+	font-synthesis: none;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	-webkit-text-size-adjust: none; /* stylelint-disable-line */
+	-moz-text-size-adjust: none; /* stylelint-disable-line */
+	text-size-adjust: none;
 }
 
 #nprogress {
@@ -30,14 +45,6 @@ time, mark, audio, video {
 	box-sizing: border-box;
 
 	font: inherit;
-
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
-	-webkit-text-size-adjust: none; /* stylelint-disable-line */
-	-moz-text-size-adjust: none; /* stylelint-disable-line */
-	text-size-adjust: none;
-
 	vertical-align: baseline;
 }
 
@@ -57,10 +64,10 @@ a, a:link, a:active, a:hover, a:visited {
 
 	transition: color 0.3s, border-color 0.3s, opacity 0.3s;
 
-	&:hover { color: var(--color-theme-green); }
+	&:hover { color: $color-theme-green; }
 
 	&.link-in-text {
-		color: var(--color-theme-green);
+		color: $color-theme-green;
 
 		&:hover { opacity: 0.8 !important; }
 	}
@@ -68,8 +75,8 @@ a, a:link, a:active, a:hover, a:visited {
 	& img { cursor: pointer !important; }
 }
 
-::-moz-selection { color: #fff; background: var(--color-theme-green); } /* stylelint-disable-line */
-::selection { color: #fff; background: var(--color-theme-green); }
+::-moz-selection { color: #fff; background: $color-theme-green; } /* stylelint-disable-line */
+::selection { color: #fff; background: $color-theme-green; }
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section { display: block; }
@@ -93,8 +100,8 @@ hr {
 
 	margin: 0;
 
-	color: var(--color-theme-green);
-	background-color: var(--color-theme-green);
+	color: $color-theme-green;
+	background-color: $color-theme-green;
 
 	border: none;
 	border-radius: 6px;

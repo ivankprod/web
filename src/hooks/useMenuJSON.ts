@@ -1,26 +1,28 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby";
 
-import { MegaMenuItem } from "models/menu"
+import { MegaMenuItem } from "models/menu";
 
 export const useMenuJSON = (): MegaMenuItem[] => {
 	return useStaticQuery(
-		graphql`query {
-			allFile(filter: {relativePath: {eq: "menu.json"}}) {
-				nodes {
-					childContentJson {
-						menu {
-							id
-							title
-							href
-							scope
-							subnav {
-								columns {
-									id
-									title
-									items {
+		graphql`
+			query {
+				allFile(filter: { relativePath: { eq: "menu.json" } }) {
+					nodes {
+						childContentJson {
+							menu {
+								id
+								title
+								href
+								scope
+								subnav {
+									columns {
 										id
 										title
-										href
+										items {
+											id
+											title
+											href
+										}
 									}
 								}
 							}
@@ -28,8 +30,8 @@ export const useMenuJSON = (): MegaMenuItem[] => {
 					}
 				}
 			}
-		}`
+		`
 	).allFile?.nodes[0]?.childContentJson?.menu;
-}
+};
 
-export default useMenuJSON
+export default useMenuJSON;

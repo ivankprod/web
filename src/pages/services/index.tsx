@@ -1,13 +1,13 @@
-import React from "react"
-import { HeadFC } from "gatsby"
+import React from "react";
+import { HeadFC } from "gatsby";
 
-import ScopeContext from "context/scope"
+import ScopeContext from "context/scope";
 
-import Layout from "components/Layout"
-import Breadcrumbs from "components/Breadcrumbs"
-import SEO from "components/SEO"
+import Layout from "components/Layout";
+import Breadcrumbs from "components/Breadcrumbs";
+import SEO from "components/SEO";
 
-import Page from "models/page"
+import Page from "models/page";
 
 const ServicesPage = () => {
 	const currentPage: Page = {
@@ -26,13 +26,11 @@ const ServicesPage = () => {
 				</section>
 			</Layout>
 		</ScopeContext.Provider>
-	)
-}
+	);
+};
 
-export default ServicesPage
+export default ServicesPage;
 
 export const Head: HeadFC = () => {
-	return (
-		<SEO title="Услуги" description="Услуги компании" path="services" />
-	)
-}
+	return <SEO title="Услуги" description="Услуги компании" path="services" />;
+};

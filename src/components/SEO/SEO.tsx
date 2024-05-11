@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react";
 
-import useSiteMetadata from "hooks/useSiteMetadata"
+import useSiteMetadata from "hooks/useSiteMetadata";
 
-type Meta = React.DetailedHTMLProps<React.MetaHTMLAttributes<HTMLMetaElement>, HTMLMetaElement>
+type Meta = React.DetailedHTMLProps<React.MetaHTMLAttributes<HTMLMetaElement>, HTMLMetaElement>;
 
 interface SeoProps {
 	title: string;
@@ -13,7 +13,14 @@ interface SeoProps {
 	robots?: string;
 }
 
-const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = [], path = "", robots = "index, follow" }) => {
+const SEO: React.FC<SeoProps> = ({
+	title,
+	description = "",
+	lang = "ru",
+	meta = [],
+	path = "",
+	robots = "index, follow"
+}) => {
 	const siteMetadata = useSiteMetadata();
 
 	const metaTitle = `${siteMetadata.title!} | ${title}`;
@@ -23,59 +30,46 @@ const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = 
 	const metaDefault: Meta[] = [
 		{
 			name: "robots",
-			content: robots,
-		},
-		{
+			content: robots
+		}, {
 			name: "description",
-			content: metaDescription,
-		},
-		{
+			content: metaDescription
+		}, {
 			name: "keywords",
-			content: "ivankprod, ivank, colldier, production, video, audio, design, media, it",
-		},
-		{
+			content: "ivankprod, ivank, colldier, production, video, audio, design, media, it"
+		}, {
 			name: "theme-color",
-			content: "#6dab1e",
-		},
-		{
+			content: "#6dab1e"
+		}, {
 			property: "og:title",
-			content: metaTitle,
-		},
-		{
+			content: metaTitle
+		}, {
 			property: "og:description",
-			content: metaDescription,
-		},
-		{
+			content: metaDescription
+		}, {
 			property: "og:type",
-			content: "website",
-		},
-		{
+			content: "website"
+		}, {
 			property: "og:url",
-			content: linkCanonical,
-		},
-		{
+			content: linkCanonical
+		}, {
 			property: "og:site_name",
-			content: siteMetadata.title!,
-		},
-		{
+			content: siteMetadata.title!
+		}, {
 			property: "og:locale",
-			content: "ru_RU",
-		},
-		{
+			content: "ru_RU"
+		}, {
 			name: "twitter:card",
-			content: "summary",
-		},
-		{
+			content: "summary"
+		}, {
 			name: "twitter:creator",
-			content: siteMetadata.author!,
-		},
-		{
+			content: siteMetadata.author!
+		}, {
 			name: "twitter:title",
-			content: metaTitle,
-		},
-		{
+			content: metaTitle
+		}, {
 			name: "twitter:description",
-			content: metaDescription,
+			content: metaDescription
 		}
 	];
 
@@ -87,10 +81,15 @@ const SEO: React.FC<SeoProps> = ({ title, description = "", lang = "ru", meta = 
 			<title>{metaTitle}</title>
 			<link rel="canonical" href={linkCanonical} />
 			{metaFinal.map(({ name, property, content }: Meta, index: number) => (
-				<meta key={`${index}-${name || property}`} name={name} property={property} content={content} />
+				<meta
+					key={`${index}-${name || property}`}
+					name={name}
+					property={property}
+					content={content}
+				/>
 			))}
 		</>
-	)
-}
+	);
+};
 
-export default SEO
+export default SEO;

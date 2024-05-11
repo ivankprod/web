@@ -1,13 +1,13 @@
-import React from "react"
-import { HeadFC } from "gatsby"
+import React from "react";
+import { HeadFC } from "gatsby";
 
-import ScopeContext from "context/scope"
+import ScopeContext from "context/scope";
 
-import Layout from "components/Layout"
-import Breadcrumbs from "components/Breadcrumbs"
-import SEO from "components/SEO"
+import Layout from "components/Layout";
+import Breadcrumbs from "components/Breadcrumbs";
+import SEO from "components/SEO";
 
-import Page from "models/page"
+import Page from "models/page";
 
 const ServicesMediaPage = () => {
 	const currentPage: Page = {
@@ -15,10 +15,12 @@ const ServicesMediaPage = () => {
 		path: "media"
 	};
 
-	const parentPages: Page[] = [{
-		title: "Услуги",
-		path: "services"
-	}];
+	const parentPages: Page[] = [
+		{
+			title: "Услуги",
+			path: "services"
+		}
+	];
 
 	return (
 		<ScopeContext.Provider value={{ scope: parentPages[0].path }}>
@@ -31,13 +33,11 @@ const ServicesMediaPage = () => {
 				</section>
 			</Layout>
 		</ScopeContext.Provider>
-	)
-}
+	);
+};
 
-export default ServicesMediaPage
+export default ServicesMediaPage;
 
 export const Head: HeadFC = () => {
-	return (
-		<SEO title="Услуги: медиа" description="Услуги в сфере медиа" path="services/media" />
-	)
-}
+	return <SEO title="Услуги: медиа" description="Услуги в сфере медиа" path="services/media" />;
+};

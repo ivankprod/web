@@ -1,18 +1,14 @@
-import React from "react"
-import clsx from "clsx"
+import React from "react";
+import clsx from "clsx";
 
-import "./FormRow.css"
+import "./FormRow.scss";
 
 interface FormRowProps extends React.PropsWithChildren {
 	className?: string;
 }
 
 const FormRow: React.FC<FormRowProps> = ({ className = "", children = undefined }) => {
-	return (
-		<div className={clsx("form-row", className)}>
-			{children}
-		</div>
-	)
-}
+	return <div className={clsx("form-row", className)}>{children}</div>;
+};
 
-export default FormRow
+export default FormRow;

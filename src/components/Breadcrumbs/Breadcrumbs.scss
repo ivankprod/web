@@ -5,20 +5,23 @@
 
 	overflow: hidden;
 
-	& .breadcrumbs-last { margin-left: 12px; }
-
-	& li {
+	& .breadcrumb {
 		display: inline-block;
+
+		&_last {
+			&__text { margin-left: 12px; }
+		}
 
 		& a {
 			position: relative;
 
 			padding: 6px 10px 6px 6px;
-			margin: 0 0 0 6px;
+			margin-left: 6px;
 
 			font-size: 1rem;
 
-			&::before, &::after {
+			&::before,
+			&::after {
 				position: absolute;
 				right: 0;
 

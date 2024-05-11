@@ -1,13 +1,13 @@
-import React from "react"
-import { HeadFC } from "gatsby"
+import React from "react";
+import { HeadFC } from "gatsby";
 
-import ScopeContext from "context/scope"
+import ScopeContext from "context/scope";
 
-import Layout from "components/Layout"
-import Breadcrumbs from "components/Breadcrumbs"
-import SEO from "components/SEO"
+import Layout from "components/Layout";
+import Breadcrumbs from "components/Breadcrumbs";
+import SEO from "components/SEO";
 
-import Page from "models/page"
+import Page from "models/page";
 
 const ServicesMediaAudioPage = () => {
 	const currentPage: Page = {
@@ -15,13 +15,15 @@ const ServicesMediaAudioPage = () => {
 		path: "audio"
 	};
 
-	const parentPages: Page[] = [{
-		title: "Услуги",
-		path: "services"
-	}, {
-		title: "Медиа",
-		path: "services/media"
-	}];
+	const parentPages: Page[] = [
+		{
+			title: "Услуги",
+			path: "services"
+		}, {
+			title: "Медиа",
+			path: "services/media"
+		}
+	];
 
 	return (
 		<ScopeContext.Provider value={{ scope: parentPages[0].path }}>
@@ -34,13 +36,17 @@ const ServicesMediaAudioPage = () => {
 				</section>
 			</Layout>
 		</ScopeContext.Provider>
-	)
-}
+	);
+};
 
-export default ServicesMediaAudioPage
+export default ServicesMediaAudioPage;
 
 export const Head: HeadFC = () => {
 	return (
-		<SEO title="Услуги: аудио" description="Услуги в сфере аудио-производства" path="services/media/audio" />
-	)
-}
+		<SEO
+			title="Услуги: аудио"
+			description="Услуги в сфере аудио-производства"
+			path="services/media/audio"
+		/>
+	);
+};
