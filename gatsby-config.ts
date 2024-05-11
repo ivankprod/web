@@ -1,13 +1,13 @@
-import path from 'path'
-import fs from 'fs'
+import path from "path";
+import fs from "fs";
 
-import type { GatsbyConfig, IPluginRefOptions } from "gatsby"
+import type { GatsbyConfig, IPluginRefOptions } from "gatsby";
 
 const rootDirsConfig: IPluginRefOptions = {};
 
 const srcDirs = fs.readdirSync(path.resolve(__dirname, "src"));
 srcDirs.forEach((srcDir) => {
-    rootDirsConfig[srcDir] = path.resolve(__dirname, "src", srcDir);
+	rootDirsConfig[srcDir] = path.resolve(__dirname, "src", srcDir);
 });
 
 const config: GatsbyConfig = {
@@ -36,25 +36,25 @@ const config: GatsbyConfig = {
 						stage: 3,
 						features: { "nesting-rules": true }
 					})
-				],
-			},
+				]
+			}
 		},
 		"gatsby-plugin-image",
 		"gatsby-plugin-sitemap",
 		{
-			resolve: 'gatsby-plugin-manifest',
+			resolve: "gatsby-plugin-manifest",
 			options: {
-				"name": "IvanK Production",
-				"short_name": "ivankprod",
-				"description": "Продакшн-студия IvanK Production",
-				"icon": "src/images/icon.png",
-				"lang": "ru",
-				"scope": "/",
-				"start_url": "/?utm_source=pwa-homescreen&utm_medium=pwa",
-				"background_color": "#6dab1e",
-				"theme_color": "#6dab1e",
-				"display": "standalone",
-				"orientation": "portrait"
+				name: "IvanK Production",
+				short_name: "ivankprod",
+				description: "Продакшн-студия IvanK Production",
+				icon: "src/images/icon.png",
+				lang: "ru",
+				scope: "/",
+				start_url: "/?utm_source=pwa-homescreen&utm_medium=pwa",
+				background_color: "#6dab1e",
+				theme_color: "#6dab1e",
+				display: "standalone",
+				orientation: "portrait"
 			}
 		},
 		"gatsby-plugin-sharp",
@@ -79,8 +79,8 @@ const config: GatsbyConfig = {
 			resolve: "gatsby-source-filesystem",
 			options: {
 				name: "legal",
-				path: "./content/legal",
-			},
+				path: "./content/legal"
+			}
 		},
 		{
 			resolve: "gatsby-source-filesystem",

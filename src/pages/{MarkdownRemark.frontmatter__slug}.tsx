@@ -1,11 +1,11 @@
-import React from "react"
-import { HeadFC, HeadProps, PageProps, graphql } from "gatsby"
+import React from "react";
+import { HeadFC, HeadProps, PageProps, graphql } from "gatsby";
 
-import Layout from "components/Layout"
-import Breadcrumbs from "components/Breadcrumbs"
-import SEO from "components/SEO"
+import Layout from "components/Layout";
+import Breadcrumbs from "components/Breadcrumbs";
+import SEO from "components/SEO";
 
-import Page from "models/page"
+import Page from "models/page";
 
 interface LegalPageTemplateProps {
 	markdownRemark: {
@@ -15,8 +15,8 @@ interface LegalPageTemplateProps {
 			title: string;
 			slug: string;
 			date: string;
-		}
-	}
+		};
+	};
 }
 
 const LegalPageTemplate: React.FC<PageProps<LegalPageTemplateProps>> = ({
@@ -39,22 +39,23 @@ const LegalPageTemplate: React.FC<PageProps<LegalPageTemplateProps>> = ({
 				</div>
 			</section>
 		</Layout>
-	)
-}
+	);
+};
 
-export default LegalPageTemplate
+export default LegalPageTemplate;
 
 export const Head: HeadFC<LegalPageTemplateProps> = ({
 	data: { markdownRemark }
 }: HeadProps<LegalPageTemplateProps>) => {
 	return (
-		<SEO title={markdownRemark.frontmatter.title}
+		<SEO
+			title={markdownRemark.frontmatter.title}
 			description={markdownRemark.frontmatter.title}
 			path={markdownRemark.frontmatter.slug.slice(1, -1)}
 			robots="noindex, nofollow"
 		/>
-	)
-}
+	);
+};
 
 export const pageQuery = graphql`
 	query ($id: String!) {

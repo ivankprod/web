@@ -1,14 +1,23 @@
-import React from "react"
-import clsx from "clsx"
+import React from "react";
+import clsx from "clsx";
 
-import { BaseInputProps } from "models/element"
+import { BaseInputProps } from "models/element";
 
-import "./TextField.css"
+import "./TextField.css";
 
-type TextFieldProps = BaseInputProps
-	& Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, keyof BaseInputProps>
-type TextAreaProps = BaseInputProps
-	& Omit<React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, keyof BaseInputProps>
+type TextFieldProps = BaseInputProps &
+	Omit<
+		React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+		keyof BaseInputProps
+	>;
+type TextAreaProps = BaseInputProps &
+	Omit<
+		React.DetailedHTMLProps<
+			React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+			HTMLTextAreaElement
+		>,
+		keyof BaseInputProps
+	>;
 
 export const TextField: React.FC<TextFieldProps> = ({
 	validable = false,
@@ -20,12 +29,16 @@ export const TextField: React.FC<TextFieldProps> = ({
 		parentOnChange?.(e);
 
 		if (validable) e.target.className = clsx({ "error-input-required": e.target.value === "" });
-	}
+	};
 
 	return (
-		<input type="text" className={clsx({ "error-input-required": validityError })} {...otherProps} />
-	)
-}
+		<input
+			type="text"
+			className={clsx({ "error-input-required": validityError })}
+			{...otherProps}
+		/>
+	);
+};
 
 export const TextArea: React.FC<TextAreaProps> = ({
 	validable = false,
@@ -37,11 +50,9 @@ export const TextArea: React.FC<TextAreaProps> = ({
 		parentOnChange?.(e);
 
 		if (validable) e.target.className = clsx({ "error-input-required": e.target.value === "" });
-	}
+	};
 
-	return (
-		<textarea className={clsx({ "error-input-required": validityError })} {...otherProps} />
-	)
-}
+	return <textarea className={clsx({ "error-input-required": validityError })} {...otherProps} />;
+};
 
-export default { TextField, TextArea }
+export default { TextField, TextArea };

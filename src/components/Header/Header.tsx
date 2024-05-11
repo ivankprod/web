@@ -1,20 +1,20 @@
-import React, { useContext } from "react"
-import clsx from "clsx"
+import React, { useContext } from "react";
+import clsx from "clsx";
 
-import ScopeContext from "context/scope"
-import useMetaJSON from "hooks/useMetaJSON"
+import ScopeContext from "context/scope";
+import useMetaJSON from "hooks/useMetaJSON";
 
-import Button from "elements/Button"
-import Navigation from "components/Navigation"
+import Button from "elements/Button";
+import Navigation from "components/Navigation";
 
-import "./Header.css"
+import "./Header.css";
 
 const Header: React.FC = () => {
 	const { scope } = useContext(ScopeContext);
 	const meta = useMetaJSON();
 
 	return (
-		<header className={clsx({"homepage-header": scope === "home"})}>
+		<header className={clsx({ "homepage-header": scope === "home" })}>
 			<div className="container header-picture">
 				<div className="header-picture-wrapper"></div>
 			</div>
@@ -31,7 +31,9 @@ const Header: React.FC = () => {
 									<a href={`tel:${meta?.phone}`}>{meta?.phone}</a>
 								</div>
 								<div className="global-info-stroke">
-									<a href={`mailto:${meta?.email_info}`}>{meta?.email_info?.toUpperCase()}</a>
+									<a href={`mailto:${meta?.email_info}`}>
+										{meta?.email_info?.toUpperCase()}
+									</a>
 								</div>
 							</div>
 							<Button to="/join/">Заполнить бриф</Button>
@@ -41,7 +43,7 @@ const Header: React.FC = () => {
 				</div>
 			</div>
 		</header>
-	)
-}
+	);
+};
 
-export default Header
+export default Header;

@@ -1,17 +1,18 @@
-import React, { ComponentProps, ElementType } from "react"
-import clsx from "clsx"
-import { Link } from "gatsby"
+import React, { ComponentProps, ElementType } from "react";
+import clsx from "clsx";
+import { Link } from "gatsby";
 
-import { ButtonSize } from "models/element"
+import { ButtonSize } from "models/element";
 
-import "./Button.css"
+import "./Button.css";
 
 interface ButtonOwnProps<E extends ElementType = ElementType> extends React.PropsWithChildren {
 	as?: E;
 	size?: ButtonSize;
 }
 
-type ButtonProps<E extends ElementType> = ButtonOwnProps<E> & Omit<ComponentProps<E>, keyof ButtonOwnProps>
+type ButtonProps<E extends ElementType> = ButtonOwnProps<E> &
+	Omit<ComponentProps<E>, keyof ButtonOwnProps>;
 
 const defaultElement = Link;
 
@@ -27,7 +28,7 @@ const Button: React.FC<ButtonProps<ElementType>> = <E extends ElementType = type
 		<TagName className={clsx("abutton", size, "rounded-all")} {...otherProps}>
 			{children}
 		</TagName>
-	)
-}
+	);
+};
 
-export default Button
+export default Button;

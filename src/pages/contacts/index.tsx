@@ -1,18 +1,18 @@
-import React from "react"
-import { HeadFC } from "gatsby"
+import React from "react";
+import { HeadFC } from "gatsby";
 
-import ScopeContext from "context/scope"
+import ScopeContext from "context/scope";
 
-import useMetaJSON from "hooks/useMetaJSON"
+import useMetaJSON from "hooks/useMetaJSON";
 
-import Layout from "components/Layout"
-import Breadcrumbs from "components/Breadcrumbs"
-import SEO from "components/SEO"
-import ContactsForm from "forms/ContactsForm"
+import Layout from "components/Layout";
+import Breadcrumbs from "components/Breadcrumbs";
+import SEO from "components/SEO";
+import ContactsForm from "forms/ContactsForm";
 
-import Page from "models/page"
+import Page from "models/page";
 
-import "./contacts.css"
+import "./contacts.css";
 
 const ContactsPage = () => {
 	const currentPage: Page = {
@@ -44,13 +44,11 @@ const ContactsPage = () => {
 				</section>
 			</Layout>
 		</ScopeContext.Provider>
-	)
-}
+	);
+};
 
-export default ContactsPage
+export default ContactsPage;
 
 export const Head: HeadFC = () => {
-	return (
-		<SEO title="Контакты" description="Наши контакты" path="contacts" />
-	)
-}
+	return <SEO title="Контакты" description="Наши контакты" path="contacts" />;
+};

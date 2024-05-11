@@ -1,11 +1,11 @@
-import React from "react"
-import { HeadFC } from "gatsby"
+import React from "react";
+import { HeadFC } from "gatsby";
 
-import ScopeContext from "context/scope"
+import ScopeContext from "context/scope";
 
-import Layout from "components/Layout"
-import Slider from "components/Slider"
-import SEO from "components/SEO"
+import Layout from "components/Layout";
+import Slider from "components/Slider";
+import SEO from "components/SEO";
 
 const IndexPage = () => (
 	<ScopeContext.Provider value={{ scope: "home" }}>
@@ -17,12 +17,10 @@ const IndexPage = () => (
 			</section>
 		</Layout>
 	</ScopeContext.Provider>
-)
+);
 
-export default IndexPage
+export default IndexPage;
 
 export const Head: HeadFC = () => {
-	return (
-		<SEO title = "Главная" />
-	)
-}
+	return <SEO title="Главная" />;
+};

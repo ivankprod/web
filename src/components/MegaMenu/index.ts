@@ -1,1 +1,1 @@
-export { default } from "./MegaMenu"
+export { default } from "./MegaMenu";
