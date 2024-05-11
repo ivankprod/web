@@ -5,7 +5,7 @@ import useSiteMetadata from "hooks/useSiteMetadata";
 
 import Page from "models/page";
 
-import "./Breadcrumbs.css";
+import "./Breadcrumbs.scss";
 
 interface BreadcrumbsProps {
 	page: Page;
@@ -19,10 +19,11 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
 	const siteMetadata = useSiteMetadata();
 
 	return (
-		<div id="breadcrumbs" className="breadcrumbs rounded-bottom">
+		<div className="breadcrumbs rounded-bottom">
 			<div>
 				<ul itemScope itemType="http://schema.org/BreadcrumbList">
 					<li
+						className="breadcrumb"
 						itemScope
 						itemType="http://schema.org/ListItem"
 						itemProp="itemListElement"
@@ -40,6 +41,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
 					</li>
 					{parentPages.map(({ title, path }: Page, index: number) => (
 						<li
+							className="breadcrumb"
 							itemScope
 							itemType="http://schema.org/ListItem"
 							itemProp="itemListElement"
@@ -61,15 +63,16 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
 						</li>
 					))}
 					<li
+						className="breadcrumb"
 						itemScope
 						itemType="http://schema.org/ListItem"
 						itemProp="itemListElement"
 					>
 						<span
+							className="breadcrumb_last__text"
 							itemScope
 							itemType="http://schema.org/WebPage"
 							itemProp="item"
-							className="breadcrumbs-last"
 						>
 							<span itemProp="name">{page.title}</span>
 						</span>

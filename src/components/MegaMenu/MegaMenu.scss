@@ -1,3 +1,5 @@
+@import "styles/theme";
+
 .nav-container {
 	font-size: 1.2rem;
 	font-weight: 600;
@@ -38,9 +40,9 @@
 						transition: background-color 0.1s linear;
 					}
 
-					&:hover, &.hovered { color: var(--color-theme-green) !important; }
+					&:hover, &.hovered { color: $color-theme-green !important; }
 
-					&.nav-item-active::before { background-color: var(--color-theme-green); }
+					&.nav-item_active::before { background-color: $color-theme-green; }
 
 					&.subnav::after {
 						content: "\f107";
@@ -83,18 +85,20 @@
 
 	border-top: 1px solid #dedede;
 
-	box-shadow: 0 3px 8px 0 rgb(0 0 0 / 10%);
+	box-shadow: 0 3px 8px 0 #0000001a;
 
 	&.showed { display: flex; }
 
-	& .subnav-title {
-		margin-bottom: 12px;
-		padding-bottom: 8px;
+	& .subnav-column {
+		width: 30%;
 
-		border-bottom: 1px solid var(--color-theme-green);
+		&__title {
+			margin-bottom: 12px;
+			padding-bottom: 8px;
+	
+			border-bottom: 1px solid $color-theme-green;
+		}
 	}
-
-	& .subnav-column { width: 30%; }
 
 	& ul.snav { margin-left: 12px; }
 	& ul.snav li { margin: 6px 0; }

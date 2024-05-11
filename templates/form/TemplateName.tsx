@@ -8,6 +8,8 @@ import { TextField, TextArea } from "elements/TextField";
 import Checkbox from "elements/Checkbox";
 import { encodeFormBody } from "scripts/utils";
 
+import "./TemplateName.scss";
+
 const useStyles = createUseStyles({
 	wrapper: {
 		width: "50%"

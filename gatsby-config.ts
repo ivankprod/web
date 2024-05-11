@@ -32,13 +32,11 @@ const config: GatsbyConfig = {
 			options: {
 				postCssPlugins: [
 					require("autoprefixer")({ remove: false }),
-					require("postcss-preset-env")({
-						stage: 3,
-						features: { "nesting-rules": true }
-					})
+					require("postcss-preset-env")
 				]
 			}
 		},
+		"gatsby-plugin-sass",
 		"gatsby-plugin-image",
 		"gatsby-plugin-sitemap",
 		{

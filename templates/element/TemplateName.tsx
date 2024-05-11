@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 
 import { BaseInputProps } from "models/element";
 
-import "./TemplateName.css";
+import "./TemplateName.scss";
 
 interface TemplateNameOwnProps extends BaseInputProps {
 	children?: ReactNode;

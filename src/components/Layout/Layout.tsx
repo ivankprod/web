@@ -1,10 +1,7 @@
 import React from "react";
 
 import "normalize.css";
-import "fonts/fontawesome/css/solid.min.css";
-import "styles/utils/reset.css";
-
-import "./Layout.css";
+import "./Layout.scss";
 
 import Header from "components/Header";
 import Footer from "components/Footer";

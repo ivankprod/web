@@ -9,7 +9,7 @@ import { MegaMenuItem, MenuItem, MenuSubnavColumn } from "models/menu";
 import { animate, drawOpacity, makeLinearEaseInOut } from "scripts/animate";
 import utils from "scripts/utils";
 
-import "./MegaMenu.css";
+import "./MegaMenu.scss";
 
 const closeShowedSubnav = async (): Promise<void> => {
 	await utils.sleep(30); // depends on many factors (network speed, RAM etc...)
@@ -100,7 +100,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ menuStructure }) => {
 							<div className="subnav-container animate-slidein-fadein-css" key={id}>
 								{subnav.columns.map(({ id, title, items }: MenuSubnavColumn) => (
 									<div className="subnav-column" key={id}>
-										<div className="subnav-title">{title}</div>
+										<div className="subnav-column__title">{title}</div>
 										<ul className="snav">
 											{items.map(({ id, title, href }: MenuItem) => (
 												<li key={id}>
@@ -119,8 +119,8 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ menuStructure }) => {
 							<Link
 								to={href}
 								className={clsx({
-									"nav-item-active": scopeVal === scope,
-									subnav: subnav
+									"nav-item_active": scopeVal === scope,
+									"subnav": subnav
 								})}
 								onClick={subnav && closeShowedSubnav}
 							>

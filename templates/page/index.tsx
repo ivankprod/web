@@ -8,7 +8,7 @@ import SEO from "components/SEO";
 import Breadcrumbs from "components/Breadcrumbs";
 import Page from "models/page";
 
-//import "./templateName.css"
+//import "./templateName.scss"
 
 const TemplateNamePage = () => {
 	const currentPage: Page = {

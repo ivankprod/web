@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 
 import { ButtonSize } from "models/element";
 
-import "./Button.css";
+import "./Button.scss";
 
 interface ButtonOwnProps<E extends ElementType = ElementType> extends React.PropsWithChildren {
 	as?: E;
@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps<ElementType>> = <E extends ElementType = type
 	const TagName = as || defaultElement;
 
 	return (
-		<TagName className={clsx("abutton", size, "rounded-all")} {...otherProps}>
+		<TagName {...otherProps} className={clsx("abutton", size, "rounded-all", otherProps.className)}>
 			{children}
 		</TagName>
 	);

@@ -1,0 +1,144 @@
+@import "styles/theme";
+@import "styles/social";
+
+.footer {
+	position: relative;
+	flex: 0 0 auto;
+
+	width: 100%;
+
+	z-index: 2;
+
+	&__back {
+		position: absolute;
+		inset: 0;
+
+		background: linear-gradient(to bottom, #f6fdf0, #fff);
+
+		border-top: 2px solid $color-theme-green;
+
+		opacity: 90%;
+
+		box-shadow: inset 0 6px 8px 0 #00000012;
+	}
+
+	& .container {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-flow: row wrap;
+
+		padding-bottom: 22px;
+
+		text-align: center;
+
+		@media (width >= 768px) {
+			justify-content: space-around;
+		}
+
+		@media (width >= 992px) {
+			justify-content: space-between;
+		}
+	}
+}
+
+.footer-block {
+	width: 30%;
+
+	margin-top: 34px;
+
+	vertical-align: top;
+	text-align: left;
+
+	@media (width <= 767px) {
+		width: 100%;
+	}
+
+	@media (width >= 768px) {
+		width: 46%;
+	}
+
+	@media (width >= 992px) {
+		width: 30%;
+	}
+
+	&_copyright {
+		position: relative;
+
+		width: auto;
+
+		margin: 18px 0 44px;
+
+		text-align: center;
+
+		& .social {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__title {
+		padding-bottom: 6px;
+		margin-bottom: 12px;
+
+		font-size: 1.3rem;
+		text-transform: uppercase;
+		color: $color-theme-green;
+
+		border-bottom: 2px solid #0000001a;
+	}
+
+	& .footer-nav {
+		&__item {
+			margin-bottom: 6px;
+
+			& a {
+				font-size: 1.2rem;
+
+				&:hover {
+					border-color: $color-theme-green;
+				}
+			}
+		}
+	}
+
+	& .footer-entry {
+		margin-top: -6px;
+
+		& i {
+			&::before {
+				display: inline-block;
+
+				position: relative;
+
+				top: 4px;
+
+				width: 26px;
+				height: 26px;
+
+				margin-right: 6px;
+
+				font-family: "Font Awesome 5 Free";
+				font-size: 1.7rem;
+				font-weight: 900;
+
+				text-align: center;
+			}
+
+			&.fix-top::before { top: 5px; }
+
+			&.fa-time::before  { content: "\f017"; }
+			&.fa-phone::before { content: "\f095"; }
+			&.fa-email::before { content: "\f003"; }
+		}
+
+		& dt {
+			display: inline-block;
+
+			width: 42px;
+
+			margin: 0 6px 4px 0;
+		}
+
+		& dd { display: inline-block; }
+	}
+}

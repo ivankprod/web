@@ -1,3 +1,5 @@
+@import "styles/theme";
+
 .form-row {
 	display: flex;
 
@@ -16,7 +18,7 @@
 
 		opacity: 0;
 
-		&.success { opacity: 1; color: var(--color-theme-green); }
-		&.error { opacity: 1; color: red; }
+		&.success { opacity: 1; color: $color-theme-green; }
+		&.error { opacity: 1; color: #ff0000; }
 	}
 }

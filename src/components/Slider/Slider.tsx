@@ -8,7 +8,7 @@ import { ButtonSize } from "models/element";
 import { SliderClass, SliderConfig, SliderEvent } from "scripts/slider";
 import { animate, drawOpacity, makeLinear } from "scripts/animate";
 
-import "./Slider.css";
+import "./Slider.scss";
 
 const onSliderTransitionStart: SliderEvent = (slider: SliderClass) => {
 	const slide = slider.slides[slider.activeIndex].children[0] as HTMLElement;
@@ -136,10 +136,10 @@ const Slider: React.FC = () => {
 						<div key={id} className="slider-slide">
 							<div className="slide-block">
 								<div>
-									<div className="slide-block-title">
+									<div className="slide-block__title">
 										<h1>{caption}</h1>
 									</div>
-									<div className="slide-block-desc">
+									<div className="slide-block__desc">
 										{text &&
 											text.map((item, index) =>
 												index == text.length - 1 ? (
@@ -153,14 +153,17 @@ const Slider: React.FC = () => {
 											)}
 									</div>
 									{action && (
-										<Button to={action?.url} size={ButtonSize.middle}>
+										<Button
+											className="slide-block__action"
+											to={action?.url} size={ButtonSize.middle}
+										>
 											{action?.text}
 										</Button>
 									)}
 								</div>
 								{icons && icons[index] && (
 									<GatsbyImage
-										className="slide-block-icon"
+										className="slide-block__icon"
 										// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 										image={icons[index].childImageSharp?.gatsbyImageData!}
 										alt="Welcome!"

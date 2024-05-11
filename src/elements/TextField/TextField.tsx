@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 import { BaseInputProps } from "models/element";
 
-import "./TextField.css";
+import "./TextField.scss";
 
 type TextFieldProps = BaseInputProps &
 	Omit<

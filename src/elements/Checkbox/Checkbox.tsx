@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 import { BaseInputProps } from "models/element";
 
-import "./Checkbox.css";
+import "./Checkbox.scss";
 
 interface CheckboxOwnProps extends React.PropsWithChildren<BaseInputProps> {}
 

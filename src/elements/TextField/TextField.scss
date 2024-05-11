@@ -1,3 +1,5 @@
+@import "styles/theme";
+
 input[type="text"],
 input[type="date"],
 input[type="datetime-local"],
@@ -19,11 +21,11 @@ textarea {
 
 	transition: border-color 0.1s;
 
-	&:focus { border-color: var(--color-theme-green); }
+	&:focus { border-color: $color-theme-green; }
 
 	&.error-input-required {
-		border-color: rgb(255 0 0 / 50%) !important;
-		outline: 1px solid rgb(255 0 0 / 50%) !important;
+		border-color: #ff000080 !important;
+		outline: 1px solid #ff000080 !important;
 	}
 }
 

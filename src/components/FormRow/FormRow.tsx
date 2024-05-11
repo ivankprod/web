@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import "./FormRow.css";
+import "./FormRow.scss";
 
 interface FormRowProps extends React.PropsWithChildren {
 	className?: string;

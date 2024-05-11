@@ -3,7 +3,7 @@ import React from "react";
 import Button from "elements/Button";
 import { ButtonSize } from "models/element";
 
-import "./ErrorBox.css";
+import "./ErrorBox.scss";
 
 interface ErrorBoxProps {
 	title: string;
@@ -13,9 +13,12 @@ interface ErrorBoxProps {
 const ErrorBox: React.FC<ErrorBoxProps> = ({ title, message }) => {
 	return (
 		<div className="error-box">
-			<div className="error-title">{title}</div>
-			<div className="error-message">{message}</div>
-			<Button to="/" size={ButtonSize.small}>
+			<div className="error-box__title">{title}</div>
+			<div className="error-box__message">{message}</div>
+			<Button
+				className="error-box__button"
+				to="/" size={ButtonSize.small}
+			>
 				На главную
 			</Button>
 		</div>

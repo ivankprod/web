@@ -12,7 +12,7 @@ import ContactsForm from "forms/ContactsForm";
 
 import Page from "models/page";
 
-import "./contacts.css";
+import "./contacts.scss";
 
 const ContactsPage = () => {
 	const currentPage: Page = {
@@ -30,11 +30,11 @@ const ContactsPage = () => {
 					<div id="content" className="content animate-fadein-css">
 						<h1>Наши контакты</h1>
 						<div className="contacts-emails">
-							<div className="contacts-emails-column">
+							<div className="contacts-emails__column">
 								<h3>Обратная связь</h3>
 								<a href={`mailto:${meta?.email_info}`}>{meta?.email_info}</a>
 							</div>
-							<div className="contacts-emails-column">
+							<div className="contacts-emails__column">
 								<h3>Пресса / PR</h3>
 								<a href={`mailto:${meta?.email_pr}`}>{meta?.email_pr}</a>
 							</div>

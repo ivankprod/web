@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-import "./TemplateName.css";
+import "./TemplateName.scss";
 
 interface TemplateNameProps {
 	children?: ReactNode;

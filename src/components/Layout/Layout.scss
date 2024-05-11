@@ -1,11 +1,10 @@
+@import "fonts/fontawesome/css/solid.min.css";
+@import "styles/reset";
+
 html, body {
 	height: 100%;
 	width: 100%;
 	min-width: 230px;
-
-	font-family: "Open Sans", system-ui !important;
-	font-size: 14px;
-	color: #000;
 
 	background: #fff;
 }
@@ -54,27 +53,4 @@ html, body {
 	& > h1 {
 		margin-bottom: 32px;
 	}
-}
-
-.article {
-	width: 100%;
-
-	font-size: 16px;
-
-	& p {
-		text-align: justify;
-		text-indent: 16px;
-	}
-
-	& ul {
-		margin-left: 48px;
-
-		list-style: disc;
-
-		text-align: left;
-
-		& li { margin-top: 12px; }
-	}
-
-	& span.bold { font-weight: 600; }
 }
