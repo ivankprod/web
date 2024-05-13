@@ -51,7 +51,7 @@
 		"gatsby-plugin-manifest": "^5.13.1",
 		"gatsby-plugin-netlify": "^5.1.1",
 		"gatsby-plugin-nprogress": "^5.13.1",
-		"gatsby-plugin-postcss": "^6.13.0",
+		"gatsby-plugin-postcss": "^6.13.1",
 		"gatsby-plugin-root-import": "^2.0.9",
 		"gatsby-plugin-sass": "^6.13.1",
 		"gatsby-plugin-sharp": "^5.13.1",
