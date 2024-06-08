@@ -28,8 +28,6 @@ html, body {
 	margin: 0 auto;
 	padding: 0 24px;
 
-	/* @media (width >= 768px) {  } */
-	/* @media (width >= 992px) {  } */
 	@media (width >= 1200px) { max-width: 1200px; }
 }
 
@@ -41,6 +39,10 @@ html, body {
 	min-height: 400px;
 
 	z-index: 1;
+
+	@media (width <= 992px) {
+		margin-top: 66px;
+	}
 }
 
 .content {
@@ -52,5 +54,9 @@ html, body {
 
 	& > h1 {
 		margin-bottom: 32px;
+	}
+
+	@media (width <= 1200px) {
+		align-items: center;
 	}
 }

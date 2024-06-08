@@ -4,9 +4,7 @@ import { BaseInputProps } from "models/element";
 
 import "./TemplateName.scss";
 
-interface TemplateNameOwnProps extends BaseInputProps {
-	children?: ReactNode;
-}
+interface TemplateNameOwnProps extends BaseInputProps {}
 
 type TemplateNameProps = TemplateNameOwnProps &
 	Omit<
@@ -15,7 +13,6 @@ type TemplateNameProps = TemplateNameOwnProps &
 	>;
 
 const TemplateName: React.FC<TemplateNameProps> = ({
-	children = undefined,
 	...otherProps
 }: TemplateNameProps) => {
 	/* const parentOnChange = otherProps.onChange;
@@ -26,7 +23,6 @@ const TemplateName: React.FC<TemplateNameProps> = ({
 	return (
 		<>
 			<input type="text" {...otherProps} />
-			{children}
 		</>
 	);
 };

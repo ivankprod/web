@@ -5,6 +5,8 @@
 	justify-content: center;
 	gap: 4px;
 
+	filter: drop-shadow(2px 4px 6px #00000050);
+
 	&__item {
 		& a {
 			display: block;

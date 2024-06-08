@@ -55,7 +55,7 @@ button, input, optgroup, select, textarea { line-height: 1.2; }
 .rounded-bottom { border-radius: 0 0 6px 6px; }
 
 a, a:link, a:active, a:hover, a:visited {
-	color: #000;
+	color: inherit;
 
 	text-decoration: none;
 	cursor: pointer !important;
@@ -139,6 +139,11 @@ p.indent { text-indent: 6px; }
 @keyframes slideIn { /* stylelint-disable-line */
 	from { transform: translateY(31px) translateZ(0); }
 	to { transform: translateY(0) translateZ(0); }
+}
+
+@keyframes slideMobileMenu { /* stylelint-disable-line */
+	from { transform: translateX(31px) translateZ(0); }
+	to { transform: translateX(0) translateZ(0); }
 }
 
 @keyframes slideBlockTitle { /* stylelint-disable-line */

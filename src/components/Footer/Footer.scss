@@ -1,3 +1,4 @@
+@use "sass:color";
 @import "styles/theme";
 @import "styles/social";
 
@@ -7,13 +8,22 @@
 
 	width: 100%;
 
+	background: #000;
+
+	font-size: 1.1rem;
+	color: #fff;
+
 	z-index: 2;
 
 	&__back {
 		position: absolute;
 		inset: 0;
 
-		background: linear-gradient(to bottom, #f6fdf0, #fff);
+		background: linear-gradient(
+			315deg,
+			color.adjust($color-theme-green, $lightness: -12%),
+			color.adjust($color-theme-green, $lightness: -27%)
+		);
 
 		border-top: 2px solid $color-theme-green;
 
@@ -26,18 +36,13 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
-		flex-flow: row wrap;
+		flex-wrap: wrap;
 
 		padding-bottom: 22px;
 
-		text-align: center;
-
-		@media (width >= 768px) {
-			justify-content: space-around;
-		}
-
-		@media (width >= 992px) {
-			justify-content: space-between;
+		@media (width <= 1200px) {
+			padding-left: 36px;
+			padding-right: 36px;
 		}
 	}
 }
@@ -45,21 +50,17 @@
 .footer-block {
 	width: 30%;
 
-	margin-top: 34px;
+	margin-top: 48px;
 
 	vertical-align: top;
 	text-align: left;
 
-	@media (width <= 767px) {
-		width: 100%;
-	}
-
-	@media (width >= 768px) {
+	@media (width <= 992px) {
 		width: 46%;
 	}
 
-	@media (width >= 992px) {
-		width: 30%;
+	@media (width <= 768px) {
+		width: 100%;
 	}
 
 	&_copyright {
@@ -78,11 +79,10 @@
 
 	&__title {
 		padding-bottom: 6px;
-		margin-bottom: 12px;
+		margin-bottom: 28px;
 
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		text-transform: uppercase;
-		color: $color-theme-green;
 
 		border-bottom: 2px solid #0000001a;
 	}
@@ -102,7 +102,9 @@
 	}
 
 	& .footer-entry {
-		margin-top: -6px;
+		margin-top: -8px;
+
+		line-height: 1.2;
 
 		& i {
 			&::before {
@@ -124,21 +126,33 @@
 				text-align: center;
 			}
 
-			&.fix-top::before { top: 5px; }
+			&.fix-top::before {
+				top: 5px;
+			}
 
-			&.fa-time::before  { content: "\f017"; }
-			&.fa-phone::before { content: "\f095"; }
-			&.fa-email::before { content: "\f003"; }
+			&.fa-time::before {
+				content: "\f017";
+			}
+
+			&.fa-phone::before {
+				content: "\f095";
+			}
+
+			&.fa-email::before {
+				content: "\f003";
+			}
 		}
 
 		& dt {
 			display: inline-block;
 
-			width: 42px;
+			width: 48px;
 
 			margin: 0 6px 4px 0;
 		}
 
-		& dd { display: inline-block; }
+		& dd {
+			display: inline-block;
+		}
 	}
 }

@@ -1,6 +1,9 @@
 @import "styles/theme";
 
-button, .abutton {
+a.button,
+.button,
+a.abutton,
+.abutton {
 	appearance: none;
 	outline: none;
 
@@ -10,8 +13,8 @@ button, .abutton {
 
 	border: 0;
 
-	font-size: 1.2rem !important;
-	color: #fff !important;
+	font-size: 1.2rem;
+	color: #fff;
 	cursor: pointer !important;
 
 	line-height: normal;
