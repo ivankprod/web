@@ -9,6 +9,7 @@
 		"comment-empty-line-before": null,
 		"declaration-block-single-line-max-declarations": null,
 		"declaration-empty-line-before": null,
-		"font-family-no-missing-generic-family-keyword": null
+		"font-family-no-missing-generic-family-keyword": null,
+		"no-descending-specificity": null
 	}
 }

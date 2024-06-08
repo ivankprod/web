@@ -8,7 +8,7 @@ import Checkbox from "elements/Checkbox";
 
 import { encodeFormBody } from "scripts/utils";
 
-import "./ContactsForm.css";
+import "./ContactsForm.scss";
 
 type ContactsFormState = {
 	name: string;

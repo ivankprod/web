@@ -36,18 +36,13 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
-		flex-flow: row wrap;
+		flex-wrap: wrap;
 
 		padding-bottom: 22px;
 
-		text-align: center;
-
-		@media (width >= 768px) {
-			justify-content: space-around;
-		}
-
-		@media (width >= 992px) {
-			justify-content: space-between;
+		@media (width <= 1200px) {
+			padding-left: 36px;
+			padding-right: 36px;
 		}
 	}
 }
@@ -60,16 +55,12 @@
 	vertical-align: top;
 	text-align: left;
 
-	@media (width <= 767px) {
-		width: 100%;
-	}
-
-	@media (width >= 768px) {
+	@media (width <= 992px) {
 		width: 46%;
 	}
 
-	@media (width >= 992px) {
-		width: 30%;
+	@media (width <= 768px) {
+		width: 100%;
 	}
 
 	&_copyright {

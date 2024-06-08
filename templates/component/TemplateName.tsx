@@ -1,10 +1,8 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
 import "./TemplateName.scss";
 
-interface TemplateNameProps {
-	children?: ReactNode;
-}
+interface TemplateNameProps extends React.PropsWithChildren {}
 
 const TemplateName: React.FC<TemplateNameProps> = ({ children = undefined }) => {
 	return (

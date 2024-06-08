@@ -141,6 +141,11 @@ p.indent { text-indent: 6px; }
 	to { transform: translateY(0) translateZ(0); }
 }
 
+@keyframes slideMobileMenu { /* stylelint-disable-line */
+	from { transform: translateX(31px) translateZ(0); }
+	to { transform: translateX(0) translateZ(0); }
+}
+
 @keyframes slideBlockTitle { /* stylelint-disable-line */
 	from { transform: translateX(64px) translateZ(0); }
 	to { transform: translateX(0) translateZ(0); }

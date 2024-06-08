@@ -6,13 +6,17 @@
 
 	width: 100%;
 
+	background: #ffffffd4;
+
 	border-bottom: 2px solid $color-theme-green;
 
 	box-shadow: 0 3px 8px 0 #0000001a;
 
 	backdrop-filter: blur(5px);
 
-	z-index: 2;
+	z-index: 3;
+
+	@media (width <= 992px) { position: fixed; }
 
 	& .header-picture {
 		position: absolute;
@@ -27,7 +31,7 @@
 			top: 0;
 			right: 0;
 
-			width: 40%;
+			width: 280px;
 			height: 100%;
 
 			background-image: url("images/art.png");
@@ -56,6 +60,10 @@
 		position: relative;
 
 		height: 160px;
+
+		@media (width <= 992px) {
+			height: auto;
+		}
 	}
 }
 
@@ -76,6 +84,16 @@
 			background-size: contain;
 		
 			cursor: pointer !important;
+
+			@media (width <= 992px) {
+				width: 200px;
+				height: 70px;
+
+				margin-bottom: -6px;
+
+				background: url("images/logotype_small.png") no-repeat left center;
+				background-size: contain;
+			}
 		}
 		
 		& .header-right {
@@ -84,6 +102,10 @@
 			align-items: flex-end;
 			justify-content: space-between;
 			align-self: stretch;
+
+			@media (width <= 992px) {
+				display: none;
+			}
 		}
 		
 		& .global-info {

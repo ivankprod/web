@@ -1,0 +1,91 @@
+@import "styles/theme";
+
+.mobile-menu {
+	@media (width > 992px) {
+		display: none;
+	}
+
+	.nav-container-wrapper {
+		display: flex;
+
+		position: absolute;
+		top: 66px;
+		right: 0;
+
+		width: 100%;
+		height: calc(100vh - 66px);
+
+		background: #00000075;
+	}
+
+	.nav-container {
+		&_mobile {
+			position: absolute;
+			right: 0;
+			top: 0;
+
+			height: 100%;
+
+			padding: 10%;
+
+			background: #fff;
+
+			animation: slideMobileMenu 400ms cubic-bezier(0.19, 1, 0.22, 1), fadeIn 200ms linear;
+
+			@media (width <= 576px) {
+				padding: 20%;
+			}
+
+			& ul {
+				&.mnav {
+					& li {
+						display: block;
+
+						padding: 0;
+
+						font-size: 2.5rem;
+
+						@media (width <= 576px) {
+							font-size: 2rem;
+						}
+
+						& a {
+							justify-content: flex-start;
+
+							&.nav-item_active {
+								color: $color-theme-green;
+
+								&::before {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__button {
+		width: 32px;
+
+		padding: 0;
+
+		font-family: "Font Awesome 5 Free";
+		font-size: 2.5rem;
+		font-weight: 900;
+		color: #7d7d7d;
+
+		background: transparent;
+
+		box-shadow: none;
+
+		&-text {
+			text-align: center;
+
+			&_close {
+				font-size: 2.8rem;
+			}
+		}
+	}
+}

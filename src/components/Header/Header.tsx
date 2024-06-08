@@ -37,6 +37,7 @@ const Header: React.FC = () => {
 						</div>
 						<Navigation />
 					</div>
+					<Navigation mobile />
 				</div>
 			</div>
 		</header>
