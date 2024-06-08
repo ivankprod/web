@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
 			<div className="container">
 				<div className="footer-block">
 					<div className="footer-block__title">О нас</div>
-					IvanK Production - продакшн-студия топ класса, основанная в 2008-ом году. Мы
+					IvanK Production - продакшн-студия топ класса, основанная в 2008-ом году.<br />Мы
 					оказываем услуги по аудио/видео производству, дизайну и разработке программного
 					обеспечения.
 					<br />

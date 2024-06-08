@@ -55,7 +55,7 @@ button, input, optgroup, select, textarea { line-height: 1.2; }
 .rounded-bottom { border-radius: 0 0 6px 6px; }
 
 a, a:link, a:active, a:hover, a:visited {
-	color: #000;
+	color: inherit;
 
 	text-decoration: none;
 	cursor: pointer !important;
