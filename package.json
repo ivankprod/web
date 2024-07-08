@@ -62,7 +62,7 @@
 		"gatsby-transformer-sharp": "^5.13.1",
 		"generate-react-cli": "^8.4.6",
 		"postcss": "^8.4.38",
-		"postcss-preset-env": "^9.5.15",
+		"postcss-preset-env": "^9.6.0",
 		"sass": "^1.77.6",
 		"stylelint": "^16.6.1",
 		"stylelint-config-standard": "^36.0.1",
