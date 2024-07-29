@@ -68,6 +68,6 @@
 		"stylelint-config-standard": "^36.0.1",
 		"stylelint-config-standard-scss": "^13.1.0",
 		"stylelint-scss": "^6.3.2",
-		"typescript": "^5.5.2"
+		"typescript": "^5.5.4"
 	}
 }
