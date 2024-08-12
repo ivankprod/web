@@ -9,7 +9,9 @@
 		display: inline-block;
 
 		&_last {
-			&__text { margin-left: 12px; }
+			&__text {
+				margin-left: 12px;
+			}
 		}
 
 		& a {
@@ -45,7 +47,9 @@
 				transform: rotate(30deg);
 			}
 
-			& span { cursor: pointer !important; }
+			& span {
+				cursor: pointer !important;
+			}
 		}
 	}
 }

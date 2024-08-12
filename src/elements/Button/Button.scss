@@ -25,15 +25,22 @@ a.abutton,
 
 	transition: opacity 0.1s !important;
 
-	&:hover, &:active { opacity: 80% !important; }
+	&:hover,
+	&:active {
+		color: #fff;
 
-	& span { cursor: pointer !important; }
+		opacity: 80% !important;
+	}
+
+	& span {
+		cursor: pointer !important;
+	}
 
 	&[disabled] {
 		color: #c5c5c5 !important;
-	
+
 		background: #f9f9f9;
-	
+
 		pointer-events: none;
 	}
 
@@ -52,34 +59,34 @@ a.abutton,
 	&.btn-auth {
 		display: flex;
 		align-items: center;
-	
+
 		position: relative;
-	
+
 		padding: 8px;
-	
+
 		color: #000;
 		text-align: left;
-	
+
 		background-color: #fff;
-	
+
 		border: 1px solid #d8d8d8;
-	
+
 		box-shadow: 0 3px 0 #d8d8d8;
-	
+
 		overflow: hidden;
-	
+
 		& img {
 			height: 24px;
 			width: 24px;
-	
+
 			cursor: pointer !important;
 		}
-	
+
 		& span {
 			display: inline-block;
-	
+
 			margin: 0 6px 0 4px;
-	
+
 			font-size: 1.1rem;
 		}
 	}

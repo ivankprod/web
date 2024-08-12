@@ -7,9 +7,13 @@ import "./TextField.scss";
 
 type TextFieldProps = BaseInputProps &
 	Omit<
-		React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+		React.DetailedHTMLProps<
+			React.InputHTMLAttributes<HTMLInputElement>,
+			HTMLInputElement
+		>,
 		keyof BaseInputProps
 	>;
+
 type TextAreaProps = BaseInputProps &
 	Omit<
 		React.DetailedHTMLProps<
@@ -21,14 +25,17 @@ type TextAreaProps = BaseInputProps &
 
 export const TextField: React.FC<TextFieldProps> = ({
 	validable = false,
-	validityError = undefined,
+	validityError,
 	...otherProps
 }: TextFieldProps) => {
 	const parentOnChange = otherProps.onChange;
 	otherProps.onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		parentOnChange?.(e);
 
-		if (validable) e.target.className = clsx({ "error-input-required": e.target.value === "" });
+		if (validable)
+			e.target.className = clsx({
+				"error-input-required": e.target.value === ""
+			});
 	};
 
 	return (
@@ -42,17 +49,23 @@ export const TextField: React.FC<TextFieldProps> = ({
 
 export const TextArea: React.FC<TextAreaProps> = ({
 	validable = false,
-	validityError = undefined,
+	validityError,
 	...otherProps
 }: TextAreaProps) => {
 	const parentOnChange = otherProps.onChange;
 	otherProps.onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
 		parentOnChange?.(e);
 
-		if (validable) e.target.className = clsx({ "error-input-required": e.target.value === "" });
+		if (validable)
+			e.target.className = clsx({
+				"error-input-required": e.target.value === ""
+			});
 	};
 
-	return <textarea className={clsx({ "error-input-required": validityError })} {...otherProps} />;
+	return (
+		<textarea
+			className={clsx({ "error-input-required": validityError })}
+			{...otherProps}
+		/>
+	);
 };
-
-export default { TextField, TextArea };

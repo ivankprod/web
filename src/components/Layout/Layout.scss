@@ -1,7 +1,8 @@
 @import "fonts/fontawesome/css/solid.min.css";
 @import "styles/reset";
 
-html, body {
+html,
+body {
 	height: 100%;
 	width: 100%;
 	min-width: 230px;
@@ -28,10 +29,14 @@ html, body {
 	margin: 0 auto;
 	padding: 0 24px;
 
-	@media (width >= 1200px) { max-width: 1200px; }
+	@media (width >= 1200px) {
+		max-width: 1200px;
+	}
 }
 
-.stretch-container { width: 100%; }
+.stretch-container {
+	width: 100%;
+}
 
 #content-holder {
 	flex: 1 0 auto;

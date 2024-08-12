@@ -30,7 +30,8 @@
 
 			background: #fff;
 
-			animation: slideMobileMenu 400ms cubic-bezier(0.19, 1, 0.22, 1), fadeIn 200ms linear;
+			animation: slideMobileMenu 400ms cubic-bezier(0.19, 1, 0.22, 1),
+				fadeIn 200ms linear;
 
 			@media (width <= 576px) {
 				padding: 20%;

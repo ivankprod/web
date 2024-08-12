@@ -6,11 +6,10 @@ import ScopeContext from "context/scope";
 import useMetaJSON from "hooks/useMetaJSON";
 
 import Layout from "components/Layout";
-import Breadcrumbs from "components/Breadcrumbs";
-import SEO from "components/SEO";
-import ContactsForm from "forms/ContactsForm";
+import { Breadcrumbs, SEO } from "components";
+import { ContactsForm } from "forms/ContactsForm";
 
-import Page from "models/page";
+import { Page } from "models/page";
 
 import "./contacts.scss";
 
@@ -32,11 +31,15 @@ const ContactsPage = () => {
 						<div className="contacts-emails">
 							<div className="contacts-emails__column">
 								<h3>Обратная связь</h3>
-								<a href={`mailto:${meta?.email_info}`}>{meta?.email_info}</a>
+								<a href={`mailto:${meta?.email_info}`}>
+									{meta?.email_info}
+								</a>
 							</div>
 							<div className="contacts-emails__column">
 								<h3>Пресса / PR</h3>
-								<a href={`mailto:${meta?.email_pr}`}>{meta?.email_pr}</a>
+								<a href={`mailto:${meta?.email_pr}`}>
+									{meta?.email_pr}
+								</a>
 							</div>
 						</div>
 						<ContactsForm />

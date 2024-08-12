@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: start;
 	flex-flow: row wrap;
-    gap: 32px;
+	gap: 32px;
 
 	margin-bottom: 32px;
 
@@ -10,5 +10,8 @@
 }
 
 .contacts-emails__column {
-	& h3 { color: #8b8b8b; font-size: 0.8em; }
+	& h3 {
+		color: #8b8b8b;
+		font-size: 0.8em;
+	}
 }

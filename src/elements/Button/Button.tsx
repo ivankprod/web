@@ -6,7 +6,8 @@ import { ButtonSize } from "models/element";
 
 import "./Button.scss";
 
-interface ButtonOwnProps<E extends ElementType = ElementType> extends React.PropsWithChildren {
+interface ButtonOwnProps<E extends ElementType = ElementType>
+	extends React.PropsWithChildren {
 	as?: E;
 	size?: ButtonSize;
 }
@@ -16,7 +17,9 @@ type ButtonProps<E extends ElementType> = ButtonOwnProps<E> &
 
 const defaultElement = Link;
 
-const Button: React.FC<ButtonProps<ElementType>> = <E extends ElementType = typeof defaultElement>({
+export const Button: React.FC<ButtonProps<ElementType>> = <
+	E extends ElementType = typeof defaultElement
+>({
 	as = undefined,
 	size = undefined,
 	children = undefined,
@@ -25,7 +28,15 @@ const Button: React.FC<ButtonProps<ElementType>> = <E extends ElementType = type
 	const TagName = as || defaultElement;
 
 	return (
-		<TagName {...otherProps} className={clsx("abutton", size, "rounded-all", otherProps.className)}>
+		<TagName
+			{...otherProps}
+			className={clsx(
+				"abutton",
+				size,
+				"rounded-all",
+				otherProps.className
+			)}
+		>
 			{children}
 		</TagName>
 	);

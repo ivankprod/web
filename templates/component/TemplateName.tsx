@@ -4,12 +4,8 @@ import "./TemplateName.scss";
 
 interface TemplateNameProps extends React.PropsWithChildren {}
 
-const TemplateName: React.FC<TemplateNameProps> = ({ children = undefined }) => {
-	return (
-		<div>
-			{children}
-		</div>
-	);
+export const TemplateName: React.FC<TemplateNameProps> = ({ children }) => {
+	return <div>{children}</div>;
 };
 
 export default TemplateName;

@@ -40,9 +40,14 @@
 						transition: background-color 0.1s linear;
 					}
 
-					&:hover, &.hovered { color: $color-theme-green !important; }
+					&:hover,
+					&.hovered {
+						color: $color-theme-green !important;
+					}
 
-					&.nav-item_active::before { background-color: $color-theme-green; }
+					&.nav-item_active::before {
+						background-color: $color-theme-green;
+					}
 
 					&.subnav::after {
 						content: "\f107";
@@ -87,7 +92,9 @@
 
 	box-shadow: 0 3px 8px 0 #0000001a;
 
-	&.showed { display: flex; }
+	&.showed {
+		display: flex;
+	}
 
 	& .subnav-column {
 		width: 30%;
@@ -95,11 +102,16 @@
 		&__title {
 			margin-bottom: 12px;
 			padding-bottom: 8px;
-	
+
 			border-bottom: 1px solid $color-theme-green;
 		}
 	}
 
-	& ul.snav { margin-left: 12px; }
-	& ul.snav li { margin: 6px 0; }
+	& ul.snav {
+		margin-left: 12px;
+	}
+
+	& ul.snav li {
+		margin: 6px 0;
+	}
 }

@@ -7,7 +7,10 @@ interface FormRowProps extends React.PropsWithChildren {
 	className?: string;
 }
 
-const FormRow: React.FC<FormRowProps> = ({ className = "", children = undefined }) => {
+export const FormRow: React.FC<FormRowProps> = ({
+	className = "",
+	children
+}) => {
 	return <div className={clsx("form-row", className)}>{children}</div>;
 };
 

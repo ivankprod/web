@@ -2,8 +2,8 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { MegaMenuItem } from "models/menu";
 
-export const useMenuJSON = (): MegaMenuItem[] => {
-	return useStaticQuery(
+export const useMenuJSON = (): MegaMenuItem[] =>
+	useStaticQuery(
 		graphql`
 			query {
 				allFile(filter: { relativePath: { eq: "menu.json" } }) {
@@ -32,6 +32,5 @@ export const useMenuJSON = (): MegaMenuItem[] => {
 			}
 		`
 	).allFile?.nodes[0]?.childContentJson?.menu;
-};
 
 export default useMenuJSON;

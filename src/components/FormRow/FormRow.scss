@@ -3,9 +3,13 @@
 .form-row {
 	display: flex;
 
-	&.submit { justify-content: space-between; }
+	&.submit {
+		justify-content: space-between;
+	}
 
-	& + .form-row { margin-top: 20px; }
+	& + .form-row {
+		margin-top: 20px;
+	}
 
 	& .postsubmit-text {
 		display: flex;
@@ -18,7 +22,14 @@
 
 		opacity: 0;
 
-		&.success { opacity: 1; color: $color-theme-green; }
-		&.error { opacity: 1; color: #f00; }
+		&.success {
+			opacity: 1;
+			color: $color-theme-green;
+		}
+
+		&.error {
+			opacity: 1;
+			color: #f00;
+		}
 	}
 }

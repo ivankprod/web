@@ -16,7 +16,9 @@
 
 	z-index: 3;
 
-	@media (width <= 992px) { position: fixed; }
+	@media (width <= 992px) {
+		position: fixed;
+	}
 
 	& .header-picture {
 		position: absolute;
@@ -79,10 +81,10 @@
 		& .logotype {
 			height: 100px;
 			width: 320px;
-		
+
 			background: url("images/logotype_2x.png") no-repeat left center;
 			background-size: contain;
-		
+
 			cursor: pointer !important;
 
 			@media (width <= 992px) {
@@ -91,11 +93,12 @@
 
 				margin-bottom: -6px;
 
-				background: url("images/logotype_small.png") no-repeat left center;
+				background: url("images/logotype_small.png") no-repeat left
+					center;
 				background-size: contain;
 			}
 		}
-		
+
 		& .header-right {
 			display: flex;
 			flex-direction: column;
@@ -107,22 +110,24 @@
 				display: none;
 			}
 		}
-		
+
 		& .global-info {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-		
+
 			font-size: 1.4rem;
 
 			&__row {
 				margin-right: 20px;
-				
+
 				color: #4a4a4a;
 				text-align: right;
 			}
 
-			&__stroke { font-size: 1rem; }
+			&__stroke {
+				font-size: 1rem;
+			}
 		}
 	}
 }

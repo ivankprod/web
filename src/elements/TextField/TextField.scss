@@ -21,7 +21,9 @@ textarea {
 
 	transition: border-color 0.1s;
 
-	&:focus { border-color: $color-theme-green; }
+	&:focus {
+		border-color: $color-theme-green;
+	}
 
 	&.error-input-required {
 		border-color: #ff000080 !important;

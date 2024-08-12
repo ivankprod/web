@@ -10,14 +10,15 @@ interface ErrorBoxProps {
 	message: string;
 }
 
-const ErrorBox: React.FC<ErrorBoxProps> = ({ title, message }) => {
+export const ErrorBox: React.FC<ErrorBoxProps> = ({ title, message }) => {
 	return (
 		<div className="error-box">
 			<div className="error-box__title">{title}</div>
 			<div className="error-box__message">{message}</div>
 			<Button
 				className="error-box__button"
-				to="/" size={ButtonSize.small}
+				to="/"
+				size={ButtonSize.small}
 			>
 				На главную
 			</Button>

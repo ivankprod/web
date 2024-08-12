@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
 import { BaseInputProps } from "models/element";
 
@@ -8,11 +8,14 @@ interface TemplateNameOwnProps extends BaseInputProps {}
 
 type TemplateNameProps = TemplateNameOwnProps &
 	Omit<
-		React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+		React.DetailedHTMLProps<
+			React.InputHTMLAttributes<HTMLInputElement>,
+			HTMLInputElement
+		>,
 		keyof TemplateNameOwnProps
 	>;
 
-const TemplateName: React.FC<TemplateNameProps> = ({
+export const TemplateName: React.FC<TemplateNameProps> = ({
 	...otherProps
 }: TemplateNameProps) => {
 	/* const parentOnChange = otherProps.onChange;

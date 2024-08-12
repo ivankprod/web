@@ -29,7 +29,8 @@ input[type="checkbox"] {
 		border: 1px solid #ddd;
 		border-radius: 0.25em;
 
-		transition: color 0.3s, border-color 0.3s, background-color 0.1s, opacity 0.1s;
+		transition: color 0.3s, border-color 0.3s, background-color 0.1s,
+			opacity 0.1s;
 	}
 
 	&:checked ~ label::before {
@@ -38,7 +39,9 @@ input[type="checkbox"] {
 		border: 1px solid $color-theme-green;
 	}
 
-	&:hover ~ label::before { opacity: 80%; }
+	&:hover ~ label::before {
+		opacity: 80%;
+	}
 
 	&.error-input-required ~ label::before {
 		border-color: #ff000080 !important;
