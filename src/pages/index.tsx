@@ -4,10 +4,9 @@ import { HeadFC } from "gatsby";
 import ScopeContext from "context/scope";
 
 import Layout from "components/Layout";
-import Slider from "components/Slider";
-import SEO from "components/SEO";
+import { Slider, SEO } from "components";
 
-const IndexPage = () => (
+const HomePage = () => (
 	<ScopeContext.Provider value={{ scope: "home" }}>
 		<Layout>
 			<section id="content-holder" className="container">
@@ -19,7 +18,7 @@ const IndexPage = () => (
 	</ScopeContext.Provider>
 );
 
-export default IndexPage;
+export default HomePage;
 
 export const Head: HeadFC = () => {
 	return <SEO title="Главная" />;

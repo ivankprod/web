@@ -3,12 +3,8 @@ import { HeadFC } from "gatsby";
 
 import ScopeContext from "context/scope";
 
-import Layout from "components/Layout";
-import SEO from "components/SEO";
-import Breadcrumbs from "components/Breadcrumbs";
-import Page from "models/page";
-
-//import "./templateName.scss"
+import { Layout, Breadcrumbs, SEO } from "components";
+import { Page } from "models/page";
 
 const TemplateNamePage = () => {
 	const currentPage: Page = {

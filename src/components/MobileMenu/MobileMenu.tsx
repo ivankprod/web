@@ -14,7 +14,7 @@ interface MobileMenuProps {
 	menuStructure: MegaMenuItem[];
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ menuStructure }) => {
+export const MobileMenu: React.FC<MobileMenuProps> = ({ menuStructure }) => {
 	const [menuOpened, setMenuOpened] = useState(false);
 
 	const ctx = useContext(ScopeContext);
@@ -38,20 +38,19 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ menuStructure }) => {
 				<div className="nav-container-wrapper">
 					<nav className="nav-container nav-container_mobile">
 						<ul className="mnav">
-							{menuStructure.map(
-								({ id, title, href, scope }: MegaMenuItem) => (
-									<li key={id}>
-										<Link
-											to={href}
-											className={clsx({
-												"nav-item_active": ctx.scope === scope
-											})}
-										>
-											{title}
-										</Link>
-									</li>
-								)
-							)}
+							{menuStructure.map(({ id, title, href, scope }) => (
+								<li key={id}>
+									<Link
+										to={href}
+										className={clsx({
+											"nav-item_active":
+												ctx.scope === scope
+										})}
+									>
+										{title}
+									</Link>
+								</li>
+							))}
 						</ul>
 					</nav>
 				</div>

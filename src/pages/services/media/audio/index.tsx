@@ -4,10 +4,9 @@ import { HeadFC } from "gatsby";
 import ScopeContext from "context/scope";
 
 import Layout from "components/Layout";
-import Breadcrumbs from "components/Breadcrumbs";
-import SEO from "components/SEO";
+import { Breadcrumbs, SEO } from "components";
 
-import Page from "models/page";
+import { Page } from "models/page";
 
 const ServicesMediaAudioPage = () => {
 	const currentPage: Page = {
@@ -19,7 +18,8 @@ const ServicesMediaAudioPage = () => {
 		{
 			title: "Услуги",
 			path: "services"
-		}, {
+		},
+		{
 			title: "Медиа",
 			path: "services/media"
 		}

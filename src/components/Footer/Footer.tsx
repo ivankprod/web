@@ -6,7 +6,7 @@ import useMetaJSON from "hooks/useMetaJSON";
 
 import "./Footer.scss";
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
 	const siteMetadata = useSiteMetadata();
 	const meta = useMetaJSON();
 
@@ -16,14 +16,18 @@ const Footer: React.FC = () => {
 			<div className="container">
 				<div className="footer-block">
 					<div className="footer-block__title">О нас</div>
-					IvanK Production - продакшн-студия топ класса, основанная в 2008-ом году.<br />Мы
-					оказываем услуги по аудио/видео производству, дизайну и разработке программного
-					обеспечения.
+					IvanK Production - продакшн-студия топ класса, основанная в
+					2008-ом году.
+					<br />
+					Мы оказываем услуги по аудио/видео производству, дизайну и
+					разработке программного обеспечения.
 					<br />
 					<br />
 					<Link to="/legal/offer/">Публичная оферта</Link>
 					<br />
-					<Link to="/legal/privacy/">Политика конфиденциальности</Link>
+					<Link to="/legal/privacy/">
+						Политика конфиденциальности
+					</Link>
 				</div>
 				<div className="footer-block">
 					<div className="footer-block__title">Меню</div>
@@ -52,8 +56,18 @@ const Footer: React.FC = () => {
 					<div className="footer-block__title">Контакты</div>
 					<dl className="footer-entry">
 						<i className="fa-time fix-top" />
-						<dt>{meta?.worktime?.slice(0, meta?.worktime?.indexOf(" "))}:</dt>
-						<dd>{meta?.worktime?.slice(meta?.worktime?.indexOf(" "))}</dd>
+						<dt>
+							{meta?.worktime?.slice(
+								0,
+								meta?.worktime?.indexOf(" ")
+							)}
+							:
+						</dt>
+						<dd>
+							{meta?.worktime?.slice(
+								meta?.worktime?.indexOf(" ")
+							)}
+						</dd>
 						<br />
 						<i className="fa-phone fix-top" />
 						<dt>тел.:</dt>
@@ -64,13 +78,17 @@ const Footer: React.FC = () => {
 						<i className="fa-email fix-top" />
 						<dt>email:</dt>
 						<dd>
-							<a href={`mailto:${meta?.email_info}`}>{meta?.email_info}</a>
+							<a href={`mailto:${meta?.email_info}`}>
+								{meta?.email_info}
+							</a>
 						</dd>
 						<br />
 						<i className="fa-email" />
 						<dt>PR:</dt>
 						<dd>
-							<a href={`mailto:${meta?.email_pr}`}>{meta?.email_pr}</a>
+							<a href={`mailto:${meta?.email_pr}`}>
+								{meta?.email_pr}
+							</a>
 						</dd>
 					</dl>
 				</div>
@@ -118,7 +136,8 @@ const Footer: React.FC = () => {
 						></a>
 					</li>
 				</ul>
-				© 2008-{new Date().getFullYear()} {siteMetadata.title}. Все права защищены.
+				© 2008-{new Date().getFullYear()} {siteMetadata.title}. Все
+				права защищены.
 			</div>
 		</footer>
 	);

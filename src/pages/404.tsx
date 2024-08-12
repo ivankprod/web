@@ -2,8 +2,7 @@ import React from "react";
 import { HeadFC } from "gatsby";
 
 import Layout from "components/Layout";
-import ErrorBox from "components/ErrorBox";
-import SEO from "components/SEO";
+import { ErrorBox, SEO } from "components";
 
 const NotFoundPage = () => (
 	<Layout>

@@ -37,8 +37,12 @@ const onSliderTransitionEnd: SliderEvent = (slider: SliderClass) => {
 			callback: function () {
 				if (!this.elem?.children[0]) return;
 
-				(this.elem.children[0].children[2] as HTMLElement).style.opacity = "1";
-				(this.elem.children[0].children[2] as HTMLElement).style.animation =
+				(
+					this.elem.children[0].children[2] as HTMLElement
+				).style.opacity = "1";
+				(
+					this.elem.children[0].children[2] as HTMLElement
+				).style.animation =
 					"slideIn 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000), fadeIn 400ms linear";
 			}
 		});
@@ -49,7 +53,7 @@ const onSliderTransitionEnd: SliderEvent = (slider: SliderClass) => {
 	}
 };
 
-const Slider: React.FC = () => {
+export const Slider: React.FC = () => {
 	useEffect(() => {
 		const sliderConfig: SliderConfig = {
 			speed: 600,
@@ -132,46 +136,60 @@ const Slider: React.FC = () => {
 		<div className="container slider-section">
 			<div className="slider-container" id="slider-container">
 				<div className="slider-wrapper">
-					{slides.map(({ id, caption, text, action }, index: number) => (
-						<div key={id} className="slider-slide">
-							<div className="slide-block">
-								<div>
-									<div className="slide-block__title">
-										<h1>{caption}</h1>
+					{slides.map(
+						({ id, caption, text, action }, index: number) => (
+							<div key={id} className="slider-slide">
+								<div className="slide-block">
+									<div>
+										<div className="slide-block__title">
+											<h1>{caption}</h1>
+										</div>
+										<div className="slide-block__desc">
+											{text &&
+												text.map((item, index) =>
+													index == text.length - 1 ? (
+														<span key={item?.id}>
+															{item?.line}
+														</span>
+													) : (
+														<Fragment
+															key={item?.id}
+														>
+															<span>
+																{item?.line}
+															</span>
+															<br />
+														</Fragment>
+													)
+												)}
+										</div>
+										{action && (
+											<Button
+												className="slide-block__action"
+												to={action?.url}
+												size={ButtonSize.middle}
+											>
+												{action?.text}
+											</Button>
+										)}
 									</div>
-									<div className="slide-block__desc">
-										{text &&
-											text.map((item, index) =>
-												index == text.length - 1 ? (
-													<span key={item?.id}>{item?.line}</span>
-												) : (
-													<Fragment key={item?.id}>
-														<span>{item?.line}</span>
-														<br />
-													</Fragment>
-												)
-											)}
-									</div>
-									{action && (
-										<Button
-											className="slide-block__action"
-											to={action?.url} size={ButtonSize.middle}
-										>
-											{action?.text}
-										</Button>
-									)}
+									{icons &&
+										icons[index] &&
+										icons[index].childImageSharp
+											?.gatsbyImageData && (
+											<GatsbyImage
+												className="slide-block__icon"
+												image={
+													icons[index].childImageSharp
+														.gatsbyImageData
+												}
+												alt="Welcome!"
+											/>
+										)}
 								</div>
-								{icons && icons[index] && (
-									<GatsbyImage
-										className="slide-block__icon"
-										// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-										image={icons[index].childImageSharp?.gatsbyImageData!}
-										alt="Welcome!"
-									/>
-								)}
 							</div>
-						</div>
-					))}
+						)
+					)}
 				</div>
 				<div className="slider-pagination"></div>
 			</div>

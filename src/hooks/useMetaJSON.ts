@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-export const useMetaJSON = (): Queries.ContentJsonMeta => {
-	return useStaticQuery(
+export const useMetaJSON = (): Queries.ContentJsonMeta =>
+	useStaticQuery(
 		graphql`
 			query {
 				allFile(filter: { relativePath: { eq: "meta.json" } }) {
@@ -19,6 +19,5 @@ export const useMetaJSON = (): Queries.ContentJsonMeta => {
 			}
 		`
 	).allFile?.nodes[0]?.childContentJson?.meta;
-};
 
 export default useMetaJSON;

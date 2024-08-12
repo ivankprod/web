@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 
 import useSiteMetadata from "hooks/useSiteMetadata";
 
-import Page from "models/page";
+import { Page } from "models/page";
 
 import "./Breadcrumbs.scss";
 
@@ -12,7 +12,7 @@ interface BreadcrumbsProps {
 	parentPages?: Page[];
 }
 
-const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
+export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
 	page,
 	parentPages = []
 }) => {

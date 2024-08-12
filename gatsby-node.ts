@@ -21,7 +21,10 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async ({
 				text,
 				action,
 				id: createNodeId(id),
-				internal: { type: "Slide", contentDigest: createContentDigest(slide) }
+				internal: {
+					type: "Slide",
+					contentDigest: createContentDigest(slide)
+				}
 			};
 
 			actions.createNode(node);

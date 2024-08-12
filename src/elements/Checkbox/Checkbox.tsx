@@ -9,11 +9,14 @@ interface CheckboxOwnProps extends React.PropsWithChildren<BaseInputProps> {}
 
 type CheckboxProps = CheckboxOwnProps &
 	Omit<
-		React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+		React.DetailedHTMLProps<
+			React.InputHTMLAttributes<HTMLInputElement>,
+			HTMLInputElement
+		>,
 		keyof CheckboxOwnProps
 	>;
 
-const Checkbox: React.FC<CheckboxProps> = ({
+export const Checkbox: React.FC<CheckboxProps> = ({
 	validable = false,
 	validityError = undefined,
 	children = undefined,
@@ -23,7 +26,10 @@ const Checkbox: React.FC<CheckboxProps> = ({
 	otherProps.onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		parentOnChange?.(e);
 
-		if (validable) e.target.className = clsx({ "error-input-required": !e.target.checked });
+		if (validable)
+			e.target.className = clsx({
+				"error-input-required": !e.target.checked
+			});
 	};
 
 	return (

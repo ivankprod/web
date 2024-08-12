@@ -2,10 +2,9 @@ import React from "react";
 import { HeadFC, HeadProps, PageProps, graphql } from "gatsby";
 
 import Layout from "components/Layout";
-import Breadcrumbs from "components/Breadcrumbs";
-import SEO from "components/SEO";
+import { Breadcrumbs, SEO } from "components";
 
-import Page from "models/page";
+import { Page } from "models/page";
 
 interface LegalPageTemplateProps {
 	markdownRemark: {
@@ -35,7 +34,10 @@ const LegalPageTemplate: React.FC<PageProps<LegalPageTemplateProps>> = ({
 				<Breadcrumbs page={currentPage} />
 				<div id="content" className="content animate-fadein-css">
 					<h1>{currentPage.title}</h1>
-					<div className="article" dangerouslySetInnerHTML={{ __html: html }}></div>
+					<div
+						className="article"
+						dangerouslySetInnerHTML={{ __html: html }}
+					></div>
 				</div>
 			</section>
 		</Layout>

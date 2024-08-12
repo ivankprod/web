@@ -4,10 +4,9 @@ import { HeadFC } from "gatsby";
 import ScopeContext from "context/scope";
 
 import Layout from "components/Layout";
-import Breadcrumbs from "components/Breadcrumbs";
-import SEO from "components/SEO";
+import { Breadcrumbs, SEO } from "components";
 
-import Page from "models/page";
+import { Page } from "models/page";
 
 const ServicesMediaPage = () => {
 	const currentPage: Page = {
@@ -39,5 +38,11 @@ const ServicesMediaPage = () => {
 export default ServicesMediaPage;
 
 export const Head: HeadFC = () => {
-	return <SEO title="Услуги: медиа" description="Услуги в сфере медиа" path="services/media" />;
+	return (
+		<SEO
+			title="Услуги: медиа"
+			description="Услуги в сфере медиа"
+			path="services/media"
+		/>
+	);
 };

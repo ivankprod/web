@@ -8,7 +8,7 @@ type AnimateOpts = {
 	elemw?: HTMLElement;
 	draw?: (perc: number) => void;
 	move?: (perc: number) => void;
-	callback?: Function;
+	callback?: () => void;
 };
 
 export function animate(opts: AnimateOpts) {
@@ -102,18 +102,3 @@ declare global {
 		lastRAF: number | null;
 	}
 }
-
-export default {
-	animate,
-	makeLinear,
-	makePow,
-	makeCirc,
-	makeEaseOut,
-	makeEaseInOut,
-	makeLinearEaseInOut,
-	makePowEaseOut,
-	makeCircEaseInOut,
-	drawOpacity,
-	drawHeight,
-	fadeOut
-};
