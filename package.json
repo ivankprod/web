@@ -31,7 +31,7 @@
 		"gen:page": "generate-react component --type=page"
 	},
 	"dependencies": {
-		"@fontsource/open-sans": "^5.0.29",
+		"@fontsource/open-sans": "^5.1.0",
 		"clsx": "^2.1.1",
 		"gatsby": "^5.13.7",
 		"gatsby": "^5.13.7",
@@ -40,13 +40,12 @@
 		"react-dom": "^18.3.1"
 	},
 	"devDependencies": {
-		"@types/node": "^22.5.0",
-		"@types/node": "^22.5.0",
+		"@types/node": "^22.5.5",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"@typescript-eslint/eslint-plugin": "^7.14.1",
 		"@typescript-eslint/parser": "^7.14.1",
-		"autoprefixer": "^10.4.19",
+		"autoprefixer": "^10.4.20",
 		"eslint": "^8.57.0",
 		"eslint-plugin-react": "^7.35.0",
 		"eslint-plugin-react": "^7.35.0",
@@ -65,12 +64,12 @@
 		"gatsby-transformer-sharp": "^5.13.1",
 		"generate-react-cli": "^8.4.8",
 		"postcss": "^8.4.44",
-		"postcss-preset-env": "^10.0.0",
+		"postcss-preset-env": "^10.0.3",
 		"sass": "^1.77.8",
 		"stylelint": "^16.9.0",
 		"stylelint-config-standard": "^36.0.1",
 		"stylelint-config-standard-scss": "^13.1.0",
-		"stylelint-scss": "^6.3.2",
+		"stylelint-scss": "^6.6.0",
 		"typescript": "^5.5.4"
 	}
 }
