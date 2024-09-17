@@ -81,6 +81,10 @@
 
 		box-shadow: none;
 
+		&:hover {
+			color: #7d7d7d;
+		}
+
 		&-text {
 			text-align: center;
 
